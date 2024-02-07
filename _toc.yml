@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: ch1_introduction_to_version_control
+  sections:
+  - file: ch11
+  - file: ch12
+  - file: ch13
+  - file: ch14
+  - file: ch15
