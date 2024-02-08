@@ -4,10 +4,28 @@
 format: jb-book
 root: intro
 chapters:
-- file: ch1/ch1_introduction_to_version_control
+- file: ch1/ch10
   sections:
   - file: ch1/ch11
   - file: ch1/ch12
   - file: ch1/ch13
   - file: ch1/ch14
   - file: ch1/ch15
+- file: ch2/ch20
+  sections:
+  - file: ch2/ch21
+  - file: ch2/ch22
+- file: ch3/ch30
+  sections:
+  - file: ch3/ch31
+  - file: ch3/ch32
+- file: ch4/ch40
+  sections:
+  - file: ch4/ch41
+  - file: ch4/ch42
+  - file: ch4/ch43
+- file: ch5/ch50
+  sections:
+  - file: ch5/ch51
+  - file: ch5/ch52
+  - file: ch5/ch53

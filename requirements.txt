@@ -3,3 +3,4 @@ matplotlib
 numpy
 bash-kernel
 ghp-import
+# gh (Github from the cli)

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -66,7 +66,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch14';</script>
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.5 Remote Repositories" href="ch15.html" />
@@ -186,12 +185,41 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch1_introduction_to_version_control.html">Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4 Merging Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53.html">5.2 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -418,14 +446,6 @@ document.write(`
                 <article class="bd-article">
                   
   <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: cd: home/my-project: No such file or directory
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="merging-branches">
 <h1>1.4 Merging Branches<a class="headerlink" href="#merging-branches" title="Link to this heading">#</a></h1>
@@ -460,72 +480,24 @@ git<span class="w"> </span>log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D	_build/.doctrees/environment.pickle
-M	_toc.yml
-D	ch1/file1.txt
-D	ch11.md
-D	ch12.md
-D	ch13.md
-D	ch14.md
-D	ch15.md
-D	ch1_introduction_to_version_control.md
-M	requirements.txt
-Switched to branch &#39;main&#39;
-Your branch is ahead of &#39;origin/main&#39; by 1 commit.
-  (use &quot;git push&quot; to publish your local commits)
-Updating 089f7ed..b463777
-error: The following untracked working tree files would be overwritten by merge:
-	ch1/ch11.md
-	ch1/ch12.md
-	ch1/ch13.md
-	ch1/ch14.md
-	ch1/ch15.md
-	ch1/ch1_introduction_to_version_control.md
-Please move or remove them before you merge.
-Aborting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+Updating 1fc9e27..77ce820
+Fast-forward
+ file1.txt | 4 <span class=" -Color -Color-Green">+++</span><span class=" -Color -Color-Red">-</span>
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 On branch main
-Your branch is ahead of &#39;origin/main&#39; by 1 commit.
-  (use &quot;git push&quot; to publish your local commits)
-
-Changes not staged for commit:
-  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-	<span class=" -Color -Color-Red">deleted:    ../_build/.doctrees/environment.pickle</span>
-	<span class=" -Color -Color-Red">modified:   ../_toc.yml</span>
-	<span class=" -Color -Color-Red">deleted:    file1.txt</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch11.md</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch12.md</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch13.md</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch14.md</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch15.md</span>
-	<span class=" -Color -Color-Red">deleted:    ../ch1_introduction_to_version_control.md</span>
-	<span class=" -Color -Color-Red">modified:   ../requirements.txt</span>
-
-Untracked files:
-  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-	<span class=" -Color -Color-Red">../_build/.doctrees/about.doctree</span>
-	<span class=" -Color -Color-Red">../_build/.doctrees/ch1/</span>
-	<span class=" -Color -Color-Red">../_build/jupyter_execute/ch1/</span>
-	<span class=" -Color -Color-Red">../about.md</span>
-	<span class=" -Color -Color-Red">ch11.md</span>
-	<span class=" -Color -Color-Red">ch12.md</span>
-	<span class=" -Color -Color-Red">ch13.md</span>
-	<span class=" -Color -Color-Red">ch14.md</span>
-	<span class=" -Color -Color-Red">ch15.md</span>
-	<span class=" -Color -Color-Red">ch1_introduction_to_version_control.md</span>
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-<span class=" -Color -Color-Yellow">commit 089f7ed655b98fd45b9ea9d270429c56d02aadc9 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">new-feature-branch</span><span class=" -Color -Color-Yellow">)</span>
+nothing to commit, working tree clean
+<span class=" -Color -Color-Yellow">commit 77ce820951d11ec67e06be7fde6354eadaf26dd8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">new-branch</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:02:00 2024 +0100
+Date:   Thu Feb 8 23:34:45 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 188ad45f8500fad34cea2ec76a65811217ea23f0 (</span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 1fc9e27026ba4f94c6a24d4970363411344f2ee7</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Wed Feb 7 15:48:53 2024 +0100
+Date:   Thu Feb 8 23:34:32 2024 +0100
 
-    initial version
+    Add file1.txt
 </pre></div>
 </div>
 </div>
@@ -552,36 +524,11 @@ git<span class="w"> </span>switch<span class="w"> </span>main
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: The following untracked working tree files would be overwritten by checkout:
-	ch1/ch11.md
-	ch1/ch12.md
-	ch1/ch13.md
-	ch1/ch14.md
-	ch1/ch15.md
-	ch1/ch1_introduction_to_version_control.md
-Please move or remove them before you switch branches.
-Aborting
-[main e91a414] Add file2 and modify file1
- 8 files changed, 660 insertions(+), 2 deletions(-)
- create mode 100644 ch1/ch11.md
- create mode 100644 ch1/ch12.md
- create mode 100644 ch1/ch13.md
- create mode 100644 ch1/ch14.md
- create mode 100644 ch1/ch15.md
- create mode 100644 ch1/ch1_introduction_to_version_control.md
- create mode 100644 ch1/file2.txt
-D	_build/.doctrees/environment.pickle
-M	_toc.yml
-D	ch11.md
-D	ch12.md
-D	ch13.md
-D	ch14.md
-D	ch15.md
-D	ch1_introduction_to_version_control.md
-M	requirements.txt
-Already on &#39;main&#39;
-Your branch is ahead of &#39;origin/main&#39; by 2 commits.
-  (use &quot;git push&quot; to publish your local commits)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;new-branch&#39;
+[new-branch f9b0c6f] Add file2 and modify file1
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 file2.txt
+Switched to branch &#39;main&#39;
 </pre></div>
 </div>
 </div>
@@ -603,18 +550,9 @@ git<span class="w"> </span>switch<span class="w"> </span>main
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D	_build/.doctrees/environment.pickle
-M	_toc.yml
-D	ch11.md
-D	ch12.md
-D	ch13.md
-D	ch14.md
-D	ch15.md
-D	ch1_introduction_to_version_control.md
-M	requirements.txt
-Switched to branch &#39;new-branch&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;new-branch&#39;
 error: Your local changes to the following files would be overwritten by checkout:
-	ch1/file1.txt
+	file1.txt
 Please commit your changes or stash them before you switch branches.
 Aborting
 </pre></div>
@@ -645,8 +583,8 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[new-branch 6fe4564] Add fifth and sixth lines to file1.txt
- 1 file changed, 2 insertions(+)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[new-branch 812f652] Add fifth and sixth lines to file1.txt
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 </pre></div>
 </div>
 </div>
@@ -662,59 +600,30 @@ git<span class="w"> </span>log<span class="w"> </span>--all
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D	_build/.doctrees/environment.pickle
-M	_toc.yml
-D	ch11.md
-D	ch12.md
-D	ch13.md
-D	ch14.md
-D	ch15.md
-D	ch1_introduction_to_version_control.md
-M	requirements.txt
-Switched to branch &#39;main&#39;
-Your branch is ahead of &#39;origin/main&#39; by 2 commits.
-  (use &quot;git push&quot; to publish your local commits)
-<span class=" -Color -Color-Yellow">commit e91a414cd6a277c2b1f1d62864f7c6cdf8ad2cad (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+<span class=" -Color -Color-Yellow">commit 812f652750efde1723ec1656194764a0ff0b8324 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">new-branch</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:07:15 2024 +0100
-
-    Add file2 and modify file1
-
-<span class=" -Color -Color-Yellow">commit 6fe4564de0879304221f9138421519756fbaa218 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">new-branch</span><span class=" -Color -Color-Yellow">)</span>
-Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:07:15 2024 +0100
+Date:   Thu Feb 8 23:34:58 2024 +0100
 
     Add fifth and sixth lines to file1.txt
 
-<span class=" -Color -Color-Yellow">commit b463777031e9afefdd768b100da12deca5dbdcdd</span>
+<span class=" -Color -Color-Yellow">commit f9b0c6ff617d23cfc04251eec504dc8a8e8a4bb6</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:02:05 2024 +0100
-
-    Add fifth and sixth lines to file1.txt
-
-<span class=" -Color -Color-Yellow">commit 05afa652d76eefa2983d990e713636268cff76ac</span>
-Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:02:05 2024 +0100
+Date:   Thu Feb 8 23:34:57 2024 +0100
 
     Add file2 and modify file1
 
-<span class=" -Color -Color-Yellow">commit 089f7ed655b98fd45b9ea9d270429c56d02aadc9 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">new-feature-branch</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 77ce820951d11ec67e06be7fde6354eadaf26dd8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:02:00 2024 +0100
+Date:   Thu Feb 8 23:34:45 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 5ff85b937808e587fb11d82fa2b770b9b60b28d8 (</span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/gh-pages</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">gh-pages</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 1fc9e27026ba4f94c6a24d4970363411344f2ee7</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Wed Feb 7 15:50:18 2024 +0100
+Date:   Thu Feb 8 23:34:32 2024 +0100
 
-    Update documentation
-
-<span class=" -Color -Color-Yellow">commit 188ad45f8500fad34cea2ec76a65811217ea23f0 (</span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
-Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Wed Feb 7 15:48:53 2024 +0100
-
-    initial version
+    Add file1.txt
 </pre></div>
 </div>
 </div>
@@ -738,10 +647,7 @@ Date:   Wed Feb 7 15:48:53 2024 +0100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal: A branch named &#39;new-feature-branch&#39; already exists.
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;new-feature-branch&#39;
 </pre></div>
 </div>
 </div>

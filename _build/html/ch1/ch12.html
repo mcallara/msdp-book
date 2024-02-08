@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -66,7 +66,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch12';</script>
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.3 Branches" href="ch13.html" />
@@ -186,12 +185,41 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch1_introduction_to_version_control.html">Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Local repositories and commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53.html">5.2 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -416,12 +444,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../home
-</pre></div>
-</div>
-</div>
+  <div class="cell tag_remove-input docutils container">
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="local-repositories-and-commit">
 <h1>1.2 Local repositories and commit<a class="headerlink" href="#local-repositories-and-commit" title="Link to this heading">#</a></h1>
@@ -432,6 +455,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my-project
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘my-project’: File exists
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +489,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
 </pre></div>
 </div>
 </div>
@@ -474,7 +505,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/my-project/.git/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: re-init: ignored --initial-branch=main
+Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/.git/
 </pre></div>
 </div>
 </div>
@@ -503,11 +535,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-
-No commits yet
-
-nothing to commit (create/copy files and use &quot;git add&quot; to track)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch new-feature-branch
+nothing to commit, working tree clean
 </pre></div>
 </div>
 </div>
@@ -531,7 +560,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/my-project/.git/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/ch1/my-project/.git/
 </pre></div>
 </div>
 </div>
@@ -547,7 +576,7 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">.git</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
 </pre></div>
 </div>
 </div>
@@ -611,8 +640,8 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 97da611] Add file1.txt
- 1 file changed, 1 insertion(+)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 1fc9e27] Add file1.txt
+ 1 file changed, 3 insertions(+)
  create mode 100644 file1.txt
 </pre></div>
 </div>
@@ -644,9 +673,9 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 97da611de3ecc50ad1530d184d63d07259154536 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 1fc9e27026ba4f94c6a24d4970363411344f2ee7 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 09:06:57 2024 +0100
+Date:   Thu Feb 8 23:34:32 2024 +0100
 
     Add file1.txt
 </pre></div>
@@ -664,7 +693,7 @@ Date:   Thu Feb 8 09:06:57 2024 +0100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">05</span>  <span class=" -Color -Color-C33">74</span>  <span class=" -Color -Color-C33">97</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">1f</span>  <span class=" -Color -Color-C33">b4</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
 </pre></div>
 </div>
 </div>
