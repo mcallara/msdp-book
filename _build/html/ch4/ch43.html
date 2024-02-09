@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5 Software Development Life Cycle, Versioning and Packaging." href="../ch5/ch50.html" />
-    <link rel="prev" title="4.2 Projects and Packages with Poetry" href="ch42.html" />
+    <link rel="prev" title="4.2 Python Project Management with Poetry" href="ch42.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3 Virtual Environments</a></li>
 
@@ -417,8 +417,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Virtual Environments</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Virtual Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment-management-with-poetry">Virtual Environment Management with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-your-virtual-environment">Creating and Using Your Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands-within-the-virtual-environment">Running Commands Within the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-the-virtual-environment">Activating the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-poetry-to-store-virtual-environments-within-the-project">Configuring Poetry to Store Virtual Environments Within the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-and-managing-multiple-environments">Switching Between and Managing Multiple Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-and-listing-environment-information">Displaying and Listing Environment Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-environments-associated-with-your-project">Deleting Environments Associated with Your Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-project-dependencies-and-version-constraints">Specifying Project Dependencies and Version Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dependencies-and-dev-dependencies">Adding Dependencies and Dev Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-dependencies-using-poetry-install">Installing Dependencies Using <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-installing-with-and-without-poetry-lock">Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-the-poetry-lock-file-to-version-control">Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-dependencies-to-their-latest-versions">Updating Dependencies to Their Latest Versions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies-only-installations">Managing Dependencies Only Installations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-further-reading">Resources and Further Reading</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -435,24 +462,115 @@ document.write(`
 <h1>4.3 Virtual Environments<a class="headerlink" href="#virtual-environments" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
+<section id="virtual-environment-management-with-poetry">
+<h2>Virtual Environment Management with Poetry<a class="headerlink" href="#virtual-environment-management-with-poetry" title="Link to this heading">#</a></h2>
+<p>Poetry provides robust tools for managing virtual environments, making it easier to maintain dependencies isolated from your global Python installation. This ensures that your project dependencies do not conflict with those of other projects or the global Python environment.</p>
+<section id="creating-and-using-your-virtual-environment">
+<h3>Creating and Using Your Virtual Environment<a class="headerlink" href="#creating-and-using-your-virtual-environment" title="Link to this heading">#</a></h3>
+<p>When you create a new project with Poetry or add dependencies to an existing project, Poetry automatically creates a virtual environment for that project. This environment is where Poetry installs the project’s dependencies.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="sections">
-<h1>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h1>
-<p>Python Environments (<a class="reference external" href="https://testdriven.io/blog/python-environments/">https://testdriven.io/blog/python-environments/</a>)
-Conda vs Poetry environments
-Managing virtual environments with Poetry (<a class="reference external" href="https://python-poetry.org/docs/managing-environments#managing-environments">https://python-poetry.org/docs/managing-environments#managing-environments</a>)
-Creating environments
-poetry config –local virtualenvs.in-project true
-poetry config virtualenvs.in-project true
-Switching between environments
-Displaying the environment information
-Listing the environments associated with the project
-Deleting the environments
-Managing dependencies with Poetry
-Adding Dependencies
-Dependencies Groups - Dev dependencies
-Adding a dependency to a group
-Environments in Visual Studio Code</p>
+<section id="running-commands-within-the-virtual-environment">
+<h3>Running Commands Within the Virtual Environment<a class="headerlink" href="#running-commands-within-the-virtual-environment" title="Link to this heading">#</a></h3>
+<p>If you need to run a single command within the context of your virtual environment without activating it, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code>. For example, to run a Python script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>my_script.py
+</pre></div>
+</div>
+</section>
+<section id="activating-the-virtual-environment">
+<h3>Activating the Virtual Environment<a class="headerlink" href="#activating-the-virtual-environment" title="Link to this heading">#</a></h3>
+<p>To activate the project’s virtual environment, you can use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">shell</span></code> command. This command spawns a new shell instance with the virtual environment activated, allowing you to run Python and other commands within the context of your project’s dependencies.</p>
+</section>
+<section id="configuring-poetry-to-store-virtual-environments-within-the-project">
+<h3>Configuring Poetry to Store Virtual Environments Within the Project<a class="headerlink" href="#configuring-poetry-to-store-virtual-environments-within-the-project" title="Link to this heading">#</a></h3>
+<p>By default, Poetry stores virtual environments in a centralized location. However, you can configure Poetry to create the virtual environment within your project’s directory by setting the <code class="docutils literal notranslate"><span class="pre">virtualenvs.in-project</span></code> configuration to <code class="docutils literal notranslate"><span class="pre">true</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>This configuration makes it easier to manage project environments, especially when working with version control systems or when you need to share the project with others.</p>
+</section>
+<section id="switching-between-and-managing-multiple-environments">
+<h3>Switching Between and Managing Multiple Environments<a class="headerlink" href="#switching-between-and-managing-multiple-environments" title="Link to this heading">#</a></h3>
+<p>Poetry allows you to manage multiple virtual environments for different Python versions or dependency configurations. Use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">use</span></code> command to switch between different Python interpreters or virtual environments associated with your project.</p>
+</section>
+<section id="displaying-and-listing-environment-information">
+<h3>Displaying and Listing Environment Information<a class="headerlink" href="#displaying-and-listing-environment-information" title="Link to this heading">#</a></h3>
+<p>To view details about the current environment, including its location and Python version, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">info</span></code>. To list all environments associated with the project, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">list</span></code>.</p>
+</section>
+<section id="deleting-environments-associated-with-your-project">
+<h3>Deleting Environments Associated with Your Project<a class="headerlink" href="#deleting-environments-associated-with-your-project" title="Link to this heading">#</a></h3>
+<p>If you need to remove a virtual environment managed by Poetry, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">remove</span></code> followed by the environment’s name or Python executable path. This is useful for cleaning up or resetting your project’s environments.</p>
+</section>
+</section>
+<section id="dependency-management">
+<h2>Dependency Management<a class="headerlink" href="#dependency-management" title="Link to this heading">#</a></h2>
+<p>Managing dependencies is a critical part of Python project development, ensuring that your project has access to the necessary external libraries and specific versions thereof. Poetry simplifies this process through an intuitive set of commands and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file for configuration.</p>
+<section id="specifying-project-dependencies-and-version-constraints">
+<h3>Specifying Project Dependencies and Version Constraints<a class="headerlink" href="#specifying-project-dependencies-and-version-constraints" title="Link to this heading">#</a></h3>
+<p>Dependencies are specified in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">[tool.poetry.dependencies]</span></code> section. You can define the version constraints to ensure compatibility and stability of your project. For example:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.8&quot;</span>
+<span class="n">requests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^2.25.1&quot;</span>
+<span class="n">flask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^1.1.2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-dependencies-and-dev-dependencies">
+<h3>Adding Dependencies and Dev Dependencies<a class="headerlink" href="#adding-dependencies-and-dev-dependencies" title="Link to this heading">#</a></h3>
+<p>To add a new dependency to your project, use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>requests
+</pre></div>
+</div>
+<p>For development dependencies, which are not required in production, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--dev</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>dev<span class="w"> </span>pytest
+</pre></div>
+</div>
+</section>
+<section id="installing-dependencies-using-poetry-install">
+<h3>Installing Dependencies Using <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code><a class="headerlink" href="#installing-dependencies-using-poetry-install" title="Link to this heading">#</a></h3>
+<p>Running <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> in your project directory will install all specified dependencies. If a <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file exists, Poetry will install dependencies according to the versions listed there to ensure consistency across environments.</p>
+<section id="differences-between-installing-with-and-without-poetry-lock">
+<h4>Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code><a class="headerlink" href="#differences-between-installing-with-and-without-poetry-lock" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>With <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></strong>: Ensures that the exact versions of dependencies are installed, as specified in the lock file. This is critical for consistency and reproducibility across development, testing, and production environments.</p></li>
+<li><p><strong>Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></strong>: Poetry resolves dependencies based on the version constraints in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and generates a new <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file. This might lead to installing newer versions of dependencies than previously used if they still satisfy the specified constraints.</p></li>
+</ul>
+</section>
+</section>
+<section id="committing-the-poetry-lock-file-to-version-control">
+<h3>Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control<a class="headerlink" href="#committing-the-poetry-lock-file-to-version-control" title="Link to this heading">#</a></h3>
+<p>Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file to your version control system is recommended. It locks the project to specific versions of dependencies, ensuring that other developers and environments use the exact same versions, thereby avoiding “it works on my machine” problems.</p>
+</section>
+<section id="updating-dependencies-to-their-latest-versions">
+<h3>Updating Dependencies to Their Latest Versions<a class="headerlink" href="#updating-dependencies-to-their-latest-versions" title="Link to this heading">#</a></h3>
+<p>To update dependencies to their latest versions that still comply with the version constraints defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
+<section id="managing-dependencies-only-installations">
+<h3>Managing Dependencies Only Installations<a class="headerlink" href="#managing-dependencies-only-installations" title="Link to this heading">#</a></h3>
+<p>The current project is installed in editable mode by default. If you want to install the dependencies without installing the package itself, you can use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span> <span class="pre">--no-root</span></code> command. This is particularly useful for CI/CD environments where you might need the dependencies for testing or building the project but not the project package itself.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="poetry-virtual-environments-with-visual-studio-code">
+<h1>Poetry Virtual Environments with Visual Studio Code<a class="headerlink" href="#poetry-virtual-environments-with-visual-studio-code" title="Link to this heading">#</a></h1>
+<p>Visual Studio Code (VS Code) has built-in support for Python development, including the detection and use of virtual environments. When you create a virtual environment in the root folder of your project, VS Code can automatically detect this environment and suggest it for use in the workspace. This seamless integration allows you to run and debug your Python code within the context of the project’s virtual environment directly from the IDE.</p>
+<p>To use the detected virtual environment in VS Code, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the Command Palette (Ctrl+Shift+P on Windows/Linux, Command+Shift+P on macOS).</p></li>
+<li><p>Type and select “Python: Select Interpreter.”</p></li>
+<li><p>Choose the virtual environment from the list. This environment will typically be located in your project’s root directory and prefixed with <code class="docutils literal notranslate"><span class="pre">./.venv</span></code> or similar, indicating that it is the local environment created by Poetry.</p></li>
+</ol>
+<p>Once the virtual environment is selected, VS Code will use it for running and debugging your project’s Python files. This ensures that you are working with the specific dependencies defined for your project, enhancing consistency and reliability during development.</p>
+<section id="resources-and-further-reading">
+<h2>Resources and Further Reading<a class="headerlink" href="#resources-and-further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Official Poetry Documentation: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">Basic Usage</a></p></li>
+<li><p>Managing Virtual Environments with Poetry: <a class="reference external" href="https://python-poetry.org/docs/managing-environments#managing-environments">Managing Environments</a></p></li>
+<li><p>Understanding Python Environments: <a class="reference external" href="https://testdriven.io/blog/python-environments/">TestDriven.io Blog</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -491,7 +609,7 @@ Environments in Visual Studio Code</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4.2 Projects and Packages with Poetry</p>
+        <p class="prev-next-title">4.2 Python Project Management with Poetry</p>
       </div>
     </a>
     <a class="right-next"
@@ -519,8 +637,35 @@ Environments in Visual Studio Code</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Virtual Environments</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Virtual Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment-management-with-poetry">Virtual Environment Management with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-your-virtual-environment">Creating and Using Your Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands-within-the-virtual-environment">Running Commands Within the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-the-virtual-environment">Activating the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-poetry-to-store-virtual-environments-within-the-project">Configuring Poetry to Store Virtual Environments Within the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-and-managing-multiple-environments">Switching Between and Managing Multiple Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-and-listing-environment-information">Displaying and Listing Environment Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-environments-associated-with-your-project">Deleting Environments Associated with Your Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-project-dependencies-and-version-constraints">Specifying Project Dependencies and Version Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dependencies-and-dev-dependencies">Adding Dependencies and Dev Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-dependencies-using-poetry-install">Installing Dependencies Using <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-installing-with-and-without-poetry-lock">Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-the-poetry-lock-file-to-version-control">Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-dependencies-to-their-latest-versions">Updating Dependencies to Their Latest Versions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies-only-installations">Managing Dependencies Only Installations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-further-reading">Resources and Further Reading</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

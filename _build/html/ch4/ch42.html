@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.2 Projects and Packages with Poetry &#8212; Modern Software Development Practices</title>
+    <title>4.2 Python Project Management with Poetry &#8212; Modern Software Development Practices</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="ch43.html">4.3 Virtual Environments</a></li>
 
@@ -407,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4.2 Projects and Packages with Poetry</h1>
+    <h1>4.2 Python Project Management with Poetry</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,8 +417,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.2 Projects and Packages with Poetry</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.2 Python Project Management with Poetry</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-poetry-over-traditional-tools">Benefits of Using Poetry Over Traditional Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-project-with-poetry">Setting Up Your Project with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poetry-and-basic-setup">Installing Poetry and Basic Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialising-a-new-project-with-poetry">Initialising a New Project with Poetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-pre-existing-project-to-use-poetry">Converting a Pre-existing Project to Use Poetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">Project Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-flat-layout-vs-the-src-layout">Understanding flat layout vs the <code class="docutils literal notranslate"><span class="pre">src</span></code> layout</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-and-the-project-structure">Poetry and the project structure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-cases-and-case-conventions">About cases and case conventions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-some-relevant-cases">List of some relevant cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-you-already-have-a-project">What if you already have a project?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 
             </nav>
@@ -431,28 +448,146 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="projects-and-packages-with-poetry">
-<h1>4.2 Projects and Packages with Poetry<a class="headerlink" href="#projects-and-packages-with-poetry" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-project-management-with-poetry">
+<h1>4.2 Python Project Management with Poetry<a class="headerlink" href="#python-project-management-with-poetry" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
+<p>Poetry is a tool designed to simplify the management of Python projects by handling dependency management and packaging in a unified way. Unlike traditional tools that require separate configurations for these tasks, Poetry uses a single <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file for project specifications, making it easier to manage dependencies, package projects, and publish them to PyPI.</p>
+<section id="benefits-of-using-poetry-over-traditional-tools">
+<h2>Benefits of Using Poetry Over Traditional Tools<a class="headerlink" href="#benefits-of-using-poetry-over-traditional-tools" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Simplified Dependency Management</strong>: Poetry resolves dependencies more efficiently and accurately, avoiding the common issues of dependency hell.</p></li>
+<li><p><strong>Unified Tool</strong>: Combines features of dependency management and packaging tools into one, eliminating the need for multiple configuration files.</p></li>
+<li><p><strong>Easy Version Management</strong>: Allows specifying version constraints for dependencies in a straightforward manner and handles updates smoothly.</p></li>
+<li><p><strong>Reproducible Builds</strong>: The <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file ensures that your project can be reproduced exactly the same way on any machine.</p></li>
+<li><p><strong>Intuitive CLI</strong>: Offers an easy-to-use command-line interface for managing projects, dependencies, and virtual environments.</p></li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="sections">
-<h1>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h1>
-<p>Poetry basic usage (<a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a> )
-Project setup with Poetry
-The src layout (src layout vs flat layout - Python Packaging User Guide, Testing &amp; Packaging/)
-Initialising a pre-existing project
-Specifying dependencies
-Using your virtual environment
-Using poetry run
-Activating the virtual environment
-Version constraints
-Installing dependencies
-Installing without poetry.lock
-Installing with poetry.lock
-Committing your poetry.lock file to version control
-Installing dependencies only
-Updating dependencies to their latest versions</p>
+<section id="setting-up-your-project-with-poetry">
+<h2>Setting Up Your Project with Poetry<a class="headerlink" href="#setting-up-your-project-with-poetry" title="Link to this heading">#</a></h2>
+<section id="installing-poetry-and-basic-setup">
+<h3>Installing Poetry and Basic Setup<a class="headerlink" href="#installing-poetry-and-basic-setup" title="Link to this heading">#</a></h3>
+<p>To install Poetry, run the following command in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-
+</pre></div>
+</div>
+<p>Once installed, you can configure Poetry to suit your needs. For example, setting Poetry to create virtual environments within the project directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+</section>
+<section id="initialising-a-new-project-with-poetry">
+<h3>Initialising a New Project with Poetry<a class="headerlink" href="#initialising-a-new-project-with-poetry" title="Link to this heading">#</a></h3>
+<p>Creating a new project is as simple as running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>my-project
+</pre></div>
+</div>
+<p>This command creates a new directory called <code class="docutils literal notranslate"><span class="pre">my-project</span></code> with a basic project structure and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file pre-configured.</p>
+</section>
+<section id="converting-a-pre-existing-project-to-use-poetry">
+<h3>Converting a Pre-existing Project to Use Poetry<a class="headerlink" href="#converting-a-pre-existing-project-to-use-poetry" title="Link to this heading">#</a></h3>
+<p>To convert an existing project to Poetry, navigate to the project’s root directory and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>init
+</pre></div>
+</div>
+<p>This interactive command will guide you through creating a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file for your project. You can specify dependencies and other project settings during this process.</p>
+</section>
+</section>
+<section id="project-structure">
+<h2>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading">#</a></h2>
+<p>The structure of your Python project plays a crucial role in its maintainability, scalability, and ease of testing. Two common layouts are used in the Python ecosystem: the <code class="docutils literal notranslate"><span class="pre">src</span></code> layout and the flat layout.</p>
+<section id="understanding-flat-layout-vs-the-src-layout">
+<h3>Understanding flat layout vs the <code class="docutils literal notranslate"><span class="pre">src</span></code> layout<a class="headerlink" href="#understanding-flat-layout-vs-the-src-layout" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Flat Layout</strong>: This layout places the code that is intended to be importable (<a class="reference external" href="https://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/#distribution-package-vs-import-package">the import package</a>) directly in the root directory of the project. While this is straightforward and commonly used in simple projects, it can lead to issues when the package tries to import itself, potentially mixing up the local code with installed versions from site-packages.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>my-package-repo-name/
+├──<span class="w"> </span>CHANGELOG.md<span class="w">             </span>┐
+├──<span class="w"> </span>CODE_OF_CONDUCT.md<span class="w">       </span>│
+├──<span class="w"> </span>CONTRIBUTING.md<span class="w">          </span>│
+├──<span class="w"> </span>docs/<span class="w">                    </span>│<span class="w"> </span>Package<span class="w"> </span>documentation
+│<span class="w">   </span>└──<span class="w"> </span>...<span class="w">                  </span>│
+├──<span class="w"> </span>LICENSE<span class="w">                  </span>│
+├──<span class="w"> </span>README.md<span class="w">                </span>┘
+├──<span class="w"> </span>pyproject.toml<span class="w">           </span><span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>configuration
+<span class="p">|</span><span class="w">   </span>my_package/<span class="w">              </span>┐
+│<span class="w">     </span>├──<span class="w"> </span>__init__.py<span class="w">        </span>│<span class="w"> </span>Package<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code
+│<span class="w">     </span>├──<span class="w"> </span>moduleA.py<span class="w">         </span>│
+│<span class="w">     </span>└──<span class="w"> </span>moduleB.py<span class="w">         </span>┘
+└──<span class="w"> </span>tests/<span class="w">                   </span>┐
+<span class="w">        </span>└──<span class="w"> </span>test-file1.py<span class="w">    </span><span class="p">|</span><span class="w"> </span>Package<span class="w"> </span>tests
+<span class="w">        </span>└──<span class="w"> </span>....<span class="w">             </span>┘
+</pre></div>
+</div>
+<p>WTN: <code class="docutils literal notranslate"><span class="pre">my_package</span></code> is in the root of the project.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">src</span></code> Layout</strong>: In the <code class="docutils literal notranslate"><span class="pre">src</span></code> layout, the package code lives in a subdirectory (commonly named <code class="docutils literal notranslate"><span class="pre">src</span></code>). This separation ensures that when you run or test the package, Python imports the installed version of the package (from site-packages) and not the local code directly. This mimics the environment that users of the package will have and can help catch potential issues related to packaging or dependencies.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package-repo-name/
+├──<span class="w"> </span>CHANGELOG.md<span class="w">               </span>┐
+├──<span class="w"> </span>CODE_OF_CONDUCT.md<span class="w">         </span>│
+├──<span class="w"> </span>CONTRIBUTING.md<span class="w">            </span>│
+├──<span class="w"> </span>docs<span class="w">                       </span>│<span class="w"> </span>Package<span class="w"> </span>documentation
+│<span class="w">   </span>└──<span class="w"> </span>index.md<span class="w">               </span><span class="p">|</span>
+│<span class="w">   </span>└──<span class="w"> </span>...<span class="w">                    </span>│
+├──<span class="w"> </span>LICENSE<span class="w">                    </span>│
+├──<span class="w"> </span>README.md<span class="w">                  </span>┘
+├──<span class="w"> </span>pyproject.toml<span class="w">             </span><span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>configuration
+├──<span class="w"> </span>src<span class="w">                        </span>┐
+│<span class="w">   </span>└──<span class="w"> </span>my_package/<span class="w">            </span>│
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py<span class="w">        </span>│<span class="w"> </span>Package<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code
+│<span class="w">       </span>├──<span class="w"> </span>moduleA.py<span class="w">         </span>│
+│<span class="w">       </span>└──<span class="w"> </span>moduleB.py<span class="w">         </span>┘
+└──<span class="w"> </span>tests/<span class="w">                     </span>┐
+<span class="w">   </span>└──<span class="w"> </span>...<span class="w">                     </span>┘<span class="w"> </span>Package<span class="w"> </span>tests
+</pre></div>
+</div>
+</section>
+<section id="poetry-and-the-project-structure">
+<h3>Poetry and the project structure<a class="headerlink" href="#poetry-and-the-project-structure" title="Link to this heading">#</a></h3>
+<p>By default, when we create a new project with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>package-name
+</pre></div>
+</div>
+<p>, poetry uses flat layout. We can change to src layout with the src flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>--src<span class="w"> </span>package-name
+</pre></div>
+</div>
+</section>
+</section>
+<section id="about-cases-and-case-conventions">
+<h2>About cases and case conventions:<a class="headerlink" href="#about-cases-and-case-conventions" title="Link to this heading">#</a></h2>
+<p>In the course, we will use:</p>
+<ul class="simple">
+<li><p>kebab case for the project name (and use it also for the remote repository name),</p></li>
+<li><p>snake case for the import package name (Poetry converts the project name in kebab case to snake case).</p></li>
+</ul>
+<p>Since valid Python identifiers cannot contain dashes (-), we should avoid using dashes in the import package names.
+A valid identifier cannot start with a number, or contain any spaces and can only contain alphanumeric letters (a-z) and (0-9), or underscores (_).</p>
+</section>
+<section id="list-of-some-relevant-cases">
+<h2>List of some relevant cases<a class="headerlink" href="#list-of-some-relevant-cases" title="Link to this heading">#</a></h2>
+<p>Pascal case: e.g., NumberOfPlayers
+Camel case: e.g., numberOfPlayers
+Snake case: e.g., number_of_players
+Kebab case: e.g., number-of-players
+lowercase: e.g., numberofplayers</p>
+</section>
+<section id="what-if-you-already-have-a-project">
+<h2>What if you already have a project?<a class="headerlink" href="#what-if-you-already-have-a-project" title="Link to this heading">#</a></h2>
+<p>If you already have a project, you can use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>package-name
+poetry<span class="w"> </span>init
+</pre></div>
+</div>
+<p>to initialize an already populated directory.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://packaging.python.org/en/latest/#">Python Packaging User Guide</a>
+<a class="reference external" href="https://www.pypa.io/en/latest/">Python Packaging Authority</a>
+<a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html">PyOpenSci</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -519,8 +654,25 @@ Updating dependencies to their latest versions</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.2 Projects and Packages with Poetry</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.2 Python Project Management with Poetry</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-poetry-over-traditional-tools">Benefits of Using Poetry Over Traditional Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-project-with-poetry">Setting Up Your Project with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poetry-and-basic-setup">Installing Poetry and Basic Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialising-a-new-project-with-poetry">Initialising a New Project with Poetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-a-pre-existing-project-to-use-poetry">Converting a Pre-existing Project to Use Poetry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">Project Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-flat-layout-vs-the-src-layout">Understanding flat layout vs the <code class="docutils literal notranslate"><span class="pre">src</span></code> layout</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-and-the-project-structure">Poetry and the project structure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-cases-and-case-conventions">About cases and case conventions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-some-relevant-cases">List of some relevant cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-you-already-have-a-project">What if you already have a project?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 
   </nav></div>

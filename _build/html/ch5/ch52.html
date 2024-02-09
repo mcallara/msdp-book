@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
@@ -417,7 +417,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.2 Software Versioning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.2 Software Versioning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-versioning">What is Versioning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-semantic-versioning">What is Semantic Versioning?</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">Automate Semantic Versioning in Poetry Projects with Python Semantic Release</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-python-project-with-poetry">Setup Your Python Project with Poetry</a></li>
@@ -428,7 +432,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository">Create a new repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-push-your-changes">Commit and Push Your Changes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-semantic-commits">Make Semantic Commits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -447,11 +450,21 @@ document.write(`
 <h1>5.2 Software Versioning<a class="headerlink" href="#software-versioning" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>TODO:
-Versioning
-Semantic Versioning (<a class="reference external" href="https://semver.org/">https://semver.org/</a> )
-Automating the Versioning with Semantic Release
-Release Notes</p>
+<section id="what-is-versioning">
+<h2>What is Versioning?<a class="headerlink" href="#what-is-versioning" title="Link to this heading">#</a></h2>
+<p>Versioning is the process of assigning unique version numbers to distinct states of software projects, allowing developers and users to track progress, manage changes, and ensure compatibility between different components. It plays a critical role in software development and release management, offering a structured way to reflect the history, stability, and compatibility of software products over time. Through versioning, teams can effectively communicate the impact of changes, manage dependencies, and facilitate the adoption of new features while maintaining the integrity of existing systems.</p>
+</section>
+<section id="what-is-semantic-versioning">
+<h2>What is Semantic Versioning?<a class="headerlink" href="#what-is-semantic-versioning" title="Link to this heading">#</a></h2>
+<p>Semantic Versioning, often abbreviated as SemVer, is a versioning scheme that aims to convey meaning about the underlying changes in a release through the version number itself. Defined by <a class="reference external" href="https://semver.org/">Semantic Versioning 2.0.0</a>, it adopts a structured format of <code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR.PATCH</span></code> to differentiate between the types of changes made to a project:</p>
+<ul class="simple">
+<li><p><strong>MAJOR</strong> version when you make incompatible API changes,</p></li>
+<li><p><strong>MINOR</strong> version when you add functionality in a backward-compatible manner, and</p></li>
+<li><p><strong>PATCH</strong> version when you make backward-compatible bug fixes.</p></li>
+</ul>
+<p>Additional labels for pre-release and build metadata are available as extensions to the <code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR.PATCH</span></code> format.</p>
+<p>The principles of Semantic Versioning help ensure a consistent, predictable approach to versioning that is directly tied to the significance of the changes made. It allows developers and consumers of software to make informed decisions about upgrading and integrating with other systems. By adhering to SemVer, projects can communicate the nature of changes efficiently, reduce the potential for conflicts, and facilitate easier dependency management in the complex ecosystem of software development.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">
 <h1>Automate Semantic Versioning in Poetry Projects with Python Semantic Release<a class="headerlink" href="#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release" title="Link to this heading">#</a></h1>
@@ -1051,10 +1064,11 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 <section id="make-semantic-commits">
 <h2>Make Semantic Commits<a class="headerlink" href="#make-semantic-commits" title="Link to this heading">#</a></h2>
 <p>To ensure <code class="docutils literal notranslate"><span class="pre">python-semantic-release</span></code> correctly increments version numbers, use semantic commit messages (e.g., <code class="docutils literal notranslate"><span class="pre">fix:</span></code>, <code class="docutils literal notranslate"><span class="pre">feat:</span></code>, <code class="docutils literal notranslate"><span class="pre">BREAKING</span> <span class="pre">CHANGE:</span></code>) for your commits. This practice helps the tool to automatically determine the next version number based on the changes made.</p>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>You’ve now set up your Poetry-managed project to automatically generate the right semantic version number for each release using <code class="docutils literal notranslate"><span class="pre">python-semantic-release</span></code> and GitHub Actions. This setup automates versioning and changelog generation, allowing you to focus more on development and less on release management.</p>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<p>After pushing our first commit and successfully running <code class="docutils literal notranslate"><span class="pre">python-semantic-release</span></code>, the tool will automatically generate both a release and a tag for your project, as well as a <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> file. You can find the generated release in the <a class="reference external" href="https://github.com/mcallara/semver/releases">Releases section</a> of the <code class="docutils literal notranslate"><span class="pre">semver</span></code> repository. This section provides detailed information about what’s new, improved, or fixed in each release, along with any associated assets.</p>
+<p>Similarly, the automatically created tag, marking the specific point in the repository’s history for the release, can be found in the <a class="reference external" href="https://github.com/mcallara/semver/tags">Tags section</a>. Tags serve as important reference points, indicating version releases and facilitating easy navigation through the project’s version history.</p>
+</div>
 </section>
 </section>
 
@@ -1122,7 +1136,11 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.2 Software Versioning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.2 Software Versioning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-versioning">What is Versioning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-semantic-versioning">What is Semantic Versioning?</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">Automate Semantic Versioning in Poetry Projects with Python Semantic Release</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-python-project-with-poetry">Setup Your Python Project with Poetry</a></li>
@@ -1133,7 +1151,6 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-repository">Create a new repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-and-push-your-changes">Commit and Push Your Changes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-semantic-commits">Make Semantic Commits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>

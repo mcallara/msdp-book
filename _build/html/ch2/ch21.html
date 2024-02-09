@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20.html">2 AI-Assisted Software Development and Debugging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1 AI-Assisted Software Development</a></li>
 
+
+
 <li class="toctree-l2"><a class="reference internal" href="ch22.html">2.1 Debugging</a></li>
 
 </ul>
@@ -203,13 +205,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
 
+
 <li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
 
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
@@ -419,6 +422,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 AI-Assisted Software Development</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#test-cases-for-a-function-that-given-two-time-intervals-returns-their-intersection">Test cases for a Function that given two time intervals, returns their intersection</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-that-given-two-time-intervals-returns-their-intersection">Function that given two time intervals, returns their intersection.</a></li>
 </ul>
 
             </nav>
@@ -442,6 +447,53 @@ document.write(`
 Effective Prompting. <a class="reference external" href="https://www.youtube.com/watch?v=ImWfIDTxn7E">https://www.youtube.com/watch?v=ImWfIDTxn7E</a> Providing Context. Use GitHub Copilot to enhance your coding with AI
 Copilot Chat. Explaining Code. Fixing Code Issues.
 Data Privacy. <a class="reference external" href="https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual">https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual</a></p>
+<p>Personal Experience: One of the things I like the most about AI assisted software development is the fact that it allows me to stay in the flow. I can focus on the problem I am trying to solve and let the AI take care of the syntax, the boilerplate code, remebering conventions, proposed solutions to simpler intermediate steps.</p>
+<p>Real-world example:
+Imagine that you are building a planning solution. The solution requires at some point to implement a function that given two time intervals, returns their intersection.</p>
+<p>If you create the pseudo-code of you solution, then the AI will be able to help you with the implementation of the function.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="test-cases-for-a-function-that-given-two-time-intervals-returns-their-intersection">
+<h1>Test cases for a Function that given two time intervals, returns their intersection<a class="headerlink" href="#test-cases-for-a-function-that-given-two-time-intervals-returns-their-intersection" title="Link to this heading">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>We see that the AI gets a bit repetitive. We can help it, suggesting variations of the test cases.</p>
+<p>what I wrote:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">intersection</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span> <span class="c1"># </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">intersection</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span> <span class="c1"># </span>
+
+<span class="ne">NameError</span>: name &#39;intersection&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>what the AI suggested:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is able to anticipate what the result will be.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="function-that-given-two-time-intervals-returns-their-intersection">
+<h1>Function that given two time intervals, returns their intersection.<a class="headerlink" href="#function-that-given-two-time-intervals-returns-their-intersection" title="Link to this heading">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -510,6 +562,8 @@ Data Privacy. <a class="reference external" href="https://docs.github.com/en/cop
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 AI-Assisted Software Development</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#test-cases-for-a-function-that-given-two-time-intervals-returns-their-intersection">Test cases for a Function that given two time intervals, returns their intersection</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#function-that-given-two-time-intervals-returns-their-intersection">Function that given two time intervals, returns their intersection.</a></li>
 </ul>
 
   </nav></div>
