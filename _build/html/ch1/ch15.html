@@ -196,26 +196,35 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
 
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
 
@@ -524,14 +533,11 @@ origin	git@github.com:mcallara/test-repo.git (push)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To github.com:mcallara/test-repo.git
- <span class=" -Color -Color-Red">! [rejected]       </span> main -&gt; main (fetch first)
-<span class=" -Color -Color-Red">error: failed to push some refs to &#39;github.com:mcallara/test-repo.git&#39;</span>
-<span class=" -Color -Color-Yellow">hint: Updates were rejected because the remote contains work that you do</span>
-<span class=" -Color -Color-Yellow">hint: not have locally. This is usually caused by another repository pushing</span>
-<span class=" -Color -Color-Yellow">hint: to the same ref. You may want to first integrate the remote changes</span>
-<span class=" -Color -Color-Yellow">hint: (e.g., &#39;git pull ...&#39;) before pushing again.</span>
-<span class=" -Color -Color-Yellow">hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
@@ -566,15 +572,15 @@ git<span class="w"> </span>log
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  main
   new-branch
 * <span class=" -Color -Color-Green">new-feature-branch</span>
-<span class=" -Color -Color-Yellow">commit 77ce820951d11ec67e06be7fde6354eadaf26dd8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">new-feature-branch</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit d0886da704b6bc631782b6723c86e652a52a31ec (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">new-feature-branch</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 23:34:45 2024 +0100
+Date:   Thu Feb 15 17:38:01 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 1fc9e27026ba4f94c6a24d4970363411344f2ee7</span>
+<span class=" -Color -Color-Yellow">commit 08b4827ab8e289d46ae0d351d128b4d9ecea67b6</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 23:34:32 2024 +0100
+Date:   Thu Feb 15 17:37:52 2024 +0100
 
     Add file1.txt
 </pre></div>
@@ -599,8 +605,13 @@ ls
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal: destination path &#39;test-repo-2&#39; already exists and is not an empty directory.
-<span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>  <span class=" -Color -Color-C33">test-repo-2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;test-repo-2&#39;...
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+<span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>
 </pre></div>
 </div>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.1 Test Driven Development (TDD) &#8212; Modern Software Development Practices</title>
+    <title>3.2 Test Driven Development (TDD) &#8212; Modern Software Development Practices</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -68,8 +68,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch3/ch32';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4 Python Packages, Virtual Environments and Dependency Management" href="../ch4/ch40.html" />
-    <link rel="prev" title="3.1 Testing" href="ch31.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,6 +129,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -184,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commit</a></li>
@@ -196,20 +196,32 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
+
 
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch30.html">3 Testing and Test Driven Development (TDD)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1 Test Driven Development (TDD)</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="mystock.html">3.2 Test Driven Development (TDD)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
@@ -407,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3.1 Test Driven Development (TDD)</h1>
+    <h1>3.2 Test Driven Development (TDD)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,10 +429,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.1 Test Driven Development (TDD)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -432,18 +442,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="test-driven-development-tdd">
-<h1>3.1 Test Driven Development (TDD)<a class="headerlink" href="#test-driven-development-tdd" title="Link to this heading">#</a></h1>
+<h1>3.2 Test Driven Development (TDD)<a class="headerlink" href="#test-driven-development-tdd" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sections">
-<h1>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h1>
+<section id="sections">
+<h2>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h2>
 <p>Test Driven Development (TDD).
 Kent Beck, TDD by Example
 Why is it useful?
 Critics to TDD
 Red-Green-Refactor
 Exercices</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -476,24 +486,6 @@ Exercices</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="ch31.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3.1 Testing</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../ch4/ch40.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4 Python Packages, Virtual Environments and Dependency Management</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -510,10 +502,8 @@ Exercices</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.1 Test Driven Development (TDD)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

@@ -1,6 +1,8 @@
 jupyter-book
 matplotlib
 numpy
-bash-kernel
-ghp-import
-# gh (Github from the cli)
+bash-kernel # to support bash kernels
+ghp-import # to publish the jupyter book to github pages
+# gh # to create/delete github repositories from the cli
+pytest # for testing chapter
+ipytest # for testing in notebooks

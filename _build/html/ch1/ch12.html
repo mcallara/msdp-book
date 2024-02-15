@@ -196,26 +196,35 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
 
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
 
@@ -458,14 +467,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘my-project’: File exists
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="create-a-repository">
@@ -489,7 +490,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>
 </pre></div>
 </div>
 </div>
@@ -505,8 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: re-init: ignored --initial-branch=main
-Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/.git/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/ch1/my-project/.git/
 </pre></div>
 </div>
 </div>
@@ -535,8 +535,11 @@ Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch new-feature-branch
-nothing to commit, working tree clean
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use &quot;git add&quot; to track)
 </pre></div>
 </div>
 </div>
@@ -576,7 +579,7 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">.git</span>
 </pre></div>
 </div>
 </div>
@@ -640,8 +643,8 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 1fc9e27] Add file1.txt
- 1 file changed, 3 insertions(+)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 08b4827] Add file1.txt
+ 1 file changed, 1 insertion(+)
  create mode 100644 file1.txt
 </pre></div>
 </div>
@@ -673,9 +676,9 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 1fc9e27026ba4f94c6a24d4970363411344f2ee7 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 08b4827ab8e289d46ae0d351d128b4d9ecea67b6 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 8 23:34:32 2024 +0100
+Date:   Thu Feb 15 17:37:52 2024 +0100
 
     Add file1.txt
 </pre></div>
@@ -693,7 +696,7 @@ Date:   Thu Feb 8 23:34:32 2024 +0100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">1f</span>  <span class=" -Color -Color-C33">b4</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">05</span>  <span class=" -Color -Color-C33">08</span>  <span class=" -Color -Color-C33">74</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
 </pre></div>
 </div>
 </div>

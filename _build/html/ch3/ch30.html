@@ -198,16 +198,25 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
+
 
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3 Testing and Test Driven Development (TDD)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="ch32.html">3.1 Test Driven Development (TDD)</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="mystock.html">3.2 Test Driven Development (TDD)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -397,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -413,6 +424,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poll-time">Poll time</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -424,16 +443,27 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="testing-and-test-driven-development-tdd">
 <h1>3 Testing and Test Driven Development (TDD)<a class="headerlink" href="#testing-and-test-driven-development-tdd" title="Link to this heading">#</a></h1>
-<p>In this chapter, we will explore Testing and Test Driven Development (TDD).</p>
+<section id="poll-time">
+<h2>Poll time<a class="headerlink" href="#poll-time" title="Link to this heading">#</a></h2>
+<p>How does your development process look like?</p>
+<ol class="arabic simple">
+<li><p>I don’t test my code at all.</p></li>
+<li><p>I implement some code and then I test it.</p></li>
+<li><p>I create a test and then implement the code.</p></li>
+</ol>
+<p>Why do we test our code? This chapter is not only about ensuring that your code works as expected, but also about a good process to achieve this.</p>
+<p>From Chapter 25 - Test-Driven Development Patterns
+Test Driven Development: By Example by Kent Beck</p>
+<p>“””
+Where should you start building a system? With stories you want to be able to tell about the finished system.
+“””</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch31.html#sections">Sections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch31.html#references">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch32.html">3.1 Test Driven Development (TDD)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch32.html#sections">Sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mystock.html">3.2 Test Driven Development (TDD)</a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -491,7 +521,20 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poll-time">Poll time</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

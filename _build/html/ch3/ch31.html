@@ -198,16 +198,26 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
+
 
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch30.html">3 Testing and Test Driven Development (TDD)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1 Testing</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="ch32.html">3.1 Test Driven Development (TDD)</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="mystock.html">3.3 Test Driven Development (TDD)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -420,11 +430,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.1 Testing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kind-of-testing-levels-of-testing">Kind of testing. Levels of Testing.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-and-integration-testing">Unit and Integration Testing.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-test-behaviors">We test behaviors.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-test-with-pytest">Basic Test with Pytest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-visual-studio-code">Testing and Visual Studio Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development-tdd">Test Driven Development (TDD).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-green-refactor">Red-Green-Refactor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kent-beck-tdd-by-example">Kent Beck, TDD by Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-useful">Why is it useful?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critics-to-tdd">Critics to TDD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -437,22 +454,124 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="testing">
 <h1>3.1 Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h1>
+<p>What is a test?  “a procedure leading to acceptance or rejection.”
+What are test useful for?</p>
+<ul class="simple">
+<li><p>To ensure that your code works as expected.</p></li>
+<li><p>To understand how the code works.</p></li>
+<li><p>To understand how the code should work.</p></li>
+</ul>
+<p>Let’s see this in action. To start as lightweigth as possbile, we will use doctest.</p>
+<p>What is doctest?
+Doctest is a module that comes with Python. It allows you to write tests in the docstrings of your code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and return the sum of two numbers.</span>
+
+<span class="sd">    Usage examples:</span>
+<span class="sd">    &gt;&gt;&gt; add(4.0, 2.0)</span>
+<span class="sd">    6.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">doctest</span>
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=0, attempted=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to create a small report that will keep track of our stocks.
+The price of a stock is defined by the amount and the currency (let’s assume only Dollars for now).
+Multiplication. The value of each stock will be the number of shares times the price of the stock.
+Sum. The total value of our portfolio will be the sum of the value of each stock.</p>
+<p>Let’s implement the multiplication feature first. We will use TDD to do this.
+So we will start by writing a test that will fail. Then we will implement the feature and make the test pass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_multiplication</span><span class="p">():</span>
+    <span class="n">five</span> <span class="o">=</span> <span class="n">Dollar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">five</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="mi">10</span> <span class="o">==</span> <span class="n">five</span><span class="o">.</span><span class="n">amount</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute and return the sum of two numbers.</span>
+
+<span class="sd">    Usage examples:</span>
+<span class="sd">    &gt;&gt;&gt; add(4.0, 2.0)</span>
+<span class="sd">    6.0</span>
+<span class="sd">    &gt;&gt;&gt; add(4, 2)</span>
+<span class="sd">    6.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">doctest</span>
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestResults(failed=0, attempted=2)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="kind-of-testing-levels-of-testing">
+<h2>Kind of testing. Levels of Testing.<a class="headerlink" href="#kind-of-testing-levels-of-testing" title="Link to this heading">#</a></h2>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="sections">
-<h1>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h1>
-<p>What is testing? Why is it useful?
-Kind of testing. Levels of Testing.
-Unit and Integration Testing.
-We test behaviors
-Basic Test with Pytest
-Testing and Visual Studio Code
-Basic Doctest</p>
+<section id="unit-and-integration-testing">
+<h2>Unit and Integration Testing.<a class="headerlink" href="#unit-and-integration-testing" title="Link to this heading">#</a></h2>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="references">
-<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<section id="we-test-behaviors">
+<h2>We test behaviors.<a class="headerlink" href="#we-test-behaviors" title="Link to this heading">#</a></h2>
+</section>
+<section id="basic-test-with-pytest">
+<h2>Basic Test with Pytest<a class="headerlink" href="#basic-test-with-pytest" title="Link to this heading">#</a></h2>
+</section>
+<section id="testing-and-visual-studio-code">
+<h2>Testing and Visual Studio Code<a class="headerlink" href="#testing-and-visual-studio-code" title="Link to this heading">#</a></h2>
+</section>
+<section id="test-driven-development-tdd">
+<h2>Test Driven Development (TDD).<a class="headerlink" href="#test-driven-development-tdd" title="Link to this heading">#</a></h2>
+</section>
+<section id="red-green-refactor">
+<h2>Red-Green-Refactor<a class="headerlink" href="#red-green-refactor" title="Link to this heading">#</a></h2>
+</section>
+<section id="kent-beck-tdd-by-example">
+<h2>Kent Beck, TDD by Example<a class="headerlink" href="#kent-beck-tdd-by-example" title="Link to this heading">#</a></h2>
+</section>
+<section id="why-is-it-useful">
+<h2>Why is it useful?<a class="headerlink" href="#why-is-it-useful" title="Link to this heading">#</a></h2>
+</section>
+<section id="critics-to-tdd">
+<h2>Critics to TDD<a class="headerlink" href="#critics-to-tdd" title="Link to this heading">#</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://code.visualstudio.com/docs/python/testing">https://code.visualstudio.com/docs/python/testing</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -519,11 +638,18 @@ Basic Doctest</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.1 Testing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kind-of-testing-levels-of-testing">Kind of testing. Levels of Testing.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-and-integration-testing">Unit and Integration Testing.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-test-behaviors">We test behaviors.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-test-with-pytest">Basic Test with Pytest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-and-visual-studio-code">Testing and Visual Studio Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development-tdd">Test Driven Development (TDD).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-green-refactor">Red-Green-Refactor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kent-beck-tdd-by-example">Kent Beck, TDD by Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-useful">Why is it useful?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critics-to-tdd">Critics to TDD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

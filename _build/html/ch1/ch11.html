@@ -196,26 +196,35 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
 
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch3/ch32.html">3.1 Test Driven Development (TDD)</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Projects and Packages with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
 
@@ -439,11 +448,6 @@ document.write(`
                 <article class="bd-article">
                   
   <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘ch1’: File exists
-</pre></div>
-</div>
-</div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="git-and-the-command-line">
 <h1>1.1 Git and the Command Line<a class="headerlink" href="#git-and-the-command-line" title="Link to this heading">#</a></h1>
@@ -515,11 +519,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>  <span class=" -Color -Color-C33">test-repo-2</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>To include hidden files (those starting with a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>) in the list:</p>
 <div class="cell docutils container">
@@ -529,7 +528,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>  <span class=" -Color -Color-C33">test-repo-2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>
 </pre></div>
 </div>
 </div>
@@ -670,14 +669,6 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nb">test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘test’: File exists
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
