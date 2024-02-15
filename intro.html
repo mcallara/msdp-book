@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Version Control" href="ch1_introduction_to_version_control.html" />
+    <link rel="next" title="1 Introduction to Version Control" href="ch1/ch10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,12 +186,37 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="ch1_introduction_to_version_control.html">Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch11.html">1.1 Git and the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch13.html">1.3 Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch14.html">1.4 Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch15.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.1 Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch3/ch31.html">3.1 Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch3/mystock.html">3.2 Test Driven Development (TDD)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch43.html">4.3 Virtual Environments</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch51.html">5.1 Software Development Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch52.html">5.2 Software Versioning</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch53.html">5.3 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -366,7 +391,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -382,6 +409,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-course-was-born">How this course was born</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are software development practices still relevant?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-expect-from-the-course">What do you expect from the course?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -393,19 +431,62 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-modern-software-development-practices">
 <h1>Welcome to Modern Software Development Practices<a class="headerlink" href="#welcome-to-modern-software-development-practices" title="Link to this heading">#</a></h1>
-<p>These are the companion notes for the course. Have fun!</p>
+<section id="about-the-author">
+<h2>About the Author<a class="headerlink" href="#about-the-author" title="Link to this heading">#</a></h2>
+<p>Hello. I’m Matias Callara and for more than 10 years I’ve been working at the intersection between Machine Learning, Operational Research and Decision Theory. This will not be a surprise to you if you consider my academic career. I’m an Industrial Engineer with a Master in Optimization and a Ph.D. in Informatics (where I worked applying Machine Learning for behavior prediction in the Cloud Computing Software Company).</p>
+</section>
+<section id="how-this-course-was-born">
+<h2>How this course was born<a class="headerlink" href="#how-this-course-was-born" title="Link to this heading">#</a></h2>
+<p>My role as a tech lead and portfolio manager, responsible for several products, drove me to find and share tools that could help our team work smarter and more effectively. I focused on making sure these tools were easy for everyone to use and encouraged teams to adopt them.</p>
+<p>This course is designed to benefit those with academic backgrounds unrelated to software development. We will explore key topics, from code management with Git to testing and debugging strategies, to equip students with tools and techniques that will make them enjoy their work alone or as part of a software development team.</p>
+</section>
+<section id="are-software-development-practices-still-relevant">
+<h2>Are software development practices still relevant?<a class="headerlink" href="#are-software-development-practices-still-relevant" title="Link to this heading">#</a></h2>
+<p>Is Software Development still relevants in times of Gen AI?
+Programming as an Art: even though AI could program for you, you may still want to do it yourself because you enjoy it.
+Programming and thought process: programming is an activity that allws me to build complex solutions.</p>
+</section>
+<section id="what-do-you-expect-from-the-course">
+<h2>What do you expect from the course?<a class="headerlink" href="#what-do-you-expect-from-the-course" title="Link to this heading">#</a></h2>
+<p>Before starting this journey, it is useful to have a somehow clear vision of where we want to get.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ch1_introduction_to_version_control.html">Introduction to Version Control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/ch10.html">1 Introduction to Version Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch11.html">1.1 Git and the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch13.html">1.3 Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch14.html">1.4 Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch15.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.1 Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch3/ch31.html">3.1 Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch3/mystock.html">3.2 Test Driven Development (TDD)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch42.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch43.html">4.3 Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch4/ch43.html#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch51.html">5.1 Software Development Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch52.html">5.2 Software Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch52.html#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">Automate Semantic Versioning in Poetry Projects with Python Semantic Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch5/ch53.html">5.3 Packaging</a></li>
 </ul>
 </li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,11 +520,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="ch1_introduction_to_version_control.html"
+       href="ch1/ch10.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Version Control</p>
+        <p class="prev-next-title">1 Introduction to Version Control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -454,7 +535,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-course-was-born">How this course was born</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are software development practices still relevant?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-expect-from-the-course">What do you expect from the course?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
