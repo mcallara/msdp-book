@@ -1,0 +1,11 @@
+
+publish:
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /^(\d+\.)?(\d+\.)?(\d+).*/ && $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
+      when: always 
+  script:
+    - pip install poetry
+    - poetry build
+    - poetry config repositories.gitlab https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/pypi --local
+    - poetry publish --repository gitlab -u $GITLAB_USER_LOGIN -p $GITLAB_TOKEN

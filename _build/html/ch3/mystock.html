@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -190,27 +190,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch15.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
-
 
 </ul>
 </li>
@@ -228,10 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">5.1 Software Development Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53.html">5.2 Packaging</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -512,7 +498,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -522,10 +508,10 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
 &gt;       five = Dollar(amount=5)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       NameError: name &#39;Dollar&#39; is not defined</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2648424505.py</span>:3: NameError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2648424505.py</span>:3: NameError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - NameError: name &#39;Dollar&#39; is not defined
-<span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.09s =========================================</span>
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - NameError: name &#39;Dollar&#39; is not defined
+<span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.10s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.TESTS_FAILED: 1&gt;
@@ -558,7 +544,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -568,9 +554,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
 &gt;       five = Dollar(amount=5)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       TypeError: Dollar() takes no arguments</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2648424505.py</span>:3: TypeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2648424505.py</span>:3: TypeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - TypeError: Dollar() takes no arguments
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - TypeError: Dollar() takes no arguments
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -602,7 +588,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -613,9 +599,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
 &gt;       five.times(multiplier=2)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: &#39;Dollar&#39; object has no attribute &#39;times&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2648424505.py</span>:4: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2648424505.py</span>:4: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Dollar&#39; object has no attribute &#39;times&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Dollar&#39; object has no attribute &#39;times&#39;
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -649,7 +635,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -661,9 +647,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
 &gt;       assert 10 == five.amount
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: &#39;Dollar&#39; object has no attribute &#39;amount&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2648424505.py</span>:5: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2648424505.py</span>:5: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Dollar&#39; object has no attribute &#39;amount&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Dollar&#39; object has no attribute &#39;amount&#39;
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -699,7 +685,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -710,11 +696,11 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
         five.times(multiplier=2)
 &gt;       assert 10 == five.amount
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       assert 10 == None</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where None = &lt;__main__.Dollar object at 0x14a0f09cc9d0&gt;.amount</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where None = &lt;__main__.Dollar object at 0x14c0b49081f0&gt;.amount</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2648424505.py</span>:5: AssertionError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2648424505.py</span>:5: AssertionError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - assert 10 == None
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - assert 10 == None
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -750,7 +736,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -798,7 +784,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -840,9 +826,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
-<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.00s =========================================</span>
+<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.OK: 0&gt;
@@ -882,9 +868,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
-<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
+<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.00s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.OK: 0&gt;
@@ -924,7 +910,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -966,9 +952,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
-<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
+<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.00s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.OK: 0&gt;
@@ -1007,7 +993,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -1020,11 +1006,11 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
         five.times(3)
 &gt;       assert 15 == five.amount
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       assert 15 == 30</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where 30 = &lt;__main__.Dollar object at 0x14a0f0a00280&gt;.amount</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where 30 = &lt;__main__.Dollar object at 0x14c0b474f2e0&gt;.amount</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/2074498160.py</span>:7: AssertionError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/2074498160.py</span>:7: AssertionError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - assert 15 == 30
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - assert 15 == 30
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -1066,7 +1052,7 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -1078,9 +1064,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color 
 &gt;       assert 10 == ten.amount
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: &#39;NoneType&#39; object has no attribute &#39;amount&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/1909386861.py</span>:5: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/1909386861.py</span>:5: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;NoneType&#39; object has no attribute &#39;amount&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;NoneType&#39; object has no attribute &#39;amount&#39;
 <span class=" -Color -Color-Red">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span><span class=" -Color -Color-Red"> in 0.01s =========================================</span>
 </pre></div>
 </div>
@@ -1114,9 +1100,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 1 item
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [100%]</span>
 
-<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.03s =========================================</span>
+<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.OK: 0&gt;
@@ -1174,21 +1160,21 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 2 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Red">FAILED                                  [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Red">FAILED                                  [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">__________________________________________ test_equality ___________________________________________</span>
 
     def test_equality():
 &gt;       assert Dollar(5) == Dollar(5)
-<span class=" -Color -Color-Bold -Color-Bold-Red">E       assert &lt;__main__.Dollar object at 0x14a0f0af08b0&gt; == &lt;__main__.Dollar object at 0x14a0f0af1480&gt;</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where &lt;__main__.Dollar object at 0x14a0f0af08b0&gt; = Dollar(5)</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  and   &lt;__main__.Dollar object at 0x14a0f0af1480&gt; = Dollar(5)</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E       assert &lt;__main__.Dollar object at 0x14c0b4628df0&gt; == &lt;__main__.Dollar object at 0x14c0b4628370&gt;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where &lt;__main__.Dollar object at 0x14c0b4628df0&gt; = Dollar(5)</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  and   &lt;__main__.Dollar object at 0x14c0b4628370&gt; = Dollar(5)</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/3170841363.py</span>:2: AssertionError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/3170841363.py</span>:2: AssertionError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_equality</span> - assert &lt;__main__.Dollar object at 0x14a0f0af08b0&gt; == &lt;__main__.Dollar object at 0x14a0f0af1480&gt;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_equality</span> - assert &lt;__main__.Dollar object at 0x14c0b4628df0&gt; == &lt;__main__.Dollar object at 0x14c0b4628370&gt;
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">1 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>
@@ -1226,8 +1212,8 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 2 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">2 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1291,8 +1277,8 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 2 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">2 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1326,8 +1312,8 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 2 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">2 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1366,8 +1352,8 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 2 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 50%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">2 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1441,9 +1427,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Red">FAILED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Red">FAILED                      [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">____________________________________ test_franc_multiplication _____________________________________</span>
@@ -1453,9 +1439,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -
 &gt;       five = Franc(5)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       NameError: name &#39;Franc&#39; is not defined</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/755619237.py</span>:3: NameError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/755619237.py</span>:3: NameError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_franc_multiplication</span> - NameError: name &#39;Franc&#39; is not defined
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_franc_multiplication</span> - NameError: name &#39;Franc&#39; is not defined
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">2 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>
@@ -1507,9 +1493,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1540,9 +1526,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1580,9 +1566,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1621,9 +1607,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1662,9 +1648,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1698,9 +1684,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1743,9 +1729,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1783,9 +1769,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Red">FAILED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Red">FAILED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">__________________________________________ test_equality ___________________________________________</span>
@@ -1796,13 +1782,13 @@ t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -
         assert Franc(5) == Franc(5)
         assert Franc(5) != Franc(6)
 &gt;       assert Dollar(5) != Franc(5)
-<span class=" -Color -Color-Bold -Color-Bold-Red">E       assert &lt;__main__.Dollar object at 0x14a0f07cb220&gt; != &lt;__main__.Franc object at 0x14a0f07cb2b0&gt;</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where &lt;__main__.Dollar object at 0x14a0f07cb220&gt; = Dollar(5)</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  and   &lt;__main__.Franc object at 0x14a0f07cb2b0&gt; = Franc(5)</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E       assert &lt;__main__.Dollar object at 0x14c0b43fc0d0&gt; != &lt;__main__.Franc object at 0x14c0b43fc100&gt;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  where &lt;__main__.Dollar object at 0x14c0b43fc0d0&gt; = Dollar(5)</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">E        +  and   &lt;__main__.Franc object at 0x14c0b43fc100&gt; = Franc(5)</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/4073365173.py</span>:6: AssertionError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/4073365173.py</span>:6: AssertionError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_equality</span> - assert &lt;__main__.Dollar object at 0x14a0f07cb220&gt; != &lt;__main__.Franc object at 0x14a0f07cb2b0&gt;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_equality</span> - assert &lt;__main__.Dollar object at 0x14c0b43fc0d0&gt; != &lt;__main__.Franc object at 0x14c0b43fc100&gt;
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">2 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>
@@ -1844,9 +1830,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
 <span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
@@ -1883,9 +1869,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -1895,9 +1881,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -
 &gt;       five = Money.dollar(5)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: type object &#39;Money&#39; has no attribute &#39;dollar&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/744221130.py</span>:3: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/744221130.py</span>:3: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: type object &#39;Money&#39; has no attribute &#39;dollar&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: type object &#39;Money&#39; has no attribute &#39;dollar&#39;
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">2 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>
@@ -1942,11 +1928,11 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Green">PASSED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED                      [100%]</span>
 
-<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.16s =========================================</span>
+<span class=" -Color -Color-Green">======================================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">3 passed</span><span class=" -Color -Color-Green"> in 0.01s =========================================</span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ExitCode.OK: 0&gt;
@@ -1990,9 +1976,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -2003,9 +1989,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -
 &gt;       assert Dollar(10) == five.times(2)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/744221130.py</span>:4: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/744221130.py</span>:4: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">2 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>
@@ -2045,9 +2031,9 @@ cachedir: .pytest_cache
 rootdir: /home/callaram/tds/msdp-book/ch3
 <span class=" -Color -Color-Bold">collecting ... </span>collected 3 items
 
-t_db630fa984c8485fb3c1449623e81359.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
-t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_multiplication <span class=" -Color -Color-Red">FAILED                            [ 33%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_equality <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                                  [ 66%]</span>
+t_142f548a07c04ccca617b7728c8914c0.py::test_franc_multiplication <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Red">                      [100%]</span>
 
 ============================================= FAILURES =============================================
 <span class=" -Color -Color-Bold -Color-Bold-Red">_______________________________________ test_multiplication ________________________________________</span>
@@ -2058,9 +2044,9 @@ t_db630fa984c8485fb3c1449623e81359.py::test_franc_multiplication <span class=" -
 &gt;       assert Money.dollar(10) == five.times(2)
 <span class=" -Color -Color-Bold -Color-Bold-Red">E       AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;</span>
 
-<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_459266/3355800405.py</span>:4: AttributeError
+<span class=" -Color -Color-Bold -Color-Bold-Red">/tmp/ipykernel_1770687/3355800405.py</span>:4: AttributeError
 <span class=" -Color -Color-Bold -Color-Bold-Cyan">===================================== short test summary info ======================================</span>
-<span class=" -Color -Color-Red">FAILED</span> t_db630fa984c8485fb3c1449623e81359.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;
+<span class=" -Color -Color-Red">FAILED</span> t_142f548a07c04ccca617b7728c8914c0.py::<span class=" -Color -Color-Bold">test_multiplication</span> - AttributeError: &#39;Money&#39; object has no attribute &#39;times&#39;
 <span class=" -Color -Color-Red">=================================== </span><span class=" -Color -Color-Bold -Color-Bold-Red">1 failed</span>, <span class=" -Color -Color-Green">2 passed</span><span class=" -Color -Color-Red"> in 0.01s ====================================</span>
 </pre></div>
 </div>

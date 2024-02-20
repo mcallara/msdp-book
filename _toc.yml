@@ -27,6 +27,6 @@ chapters:
   - file: ch4/ch43
 - file: ch5/ch50
   sections:
-  - file: ch5/ch51
+  - file: ch5/ch51_gitlab
   - file: ch5/ch52_gitlab
   - file: ch5/ch53_gitlab

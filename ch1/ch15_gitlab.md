@@ -25,7 +25,7 @@ Inside the `my-project` directory, we will tell Git that we want to work with a 
 
 ```{code-cell} bash
 cd my-project
-git remote add origin git@gitlab.com:yourusername/my-project-remote.git
+git remote add origin git@gitlab.com:msdp.book/my-project-remote.git
 ```
 
 ### List the remote repository connections
@@ -77,7 +77,7 @@ Clone the `test-repo` into a new directory named `test-repo-2`.
 
 ```{code-cell} bash
 cd ..
-git clone git@gitlab.com:yourusername/my-project-remote.git my-project-remote-2
+git clone git@gitlab.com:msdp.book/my-project-remote.git my-project-remote-2
 ls
 ```
 

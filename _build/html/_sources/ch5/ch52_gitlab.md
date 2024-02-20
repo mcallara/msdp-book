@@ -227,9 +227,9 @@ To ensure `python-semantic-release` correctly increments version numbers, use se
 ```{admonition} What to notice
 :class: hint
 
-After pushing our first commit and successfully running `python-semantic-release`, the tool will automatically generate both a release and a tag for your project, as well as a `CHANGELOG.md` file. You can find the generated release in the [Releases section](https://github.com/mcallara/semver/releases) of the `semver` repository. This section provides detailed information about what's new, improved, or fixed in each release, along with any associated assets.
+After pushing our first commit and successfully running `python-semantic-release`, the tool will automatically generate both a release and a tag for your project, as well as a `CHANGELOG.md` file. You can find the generated release in the [Releases section](https://github.com/msdp.book/semver/releases) of the `semver` repository. This section provides detailed information about what's new, improved, or fixed in each release, along with any associated assets.
 
-Similarly, the automatically created tag, marking the specific point in the repository's history for the release, can be found in the [Tags section](https://github.com/mcallara/semver/tags). Tags serve as important reference points, indicating version releases and facilitating easy navigation through the project's version history.
+Similarly, the automatically created tag, marking the specific point in the repository's history for the release, can be found in the [Tags section](https://github.com/msdp.book/semver/tags). Tags serve as important reference points, indicating version releases and facilitating easy navigation through the project's version history.
 ```
 
 # Create a new commit and see how it bumps the version
