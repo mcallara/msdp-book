@@ -10,7 +10,7 @@ chapters:
   - file: ch1/ch12
   - file: ch1/ch13
   - file: ch1/ch14
-  - file: ch1/ch15
+  - file: ch1/ch15_gitlab
 - file: ch2/ch20
   sections:
   - file: ch2/ch21
@@ -28,5 +28,5 @@ chapters:
 - file: ch5/ch50
   sections:
   - file: ch5/ch51
-  - file: ch5/ch52
-  - file: ch5/ch53
+  - file: ch5/ch52_gitlab
+  - file: ch5/ch53_gitlab

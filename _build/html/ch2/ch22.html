@@ -196,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20.html">2 AI-Assisted Software Development and Debugging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch21.html">2.1 AI-Assisted Software Development</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1 Debugging</a></li>
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -413,9 +414,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Debugging</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mastering-debugging-in-python-with-visual-studio-code">Mastering Debugging in Python with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-and-running-the-debugger">Setting Up and Running the Debugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-the-exception-and-inspecting-variables">Observing the Exception and Inspecting Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-breakpoint-and-watching-variables">Setting a Breakpoint and Watching Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-and-testing-a-solution-for-the-issue">Identifying and testing a solution for the Issue</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-breakpoints">Other Types of Breakpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-breakpoints"><strong>Conditional Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hit-count-breakpoints"><strong>Hit Count Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logpoints"><strong>Logpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-breakpoints"><strong>Function Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-breakpoints"><strong>Exception Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-breakpoints-and-debugging-inside-a-third-party-library">Function Breakpoints and Debugging Inside a Third-Party Library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-configuring-the-debugger">Step 1: Configuring the Debugger</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-setting-a-function-breakpoint">Step 2: Setting a Function Breakpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect">What to Expect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -430,11 +457,7 @@ document.write(`
 <h1>2.1 Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
-<section id="sections">
-<h2>Sections<a class="headerlink" href="#sections" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Introduction to debugging: importance and basic concepts.</p></li>
-<li><p>Configuration of the debugging environment in Visual Studio Code.</p></li>
 <li><p>Use of breakpoints to halt execution.</p></li>
 <li><p>Types of breakpoints: conditional and exception breakpoints.</p></li>
 <li><p>Inspection of variables and expressions during execution.</p></li>
@@ -443,7 +466,217 @@ document.write(`
 <li><p>Visualization tools: watch, variables, and call stack.</p></li>
 <li><p>Logging usage for debugging.</p></li>
 <li><p>Remote debugging and debugging in virtual environments.</p></li>
+<li><p>Using the justMyCode option to understand the behavior of third-party libraries.</p></li>
 </ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mastering-debugging-in-python-with-visual-studio-code">
+<h1>Mastering Debugging in Python with Visual Studio Code<a class="headerlink" href="#mastering-debugging-in-python-with-visual-studio-code" title="Link to this heading">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>Debugging is not merely about fixing errors; it’s about understanding the behavior of your code under various conditions, ensuring reliability, and improving performance. Effective debugging can significantly reduce development time, enhance code quality, and create more robust applications.</p>
+<p>Imagine you’re working on a Python project that processes data from an online store. Your task is to write a script that calculates the total sales for each product category. However, after trying to run your script, you notice that is throwing an error. You’ve checked your code multiple times, but the mistake remains elusive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_total_sales</span><span class="p">(</span><span class="n">sales_data</span><span class="p">):</span>
+    <span class="n">total_sales</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">sales</span> <span class="ow">in</span> <span class="n">sales_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">total_sales</span> <span class="o">+=</span> <span class="n">sales</span>
+    <span class="k">return</span> <span class="n">total_sales</span>
+
+<span class="n">sales_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;electronics&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;books&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s2">&quot;clothing&quot;</span><span class="p">:</span> <span class="s2">&quot;7000&quot;</span><span class="p">,</span> <span class="s2">&quot;toys&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">},</span>
+<span class="n">total_sales</span> <span class="o">=</span> <span class="n">calculate_total_sales</span><span class="p">(</span><span class="n">sales_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total sales: $</span><span class="si">{</span><span class="n">total_sales</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">total_sales</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">sales_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;electronics&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;books&quot;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s2">&quot;clothing&quot;</span><span class="p">:</span> <span class="s2">&quot;7000&quot;</span><span class="p">,</span> <span class="s2">&quot;toys&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">},</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">total_sales</span> <span class="o">=</span> <span class="n">calculate_total_sales</span><span class="p">(</span><span class="n">sales_data</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total sales: $</span><span class="si">{</span><span class="n">total_sales</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[2], line 3,</span> in <span class="ni">calculate_total_sales</span><span class="nt">(sales_data)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">calculate_total_sales</span><span class="p">(</span><span class="n">sales_data</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">total_sales</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">sales</span> <span class="ow">in</span> <span class="n">sales_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">total_sales</span> <span class="o">+=</span> <span class="n">sales</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">total_sales</span>
+
+<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;items&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="setting-up-and-running-the-debugger">
+<h3>Setting Up and Running the Debugger<a class="headerlink" href="#setting-up-and-running-the-debugger" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Open your Python script in VS Code</strong> and make sure you have the Python extension installed.</p></li>
+<li><p><strong>Open the Debug view</strong> by clicking on the Run and Debug view icon on the left sidebar or pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code>.</p></li>
+<li><p><strong>Start debugging</strong> by selecting the appropriate Python file configuration and pressing the green play button or pressing <code class="docutils literal notranslate"><span class="pre">F5</span></code>. Make sure the “Uncaught Exceptions” option is ticked in the Breakpoints panel.</p></li>
+</ol>
+</section>
+<section id="observing-the-exception-and-inspecting-variables">
+<h3>Observing the Exception and Inspecting Variables<a class="headerlink" href="#observing-the-exception-and-inspecting-variables" title="Link to this heading">#</a></h3>
+<p>As the debugger runs, it will halt execution when it encounters the uncaught TypeError exception due to attempting to add an integer to a string. This halting point allows us to inspect the program’s state just before the exception occurred.</p>
+<ul class="simple">
+<li><p><strong>Inspect the <code class="docutils literal notranslate"><span class="pre">sales_data</span></code> variable</strong> in the Variables panel to notice that the value for “clothing” is a string, <code class="docutils literal notranslate"><span class="pre">&quot;7000&quot;</span></code>, instead of an integer.</p></li>
+</ul>
+</section>
+<section id="setting-a-breakpoint-and-watching-variables">
+<h3>Setting a Breakpoint and Watching Variables<a class="headerlink" href="#setting-a-breakpoint-and-watching-variables" title="Link to this heading">#</a></h3>
+<p>With the knowledge that our program halts due to a TypeError, we’ll focus on the calculation of <code class="docutils literal notranslate"><span class="pre">total_sales</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>Add a breakpoint</strong> at the <code class="docutils literal notranslate"><span class="pre">total_sales</span> <span class="pre">+=</span> <span class="pre">sales</span></code> line.</p></li>
+<li><p><strong>Add <code class="docutils literal notranslate"><span class="pre">total_sales</span></code> and <code class="docutils literal notranslate"><span class="pre">sales</span></code> to the Watch panel</strong> to monitor their values in real-time.</p></li>
+<li><p><strong>Restart the debugger</strong> and observe as it stops at our breakpoint before the exception occurs.</p></li>
+<li><p><strong>Step through the for loop</strong> using the “Step Over” button (or pressing <code class="docutils literal notranslate"><span class="pre">F10</span></code>) to iterate through each category and sale.</p></li>
+</ol>
+</section>
+<section id="identifying-and-testing-a-solution-for-the-issue">
+<h3>Identifying and testing a solution for the Issue<a class="headerlink" href="#identifying-and-testing-a-solution-for-the-issue" title="Link to this heading">#</a></h3>
+<p>As you step through each iteration, when reaching “clothing”, you’ll notice in the Watch panel that <code class="docutils literal notranslate"><span class="pre">sales</span></code> holds the string value <code class="docutils literal notranslate"><span class="pre">&quot;7000&quot;</span></code>. This is the moment of realization that the data type inconsistency is causing our issue.</p>
+<ol class="arabic simple">
+<li><p><strong>Modify the <code class="docutils literal notranslate"><span class="pre">sales_data</span></code> directly in the watch panel</strong> with a secondary click and selecting “Change Value” to correct the value for “clothing” from <code class="docutils literal notranslate"><span class="pre">&quot;7000&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">7000</span></code> (an integer).</p></li>
+<li><p><strong>Continue execution</strong> by pressing the “Continue” button (or pressing <code class="docutils literal notranslate"><span class="pre">F5</span></code>) in the debugger.</p></li>
+<li><p>Observe that the debugger now completes the execution without halting on an exception, and the correct total sales value is printed to the console.</p></li>
+</ol>
+</section>
+</section>
+<section id="other-types-of-breakpoints">
+<h2>Other Types of Breakpoints<a class="headerlink" href="#other-types-of-breakpoints" title="Link to this heading">#</a></h2>
+<p>In our first example, we used an uncaught exception breakpoint to halt the execution of our program. Let’s now use our example to explore other types of breakpoints.</p>
+<section id="conditional-breakpoints">
+<h3><strong>Conditional Breakpoints</strong><a class="headerlink" href="#conditional-breakpoints" title="Link to this heading">#</a></h3>
+<p>Pause execution when a specified condition is true.</p>
+<ol class="arabic simple">
+<li><p>Open your code in Visual Studio Code and navigate to the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop line.</p></li>
+<li><p>Right-click on the left margin and select “Add Conditional Breakpoint.”</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sales</span> <span class="pre">==</span> <span class="pre">5000</span></code> as the condition. This setup ensures the debugger halts for the “books” category, allowing inspection of variables at that point.</p></li>
+</ol>
+</section>
+<section id="hit-count-breakpoints">
+<h3><strong>Hit Count Breakpoints</strong><a class="headerlink" href="#hit-count-breakpoints" title="Link to this heading">#</a></h3>
+<p>Trigger after the breakpoint has been hit a specified number of times.</p>
+<ol class="arabic simple">
+<li><p>On the same line as before, add a breakpoint.</p></li>
+<li><p>Right-click on the breakpoint and select “Edit Breakpoint” -&gt; “Hit Count.”</p></li>
+<li><p>Specify the hit count as <code class="docutils literal notranslate"><span class="pre">3</span></code>. The debugger will now pause execution the third time it reaches this line, useful for examining the accumulated <code class="docutils literal notranslate"><span class="pre">total_sales</span></code> after several iterations.</p></li>
+</ol>
+</section>
+<section id="logpoints">
+<h3><strong>Logpoints</strong><a class="headerlink" href="#logpoints" title="Link to this heading">#</a></h3>
+<p>Log messages to the console without stopping the program.</p>
+<ol class="arabic simple">
+<li><p>Right-click on the left margin next to the loop and select “Add Logpoint.”</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Processing</span> <span class="pre">{category}:</span> <span class="pre">{sales}</span></code> in the message field. This action allows real-time monitoring of which items are being processed and their respective sales without halting the program.</p></li>
+</ol>
+</section>
+<section id="function-breakpoints">
+<h3><strong>Function Breakpoints</strong><a class="headerlink" href="#function-breakpoints" title="Link to this heading">#</a></h3>
+<p>Halt execution when entering a specified function.</p>
+<ol class="arabic simple">
+<li><p>Go to the Run and Debug view in Visual Studio Code.</p></li>
+<li><p>Click on “Add Function Breakpoint” and type the name of the function, <code class="docutils literal notranslate"><span class="pre">calculate_total_sales</span></code>.</p></li>
+<li><p>When you run the debugger, it will pause every time <code class="docutils literal notranslate"><span class="pre">calculate_total_sales</span></code> is invoked, allowing you to inspect the initial state of the function and its parameters.</p></li>
+</ol>
+</section>
+<section id="exception-breakpoints">
+<h3><strong>Exception Breakpoints</strong><a class="headerlink" href="#exception-breakpoints" title="Link to this heading">#</a></h3>
+<p>Pause execution when exceptions are thrown.</p>
+<ul class="simple">
+<li><p><strong>For Raised Exceptions</strong>:</p>
+<ol class="arabic simple">
+<li><p>In the Debug view, under Breakpoints, ensure that “All Exceptions” is checked.</p></li>
+<li><p>If an exception is raised within <code class="docutils literal notranslate"><span class="pre">calculate_total_sales</span></code> or its call, the debugger will halt, enabling you to inspect the cause and context of the exception.</p></li>
+</ol>
+</li>
+<li><p><strong>For User-Uncaught Exceptions</strong>:</p>
+<ol class="arabic simple">
+<li><p>Similarly, check “Uncaught Exceptions” to focus on exceptions that escape your error handling. This is particularly useful for identifying and debugging unhandled exceptions that could cause unexpected behavior or application crashes.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="function-breakpoints-and-debugging-inside-a-third-party-library">
+<h3>Function Breakpoints and Debugging Inside a Third-Party Library<a class="headerlink" href="#function-breakpoints-and-debugging-inside-a-third-party-library" title="Link to this heading">#</a></h3>
+<p>Suppose we are working on a Python project that uses pandas for data manipulation and we have the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">s</span><span class="o">.</span><span class="n">add_suffix</span><span class="p">(</span><span class="s1">&#39;_item&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_830653/179978455.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0_item    1
+1_item    2
+2_item    3
+3_item    4
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to understand how the <code class="docutils literal notranslate"><span class="pre">add_suffix</span></code> method works internally, in particular, we would like to investigate an issue that occurs with <code class="docutils literal notranslate"><span class="pre">_get_axis_name</span></code> which is another method that is used by <code class="docutils literal notranslate"><span class="pre">add_suffix</span></code>. To do this, we’ll configure our debugger to step into the pandas library code and break when it reaches the <code class="docutils literal notranslate"><span class="pre">_get_axis_name</span></code> function.</p>
+<section id="step-1-configuring-the-debugger">
+<h4>Step 1: Configuring the Debugger<a class="headerlink" href="#step-1-configuring-the-debugger" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Open VS Code</strong> and navigate to your Python script.</p></li>
+<li><p><strong>Open the <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> file</strong> in the <code class="docutils literal notranslate"><span class="pre">.vscode</span></code> folder. If it doesn’t exist, create it by going to the Run and Debug view, selecting “create a launch.json file”, and then choosing a Python configuration.</p></li>
+<li><p><strong>Modify the <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> file</strong> to include the <code class="docutils literal notranslate"><span class="pre">justMyCode</span></code> option set to <code class="docutils literal notranslate"><span class="pre">false</span></code>. This tells the debugger to include third-party library code in the debugging session.</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python: Current File&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${file}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-setting-a-function-breakpoint">
+<h4>Step 2: Setting a Function Breakpoint<a class="headerlink" href="#step-2-setting-a-function-breakpoint" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Go to the Run and Debug view</strong> in VS Code.</p></li>
+<li><p><strong>Open the Breakpoints pane</strong> and find the option to add a function breakpoint. Click on “Add Function Breakpoint”.</p></li>
+<li><p><strong>Type the name of the function</strong> you want to break on. In this case, enter <code class="docutils literal notranslate"><span class="pre">_get_axis_name</span></code>.</p></li>
+<li><p><strong>Start the debugger</strong> by selecting the appropriate configuration for the current file and pressing the green play button or pressing <code class="docutils literal notranslate"><span class="pre">F5</span></code>.</p></li>
+</ol>
+</section>
+<section id="what-to-expect">
+<h4>What to Expect<a class="headerlink" href="#what-to-expect" title="Link to this heading">#</a></h4>
+<p>When you run the debugger with these settings and execute your script, the debugger will pause execution when it reaches the <code class="docutils literal notranslate"><span class="pre">_get_axis_name</span></code> function call within the pandas library. This allows you to:</p>
+<ul class="simple">
+<li><p>Step through the pandas library code to see how the <code class="docutils literal notranslate"><span class="pre">_get_axis_name</span></code> function is implemented.</p></li>
+<li><p>Inspect variables and understand the internal workings of the function.</p></li>
+<li><p>Gain insights into the behavior of third-party libraries, which can be invaluable for debugging complex issues or enhancing your understanding of these libraries.</p></li>
+</ul>
+</section>
+<section id="note">
+<h4>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h4>
+<p>Remember that stepping into third-party library code can sometimes be overwhelming due to the complexity and volume of the code. However, it can also be a powerful way to learn more about these libraries and to troubleshoot issues more effectively or even adapt them to your specific needs.</p>
+</section>
+</section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
@@ -517,9 +750,35 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections">Sections</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.1 Debugging</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mastering-debugging-in-python-with-visual-studio-code">Mastering Debugging in Python with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-and-running-the-debugger">Setting Up and Running the Debugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-the-exception-and-inspecting-variables">Observing the Exception and Inspecting Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-breakpoint-and-watching-variables">Setting a Breakpoint and Watching Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-and-testing-a-solution-for-the-issue">Identifying and testing a solution for the Issue</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-breakpoints">Other Types of Breakpoints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-breakpoints"><strong>Conditional Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hit-count-breakpoints"><strong>Hit Count Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logpoints"><strong>Logpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-breakpoints"><strong>Function Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-breakpoints"><strong>Exception Breakpoints</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-breakpoints-and-debugging-inside-a-third-party-library">Function Breakpoints and Debugging Inside a Third-Party Library</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-configuring-the-debugger">Step 1: Configuring the Debugger</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-setting-a-function-breakpoint">Step 2: Setting a Function Breakpoint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect">What to Expect</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
