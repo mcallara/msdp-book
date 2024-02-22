@@ -7,7 +7,7 @@ Hello. I’m Matias Callara and for more than 10 years I’ve been working at th
 ## How this course was born
 My role as a tech lead and portfolio manager, responsible for several products, drove me to find and share tools that could help our team work smarter and more effectively. I focused on making sure these tools were easy for everyone to use and encouraged teams to adopt them.
 
-This course is designed to benefit those with academic backgrounds unrelated to software development. We will explore key topics, from code management with Git to testing and debugging strategies, to equip students with tools and techniques that will make them enjoy their work alone or as part of a software development team.
+This course is designed to benefit those with academic backgrounds unrelated to software development. We will explore key topics, from code management with Git to testing and debugging strategies, to equip students with tools and techniques that will hopefully make them enjoy their work alone or as part of a software development team.
 
 ## Are software development practices still relevant?
 
@@ -17,7 +17,7 @@ Programming and thought process: programming is an activity that allws me to bui
 
 ## What do you expect from the course?
 
-Before starting this journey, it is useful to have a somehow clear vision of where we want to get.
+Before starting this journey, it is useful to have a somehow clear vision of where we want to get. I think this is a good moment to ask you to write down your expectations. What do you expect from this course? What do you want to learn? What do you want to be able to do after completing the course?
 
 ```{tableofcontents}
 ```
