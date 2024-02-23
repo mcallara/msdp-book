@@ -188,47 +188,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a></li>
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53.html">5.2 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -285,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch11.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch11.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -426,15 +385,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-command">First command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-line">The Command Line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-commands">Your first commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-options-and-arguments">Commands: options and arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clear-the-terminal">Clear the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-system">File system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-content-of-directories">Viewing the content of directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-folders">Creating folders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-file-system">Navigating the file system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clearing-the-terminal">Clearing the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-directory">Creating a new directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-content-to-a-file">Adding content to a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-the-content-of-a-file">Displaying the content of a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navegating-the-file-system">Navegating the File system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-file">Deleting a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-directory">Deleting a directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-git">Configuring Git</a></li>
 </ul>
             </nav>
@@ -448,24 +412,30 @@ document.write(`
                 <article class="bd-article">
                   
   <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘ch1’: File exists
+</pre></div>
+</div>
+</div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="git-and-the-command-line">
 <h1>1.1 Git and the Command Line<a class="headerlink" href="#git-and-the-command-line" title="Link to this heading">#</a></h1>
-<section id="the-terminal">
-<h2>The terminal<a class="headerlink" href="#the-terminal" title="Link to this heading">#</a></h2>
-<p>The terminal is a powerful tool used to interact with your computer’s operating system through commands. It allows you to perform tasks, manage files, and run programs without a graphical user interface.</p>
-</section>
+<p>Before jumping into the world of Git, let’s cover the essential of the command line. This section will introduce you to the command line and the basic commands you need to use Git.</p>
+<section id="the-command-line">
+<h2>The Command Line<a class="headerlink" href="#the-command-line" title="Link to this heading">#</a></h2>
+<p>The command line is a powerful tool used to interact with your computer’s operating system through commands. It allows you to perform tasks, manage files, and run programs without a graphical user interface.</p>
 <section id="the-prompt">
-<h2>The prompt<a class="headerlink" href="#the-prompt" title="Link to this heading">#</a></h2>
-<p>When you open the terminal, you are greeted by the prompt. It typically shows your current user and the host you’re logged into, followed by the current directory. For example:</p>
+<h3>The prompt<a class="headerlink" href="#the-prompt" title="Link to this heading">#</a></h3>
+<p>When you open the command line, you are greeted by the prompt. It typically shows your current user and the host you’re logged into, followed by the current directory. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@debian</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
 </pre></div>
 </div>
-<p>This indicates that you are logged in as the <code class="docutils literal notranslate"><span class="pre">root</span></code> user on a host named <code class="docutils literal notranslate"><span class="pre">debian</span></code>, and you are currently in the root’s home directory (<code class="docutils literal notranslate"><span class="pre">~</span></code>).</p>
+<p>This indicates that you are logged in as the <code class="docutils literal notranslate"><span class="pre">root</span></code> user on a host named <code class="docutils literal notranslate"><span class="pre">debian</span></code>, and you are currently in the root’s home directory (<code class="docutils literal notranslate"><span class="pre">~</span></code>). The <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol indicates that you are logged in as the root user. If you are logged in as a regular user, the prompt will end with a <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol.</p>
 </section>
-<section id="first-command">
-<h2>First command<a class="headerlink" href="#first-command" title="Link to this heading">#</a></h2>
-<p>Let’s start with checking the version of Git installed on your system. Type the following command:</p>
+</section>
+<section id="your-first-commands">
+<h2>Your first commands<a class="headerlink" href="#your-first-commands" title="Link to this heading">#</a></h2>
+<p>First we need to check that Git is installed in our system, and as we will discuss later in the course, we would also like to know which version of Git we are using. To check if Git is intalled and which version we are using, we can use the following command:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
@@ -481,21 +451,70 @@ document.write(`
 </section>
 <section id="commands-options-and-arguments">
 <h2>Commands: options and arguments<a class="headerlink" href="#commands-options-and-arguments" title="Link to this heading">#</a></h2>
-<p>Commands can have options (shortened with a single dash <code class="docutils literal notranslate"><span class="pre">-</span></code> or full word with double dashes <code class="docutils literal notranslate"><span class="pre">--</span></code>) and arguments to modify their behavior or specify what they should act on.</p>
+<p>Commands can have options (shortened with a single dash <code class="docutils literal notranslate"><span class="pre">-</span></code> or full word with double dashes <code class="docutils literal notranslate"><span class="pre">--</span></code>) and arguments (values that the command acts on) to modify their behavior or specify what they should act on. For example, in the previous command, <code class="docutils literal notranslate"><span class="pre">--version</span></code> is an option that tells Git to display its version.</p>
 </section>
-<section id="clear-the-terminal">
-<h2>Clear the terminal<a class="headerlink" href="#clear-the-terminal" title="Link to this heading">#</a></h2>
+<section id="clearing-the-terminal">
+<h2>Clearing the terminal<a class="headerlink" href="#clearing-the-terminal" title="Link to this heading">#</a></h2>
 <p>To clear the terminal and get a clean screen, use:</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clear
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="file-system">
-<h2>File system<a class="headerlink" href="#file-system" title="Link to this heading">#</a></h2>
+<section id="creating-a-new-directory">
+<h2>Creating a new directory<a class="headerlink" href="#creating-a-new-directory" title="Link to this heading">#</a></h2>
+<p>To create a new directory named <code class="docutils literal notranslate"><span class="pre">test</span></code>, use the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command followed by the name of the directory you want to create. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-new-file">
+<h2>Creating a new file<a class="headerlink" href="#creating-a-new-file" title="Link to this heading">#</a></h2>
+<p>To create a new file named <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code>, use the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command followed by the name of the file you want to create. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>hello.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-content-to-a-file">
+<h2>Adding content to a file<a class="headerlink" href="#adding-content-to-a-file" title="Link to this heading">#</a></h2>
+<p>To add content to a file, use the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command followed by the content you want to add and the name of the file you want to add it to. For example, to add the text “Hello, world!” to the <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code> file, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>hello.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="displaying-the-content-of-a-file">
+<h2>Displaying the content of a file<a class="headerlink" href="#displaying-the-content-of-a-file" title="Link to this heading">#</a></h2>
+<p>To display the content of a file, use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command followed by the name of the file you want to display. For example, to display the content of the <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code> file, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>hello.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="navegating-the-file-system">
+<h2>Navegating the File system<a class="headerlink" href="#navegating-the-file-system" title="Link to this heading">#</a></h2>
 <p>To display the current directory you are in, use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,18 +528,20 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="viewing-the-content-of-directories">
-<h2>Viewing the content of directories<a class="headerlink" href="#viewing-the-content-of-directories" title="Link to this heading">#</a></h2>
-<p>To list the files and directories in your current directory:</p>
+<p>To list the files and directories in your current directory, use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello.txt  <span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>
+</pre></div>
 </div>
-<p>To include hidden files (those starting with a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>) in the list:</p>
+</div>
+</div>
+<p>To include hidden files (those starting with a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>) in the list, add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option to the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command. For example, to list all files and directories in your current directory, use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
@@ -528,12 +549,46 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  hello.txt  <span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">test</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>For help with <code class="docutils literal notranslate"><span class="pre">ls</span></code> command options:</p>
+<p>To get more information about the files and directories in your current directory, use the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 3
+-rw-r--r-- 1 callaram games   14 Feb 23 09:23 hello.txt
+drwxr-xr-x 3 callaram games 4096 Feb 23 09:09 <span class=" -Color -Color-C33">my-project</span>
+drwxr-xr-x 2 callaram games 4096 Feb 23 09:23 <span class=" -Color -Color-C33">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To combine options, use them together. For example, to list all files and directories in your current directory with more information, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 5
+drwxr-xr-x 4 callaram games 4096 Feb 23 09:23 <span class=" -Color -Color-C33">.</span>
+drwxr-xr-x 6 callaram games 4096 Feb 23 08:48 <span class=" -Color -Color-C33">..</span>
+-rw-r--r-- 1 callaram games   14 Feb 23 09:23 hello.txt
+drwxr-xr-x 3 callaram games 4096 Feb 23 09:09 <span class=" -Color -Color-C33">my-project</span>
+drwxr-xr-x 2 callaram games 4096 Feb 23 09:23 <span class=" -Color -Color-C33">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To list all options available for a command you can frequeantly, use the <code class="docutils literal notranslate"><span class="pre">--help</span></code> option. For example, to list all options available for the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command, use:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>--help
@@ -662,21 +717,7 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 </div>
 </div>
 </div>
-</section>
-<section id="creating-folders">
-<h2>Creating folders<a class="headerlink" href="#creating-folders" title="Link to this heading">#</a></h2>
-<p>To create a new directory named <code class="docutils literal notranslate"><span class="pre">test</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nb">test</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="navigating-the-file-system">
-<h2>Navigating the file system<a class="headerlink" href="#navigating-the-file-system" title="Link to this heading">#</a></h2>
-<p>To change directory:</p>
+<p>To change directory, use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command followed by the name of the directory you want to change to as an argument. For example, to change to the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory, use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
@@ -684,7 +725,11 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 </div>
 </div>
 </div>
-<p>Check your current directory again:</p>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<p>Note that the current directory in the prompt changed to reflect the new directory you are in and now it should look like this: <code class="docutils literal notranslate"><span class="pre">root&#64;debian:~/test#</span></code>.</p>
+</div>
+<p>You can also confirm the current directory by using the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
@@ -697,7 +742,7 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 </div>
 </div>
 </div>
-<p>To go back one directory:</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">..</span></code> argument to go back one directory. For example, to go back to the previous directory, use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
@@ -706,8 +751,48 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 </div>
 </div>
 </section>
+<section id="deleting-a-file">
+<h2>Deleting a file<a class="headerlink" href="#deleting-a-file" title="Link to this heading">#</a></h2>
+<p>To remove a file, use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command followed by the (relative or absolute) path to the file you want to remove. For example, to remove the <code class="docutils literal notranslate"><span class="pre">hello.txt</span></code> file, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>hello.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deleting-a-directory">
+<h2>Deleting a directory<a class="headerlink" href="#deleting-a-directory" title="Link to this heading">#</a></h2>
+<p>To remove a directory and all its content, use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command followed by the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option and the (relative or absolute) path to the directory you want to remove. For example, to remove the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can add the <code class="docutils literal notranslate"><span class="pre">-f</span></code> option to force the removal of the directory and its content without asking for confirmation. For example, to remove the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory without confirmation, use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="configuring-git">
 <h2>Configuring Git<a class="headerlink" href="#configuring-git" title="Link to this heading">#</a></h2>
+<p>Now that we have covered the basics of the command line, let’s configure Git. The first thing you should do when you install Git is to set your username and email address. This information will be used to identify your work.</p>
+<p>To set your global username and email for Git:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;msdp-book&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;msdp.book@gmail.com&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>To list your global Git configuration:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,22 +801,17 @@ or available locally via: info &#39;(coreutils) ls invocation&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>user.name=mcallara
-user.email=mcallara@gmail.com
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>user.name=msdp-book
+user.email=msdp.book@gmail.com
 http.sslverify=false
 init.defaultbranch=main
 </pre></div>
 </div>
 </div>
 </div>
-<p>To set your global username and email for Git:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;mcallara&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;mcallara@gmail.com&quot;</span>
-</pre></div>
-</div>
-</div>
+<div class="note admonition">
+<p class="admonition-title">Know more: Sytem vs Global vs Local Configuration</p>
+<p>Git has three levels of configuration: system, global, and local. The system configuration applies to all users on the system and all repositories. The global configuration applies to the current user and all repositories. The local configuration applies to the current repository only. You can use the <code class="docutils literal notranslate"><span class="pre">--system</span></code>, <code class="docutils literal notranslate"><span class="pre">--global</span></code>, and <code class="docutils literal notranslate"><span class="pre">--local</span></code> options to specify which level of configuration you want to work with.</p>
 </div>
 </section>
 </section>
@@ -800,15 +880,20 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-command">First command</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-line">The Command Line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-commands">Your first commands</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-options-and-arguments">Commands: options and arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clear-the-terminal">Clear the terminal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-system">File system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-the-content-of-directories">Viewing the content of directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-folders">Creating folders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-file-system">Navigating the file system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clearing-the-terminal">Clearing the terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-directory">Creating a new directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-content-to-a-file">Adding content to a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-the-content-of-a-file">Displaying the content of a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navegating-the-file-system">Navegating the File system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-file">Deleting a file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-directory">Deleting a directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-git">Configuring Git</a></li>
 </ul>
   </nav></div>

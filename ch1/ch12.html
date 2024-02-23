@@ -68,7 +68,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch12';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.3 Branches" href="ch13.html" />
     <link rel="prev" title="1.1 Git and the Command Line" href="ch11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,47 +187,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Local repositories and commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15.html">1.5 Remote Repositories</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a></li>
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Virtual Environments</a></li>
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51.html">Software Development Life Cycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52.html">5.2 Software Versioning</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53.html">5.2 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -285,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch12.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch12.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -426,19 +384,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-before-starting-this-class">Checklist, before starting this class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">Create a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-that-it-is-empty">Check that it is empty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dummy-project">Creating a dummy project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-repository">Initialize a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-main-vs-master-branch">Discussion: Main vs Master branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-the-git-repository">Deleting the Git repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-deletion">Exercise: Verify deletion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-areas-of-git">Discussion: Areas of Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-create-a-text-file">Exercise: Create a text file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-edit-the-file">Exercise: Edit the file</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-of-git">Areas of Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-of-a-commit">The two steps of a commit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -453,36 +403,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell tag_remove-input docutils container">
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="local-repositories-and-commit">
+  <section class="tex2jax_ignore mathjax_ignore" id="local-repositories-and-commit">
 <h1>1.2 Local repositories and commit<a class="headerlink" href="#local-repositories-and-commit" title="Link to this heading">#</a></h1>
-<p>In this chapter, we will explore the creation of local repositories, the process of committing changes, and the significance of these actions.</p>
-<section id="checklist-before-starting-this-class">
-<h2>Checklist, before starting this class<a class="headerlink" href="#checklist-before-starting-this-class" title="Link to this heading">#</a></h2>
-<p>First, create a new project directory:</p>
-<div class="cell docutils container">
+<p>In this chapter, we will explore the creation of local repositories and the process of committing changes. We will also learn how to interact with Git using the command line and Visual Studio Code (VSC).</p>
+<section id="creating-a-dummy-project">
+<h2>Creating a dummy project<a class="headerlink" href="#creating-a-dummy-project" title="Link to this heading">#</a></h2>
+<p>If we want to learn about Git, we need a project to work with. Git can track changes in any type of files, it doesn’t have to be code. So to keep it simple, we will create a dummy project, which will be just a directory with some text files in it.</p>
+<div class="hint admonition">
+<p class="admonition-title">Test your knowledge</p>
+<ul class="simple">
+<li><p>Create an empty directory for our project and name it <code class="docutils literal notranslate"><span class="pre">my-project</span></code>.</p></li>
+<li><p>Change into your project directory.</p></li>
+<li><p>Verify that the directory is empty and that it does not contain any hidden files.</p></li>
+</ul>
+</div>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my-project
+<span class="nb">cd</span><span class="w"> </span>my-project
+ls<span class="w"> </span>-a
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
-<section id="create-a-repository">
-<h2>Create a repository<a class="headerlink" href="#create-a-repository" title="Link to this heading">#</a></h2>
-<p>Change into your project directory:</p>
+<section id="initialize-a-repository">
+<h2>Initialize a repository<a class="headerlink" href="#initialize-a-repository" title="Link to this heading">#</a></h2>
+<p>To tell Git that you want it to keep track of your project changes, we need to initialize a Git repository. To do that we use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>my-project
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span>-b<span class="w"> </span>main
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: re-init: ignored --initial-branch=main
+Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/.git/
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="check-that-it-is-empty">
-<h2>Check that it is empty<a class="headerlink" href="#check-that-it-is-empty" title="Link to this heading">#</a></h2>
-<p>Verify the directory is empty:</p>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<p>After initializing the repository:</p>
+<ul class="simple">
+<li><p>A new hidden directory named <code class="docutils literal notranslate"><span class="pre">.git</span></code> is created inside the project directory. This directory will contain all the necessary files to keep track of the changes in the project.</p></li>
+</ul>
+<p>In Visual Studio Code (VSC):</p>
+<ul class="simple">
+<li><p>The main branch is mentioned in the left bottom corner of the window.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder is not visible in the explorer because is hidden by default to avoid accidental changes. You can modify this behavior in the settings.</p></li>
+</ul>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Test your knowledge</p>
+<ul class="simple">
+<li><p>Verify that the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory was created.</p></li>
+</ul>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
@@ -490,15 +474,42 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Know more: Main vs Master branch</p>
+<p>From Git 2.28 onwards, the default branch name can be changed by using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">init.defaultBranch</span> <span class="pre">main</span></code>.</p>
+</div>
+<p>Check the repository status:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+nothing to commit, working tree clean
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="initialize-a-repository">
-<h2>Initialize a repository<a class="headerlink" href="#initialize-a-repository" title="Link to this heading">#</a></h2>
-<p>Initialize a new Git repository:</p>
+<section id="deleting-the-git-repository">
+<h2>Deleting the Git repository<a class="headerlink" href="#deleting-the-git-repository" title="Link to this heading">#</a></h2>
+<p>We learned how to initialize the repository, let’s know learn how to delete it.
+To delete the repository, we can just delete the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>.git
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you try this command you will need to initialize the repository again with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init<span class="w"> </span>-b<span class="w"> </span>main
@@ -511,82 +522,9 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="hint admonition">
-<p class="admonition-title">What to notice</p>
-<p>Notice the main branch is mentioned in the left bottom corner of Visual Studio Code (VSC).</p>
-</div>
-<p><strong>NOTE:</strong> In VSC, the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder (along with some others) is hidden by default to avoid accidental changes. You can modify this behavior in the settings.</p>
 </section>
-<section id="discussion-main-vs-master-branch">
-<h2>Discussion: Main vs Master branch<a class="headerlink" href="#discussion-main-vs-master-branch" title="Link to this heading">#</a></h2>
-<p>From Git 2.28 onwards, the default branch name can be changed. This is how you set “main” as your default branch globally:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
-</pre></div>
-</div>
-</div>
-</div>
-<p>Check the repository status:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-
-No commits yet
-
-nothing to commit (create/copy files and use &quot;git add&quot; to track)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="deleting-the-git-repository">
-<h2>Deleting the Git repository<a class="headerlink" href="#deleting-the-git-repository" title="Link to this heading">#</a></h2>
-<p>Deleting the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder removes the repository:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>.git
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you try this command you will need to initialize the repository again with:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/ch1/my-project/.git/
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-verify-deletion">
-<h2>Exercise: Verify deletion<a class="headerlink" href="#exercise-verify-deletion" title="Link to this heading">#</a></h2>
-<p>Check that the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder is now missing:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">.git</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="discussion-areas-of-git">
-<h2>Discussion: Areas of Git<a class="headerlink" href="#discussion-areas-of-git" title="Link to this heading">#</a></h2>
+<section id="areas-of-git">
+<h2>Areas of Git<a class="headerlink" href="#areas-of-git" title="Link to this heading">#</a></h2>
 <p>Exploring the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder and its subdirectories:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,32 +543,34 @@ ls<span class="w"> </span>.git/objects<span class="w"> </span>-a
 </section>
 <section id="what-is-a-commit">
 <h2>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Link to this heading">#</a></h2>
-<section id="exercise-create-a-text-file">
-<h3>Exercise: Create a text file<a class="headerlink" href="#exercise-create-a-text-file" title="Link to this heading">#</a></h3>
-<p>Use the terminal to create a new file:</p>
-<div class="cell docutils container">
+<div class="hint admonition">
+<p class="admonition-title">Test your knowledge</p>
+<ul class="simple">
+<li><p>Use the terminal to create a new file named <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code>.</p></li>
+<li><p>Use the terminal to add the text “This is file 1.” to the file.</p></li>
+</ul>
+</div>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>file1.txt
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;This is file 1.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="exercise-edit-the-file">
-<h3>Exercise: Edit the file<a class="headerlink" href="#exercise-edit-the-file" title="Link to this heading">#</a></h3>
-<p>You can edit the file with VSC or directly from the terminal:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;This is file 1.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
-</pre></div>
-</div>
-</div>
+</details>
 </div>
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
-<p>In VSC, the file appears in the Explorer with a “U” symbol indicating it’s untracked.</p>
+<p>In VSC:</p>
+<ul class="simple">
+<li><p>the file appears in the Explorer with a “U” symbol indicating it’s untracked.</p></li>
+</ul>
 </div>
-</section>
 </section>
 <section id="the-two-steps-of-a-commit">
 <h2>The two steps of a commit<a class="headerlink" href="#the-two-steps-of-a-commit" title="Link to this heading">#</a></h2>
@@ -643,7 +583,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 08b4827] Add file1.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 537d8b4] Add file1.txt
  1 file changed, 1 insertion(+)
  create mode 100644 file1.txt
 </pre></div>
@@ -652,7 +592,10 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
-<p>After adding, the file moves to the staging area. After committing, it’s no longer marked with an “A” but is committed to the repository.</p>
+<ul class="simple">
+<li><p>After adding, the file moves to the staging area.</p></li>
+<li><p>After committing, it’s no longer marked with an “A” but is committed to the repository.</p></li>
+</ul>
 </div>
 <p>Check the repository status again:</p>
 <div class="cell docutils container">
@@ -676,9 +619,9 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 08b4827ab8e289d46ae0d351d128b4d9ecea67b6 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
-Author: mcallara &lt;mcallara@gmail.com&gt;
-Date:   Thu Feb 15 17:37:52 2024 +0100
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 537d8b4814b811f3cf21d4405fc7574966ac19c6 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Fri Feb 23 09:23:17 2024 +0100
 
     Add file1.txt
 </pre></div>
@@ -687,7 +630,10 @@ Date:   Thu Feb 15 17:37:52 2024 +0100
 </div>
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
-<p>The commit is now listed. Explore the <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code> directory to see the objects created by Git.</p>
+<ul class="simple">
+<li><p>The commit is now listed.</p></li>
+<li><p>Explore the <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code> directory to see the objects created by Git.</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,7 +642,7 @@ Date:   Thu Feb 15 17:37:52 2024 +0100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">05</span>  <span class=" -Color -Color-C33">08</span>  <span class=" -Color -Color-C33">74</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">35</span>  <span class=" -Color -Color-C33">53</span>  <span class=" -Color -Color-C33">92</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
 </pre></div>
 </div>
 </div>
@@ -753,15 +699,6 @@ Date:   Thu Feb 15 17:37:52 2024 +0100
         <p class="prev-next-title">1.1 Git and the Command Line</p>
       </div>
     </a>
-    <a class="right-next"
-       href="ch13.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.3 Branches</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -778,19 +715,11 @@ Date:   Thu Feb 15 17:37:52 2024 +0100
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-before-starting-this-class">Checklist, before starting this class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">Create a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-that-it-is-empty">Check that it is empty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dummy-project">Creating a dummy project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-repository">Initialize a repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-main-vs-master-branch">Discussion: Main vs Master branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-the-git-repository">Deleting the Git repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-verify-deletion">Exercise: Verify deletion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-areas-of-git">Discussion: Areas of Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-create-a-text-file">Exercise: Create a text file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-edit-the-file">Exercise: Edit the file</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-of-git">Areas of Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-of-a-commit">The two steps of a commit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
