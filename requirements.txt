@@ -6,4 +6,4 @@ ghp-import # to publish the jupyter book to github pages
 # gh # to create/delete github repositories from the cli
 pytest # for testing chapter
 ipytest # for testing in notebooks
-sphinx-exercise # for exercises in the book https://ebp-sphinx-exercise.readthedocs.io/en/latest/index.html#
+# sphinx-exercise # for exercises in the book https://ebp-sphinx-exercise.readthedocs.io/en/latest/index.html#
