@@ -38,7 +38,8 @@ html:
   use_repository_button: true
   
 sphinx:
-#  extra_extensions:
+  extra_extensions:
+    - sphinxcontrib.mermaid
 #    - sphinx_exercise
   config:
     nb_merge_streams: true

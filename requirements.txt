@@ -7,3 +7,4 @@ ghp-import # to publish the jupyter book to github pages
 pytest # for testing chapter
 ipytest # for testing in notebooks
 # sphinx-exercise # for exercises in the book https://ebp-sphinx-exercise.readthedocs.io/en/latest/index.html#
+sphinxcontrib-mermaid # for mermaid diagrams
