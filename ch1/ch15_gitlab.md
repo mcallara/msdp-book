@@ -42,20 +42,32 @@ These are two common conventions but you can use any names you want.
 ```
 
 ### List the remote repository connections
+
+Git provides the `remote` command to list the remote repositories linked to your local repository. 
+
 ```{code-cell} bash
 git remote
+```
+
+With the `-v` option, you can see the URLs used for fetching and pushing data.
+
+```{code-cell} bash
 git remote -v
 ```
 
-### Exploring the Git configuration
-Inspect the `.git/config` file to see the remote repository configuration.
+- `(fetch)`: This specifies the URL used for fetching data from the remote repository. Fetching involves downloading objects and refs from the remote repository to update your local repository's history.
+
+- `(push)`: This indicates the URL used for pushing data to the remote repository. Pushing involves sending your local commits to the remote repository to update its history and potentially update branches on the remote.
+
+### Inner workings: remote config
+If we inspect the `.git/config` file, we can now see the configuration for the remote repository.
 
 ```{code-cell} bash
 cat .git/config
 ```
 
 ### Checking references
-Look into the `.git/refs` directory to see references such as heads and tags.
+Even though we configured the remote repository, we have not yet pushed any changes to it. Therefore, the `.git/refs` directory does not contain any references to the remote repository. If we look into the `.git/refs` directory to see references, we still only see `heads` and `tags`.
 
 ```{code-cell} bash
 ls .git/refs
@@ -68,21 +80,33 @@ Push your changes to the remote repository on GitLab, setting `origin` as the up
 git push -u origin main
 ```
 
-After pushing, inspect the `.git/refs` again to verify the update.
+Now that we have pushed our changes to the remote repository, we can see the branches and commits in the remote repository. You can go to the GitLab website and navigate to the `my-project` repository to see the changes.
+
+### Inner workings: remote refs
+After pushing, if we inspect the `.git/refs` again we see that the `remotes` directory has been created and now contains a reference to the remote repository.
 
 ```{code-cell} bash
 ls .git/refs
 ```
 
+```{code-cell} bash
+ls .git/refs/remotes
+```
+
 ### Listing branches and commits
+
 ```{code-cell} bash
 git branch --all
+```
+
+```{code-cell} bash
 git log
 ```
 
 ```{admonition} What to notice
 :class: hint
-`origin/main` should be pointing to the same commit as `main`.
+- We see a new branch `origin/main` which is a reference to the `main` branch in the remote repository.
+- `origin/main` points to the same commit as `main`.
 ```
 
 ## Cloning a repository
