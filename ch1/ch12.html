@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch12';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3 Branches" href="ch13.html" />
     <link rel="prev" title="1.1 Git and the Command Line" href="ch11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,6 +188,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Local repositories and commit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 </ul>
@@ -384,15 +389,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.2 Local repositories and commit</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dummy-project">Creating a dummy project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-repository">Initialize a repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-the-git-repository">Deleting the Git repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-of-git">Areas of Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-of-a-commit">The two steps of a commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-basic-sections-of-git">The three basic sections of Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">Commiting changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-for-a-commit-add-and-commit">The two steps for a commit: add and commit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-commits">Listing the commits</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commit-behind-the-scenes">A commit behind the scenes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -409,7 +423,7 @@ document.write(`
 <section id="creating-a-dummy-project">
 <h2>Creating a dummy project<a class="headerlink" href="#creating-a-dummy-project" title="Link to this heading">#</a></h2>
 <p>If we want to learn about Git, we need a project to work with. Git can track changes in any type of files, it doesn’t have to be code. So to keep it simple, we will create a dummy project, which will be just a directory with some text files in it.</p>
-<div class="hint admonition">
+<div class="tip admonition">
 <p class="admonition-title">Test your knowledge</p>
 <ul class="simple">
 <li><p>Create an empty directory for our project and name it <code class="docutils literal notranslate"><span class="pre">my-project</span></code>.</p></li>
@@ -443,8 +457,7 @@ ls<span class="w"> </span>-a
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: re-init: ignored --initial-branch=main
-Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/.git/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /home/callaram/tds/home/ch1/my-project/.git/
 </pre></div>
 </div>
 </div>
@@ -474,7 +487,7 @@ Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  file1.txt  <span class=" -Color -Color-C33">.git</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">.git</span>
 </pre></div>
 </div>
 </div>
@@ -492,7 +505,10 @@ Reinitialized existing Git repository in /home/callaram/tds/home/ch1/my-project/
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
-nothing to commit, working tree clean
+
+No commits yet
+
+nothing to commit (create/copy files and use &quot;git add&quot; to track)
 </pre></div>
 </div>
 </div>
@@ -500,8 +516,7 @@ nothing to commit, working tree clean
 </section>
 <section id="deleting-the-git-repository">
 <h2>Deleting the Git repository<a class="headerlink" href="#deleting-the-git-repository" title="Link to this heading">#</a></h2>
-<p>We learned how to initialize the repository, let’s know learn how to delete it.
-To delete the repository, we can just delete the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder.</p>
+<p>To delete the repository, we can just simply delete the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder, we can do this with the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command followed by the <code class="docutils literal notranslate"><span class="pre">-rf</span></code> option (to delete all the content without confirmation) and the path to the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>.git
@@ -509,6 +524,7 @@ To delete the repository, we can just delete the <code class="docutils literal n
 </div>
 </div>
 </div>
+<p>After deleting the repository,all the changes made to the files in the working directory will remain, but the history of the changes will be lost.</p>
 <p>If you try this command you will need to initialize the repository again with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,26 +539,17 @@ To delete the repository, we can just delete the <code class="docutils literal n
 </div>
 </div>
 </section>
-<section id="areas-of-git">
-<h2>Areas of Git<a class="headerlink" href="#areas-of-git" title="Link to this heading">#</a></h2>
-<p>Exploring the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder and its subdirectories:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>.git<span class="w"> </span>-a
-ls<span class="w"> </span>.git/objects<span class="w"> </span>-a
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  config  description  HEAD  <span class=" -Color -Color-C33">hooks</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">objects</span>  <span class=" -Color -Color-C33">refs</span>
-<span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="the-three-basic-sections-of-git">
+<h2>The three basic sections of Git<a class="headerlink" href="#the-three-basic-sections-of-git" title="Link to this heading">#</a></h2>
+<p>So we have a directory for our project and a repository (the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory) associated to it but how do we actually keep track of the changes in our project? To keep track of the changes, Git uses three areas: the working directory, the staging area, and the repository to allow the user to generate snapshots of the project (that we call commits).</p>
+<ol class="arabic simple">
+<li><p>The working directory is the area in which you create, edit and delete files.</p></li>
+<li><p>The staging area, or index, it is a file, stored in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory, that stores information about what will go into your next commit.</p></li>
+<li><p>The repository is where git stores all the commits, the snapshots of the content of your working directory that was staged for a commit. Git generates a commit history by linking each commit to previous commits.</p></li>
+</ol>
 </section>
-<section id="what-is-a-commit">
-<h2>What is a commit?<a class="headerlink" href="#what-is-a-commit" title="Link to this heading">#</a></h2>
+<section id="commiting-changes">
+<h2>Commiting changes<a class="headerlink" href="#commiting-changes" title="Link to this heading">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Test your knowledge</p>
 <ul class="simple">
@@ -558,46 +565,96 @@ ls<span class="w"> </span>.git/objects<span class="w"> </span>-a
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>file1.txt
-<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;This is file 1.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is the first line.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<div class="hint admonition">
-<p class="admonition-title">What to notice</p>
-<p>In VSC:</p>
-<ul class="simple">
-<li><p>the file appears in the Explorer with a “U” symbol indicating it’s untracked.</p></li>
-</ul>
-</div>
-</section>
-<section id="the-two-steps-of-a-commit">
-<h2>The two steps of a commit<a class="headerlink" href="#the-two-steps-of-a-commit" title="Link to this heading">#</a></h2>
-<p>Add the file to the staging area and commit:</p>
+<p>Now we have a file in the working directory. Let’s check the repository status using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1.txt
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add file1.txt&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 537d8b4] Add file1.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">file1.txt</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Git tells us that the file is untracked.</p></li>
+</ul>
+<p>In VSC:</p>
+<ul class="simple">
+<li><p>the file appears in the Explorer with a “U” symbol indicating that it is untracked.</p></li>
+</ul>
+</div>
+<section id="the-two-steps-for-a-commit-add-and-commit">
+<h3>The two steps for a commit: add and commit<a class="headerlink" href="#the-two-steps-for-a-commit-add-and-commit" title="Link to this heading">#</a></h3>
+<p>To ‘move’ a file from the working directory to the staging area, we use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+	<span class=" -Color -Color-Green">new file:   file1.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>The file is now on the list of ‘changes to be commited’ (in the staging area).</p></li>
+</ul>
+<p>In VSC:</p>
+<ul class="simple">
+<li><p>the file appears in the Explorer with a “A” symbol indicating that it has been added to the staging area.</p></li>
+</ul>
+</div>
+<p>To ‘move’ all the changes in the staging area to the repository, we use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command. We also need to add a commit message to describe the changes we made using the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Create file1.txt with the first line&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) 20de958] Create file1.txt with the first line
  1 file changed, 1 insertion(+)
  create mode 100644 file1.txt
 </pre></div>
 </div>
 </div>
 </div>
-<div class="hint admonition">
-<p class="admonition-title">What to notice</p>
-<ul class="simple">
-<li><p>After adding, the file moves to the staging area.</p></li>
-<li><p>After committing, it’s no longer marked with an “A” but is committed to the repository.</p></li>
-</ul>
-</div>
-<p>Check the repository status again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
@@ -611,7 +668,19 @@ nothing to commit, working tree clean
 </div>
 </div>
 </div>
-<p>List the commits:</p>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Git tells us that the working tree is clean, meaning that the working tree matches the tree of the last commit. All changes have been committed and there are no untracked files.
+In VSC:</p></li>
+<li><p>The file is no longer emphasized in the Explorer.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="listing-the-commits">
+<h2>Listing the commits<a class="headerlink" href="#listing-the-commits" title="Link to this heading">#</a></h2>
+<p>We can list the commit history using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
@@ -619,11 +688,11 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 537d8b4814b811f3cf21d4405fc7574966ac19c6 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Feb 23 09:23:17 2024 +0100
+Date:   Sat Mar 2 23:25:51 2024 +0100
 
-    Add file1.txt
+    Create file1.txt with the first line
 </pre></div>
 </div>
 </div>
@@ -632,9 +701,16 @@ Date:   Fri Feb 23 09:23:17 2024 +0100
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
 <li><p>The commit is now listed.</p></li>
-<li><p>Explore the <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code> directory to see the objects created by Git.</p></li>
+<li><p>The long string of characters is the commit hash. It’s a unique identifier for the commit automatically generated by Git.</p></li>
+<li><p>The author (that we added to the config) and date of the commit are also listed.</p></li>
+<li><p>The commit message <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">file1.txt</span></code> is also displayed.</p></li>
 </ul>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-commit-behind-the-scenes">
+<h1>A commit behind the scenes<a class="headerlink" href="#a-commit-behind-the-scenes" title="Link to this heading">#</a></h1>
+<p>When we commit changes, Git creates a new object in the <code class="docutils literal notranslate"><span class="pre">.git/objects</span></code> directory. This object contains the changes we made to the files, the author, the date, and the commit message.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a<span class="w"> </span>.git/objects
@@ -642,16 +718,11 @@ Date:   Fri Feb 23 09:23:17 2024 +0100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">35</span>  <span class=" -Color -Color-C33">53</span>  <span class=" -Color -Color-C33">92</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C33">.</span>  <span class=" -Color -Color-C33">..</span>  <span class=" -Color -Color-C33">20</span>  <span class=" -Color -Color-C33">59</span>  <span class=" -Color -Color-C33">c0</span>  <span class=" -Color -Color-C33">info</span>  <span class=" -Color -Color-C33">pack</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>We covered creating a repository, adding and committing a file, and the significance of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> and objects directories.</p>
-</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -699,6 +770,15 @@ Date:   Fri Feb 23 09:23:17 2024 +0100
         <p class="prev-next-title">1.1 Git and the Command Line</p>
       </div>
     </a>
+    <a class="right-next"
+       href="ch13.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.3 Branches</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -715,15 +795,24 @@ Date:   Fri Feb 23 09:23:17 2024 +0100
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.2 Local repositories and commit</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dummy-project">Creating a dummy project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-repository">Initialize a repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-the-git-repository">Deleting the Git repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-of-git">Areas of Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-commit">What is a commit?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-of-a-commit">The two steps of a commit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-basic-sections-of-git">The three basic sections of Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commiting-changes">Commiting changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-two-steps-for-a-commit-add-and-commit">The two steps for a commit: add and commit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-the-commits">Listing the commits</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-commit-behind-the-scenes">A commit behind the scenes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
