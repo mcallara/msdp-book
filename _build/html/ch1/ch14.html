@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.4 Merging Branches &#8212; Modern Software Development Practices</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch14';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.5 Remote Repositories" href="ch15_gitlab.html" />
+    <link rel="prev" title="1.3 Branches" href="ch13.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/tds-logo-small.png" class="logo__image only-light" alt="Modern Software Development Practices - Home"/>
+    <script>document.write(`<img src="../_static/tds-logo-small.png" class="logo__image only-dark" alt="Modern Software Development Practices - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Modern Software Development Practices
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4 Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mcallara/msdp-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch14.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ch1/ch14.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.4 Merging Branches</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-merges">Types of Merges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-forward-merge">Fast-forward merge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-switching-branches-on-the-working-directory">Impact of switching branches on the working directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches-with-uncommitted-changes">Switching branches with uncommitted changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-an-staged-file">Modifying an staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-all-commits">Viewing all commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-out-a-commit-and-the-detached-head-state">Checking out a commit and the detached HEAD State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch">Deleting a branch</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell tag_remove-input docutils container">
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="merging-branches">
+<h1>1.4 Merging Branches<a class="headerlink" href="#merging-branches" title="Link to this heading">#</a></h1>
+<p>In this section, we’ll see how to integrate work from the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch back into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<section id="types-of-merges">
+<h2>Types of Merges<a class="headerlink" href="#types-of-merges" title="Link to this heading">#</a></h2>
+<p>The two most common merge strategies are fast-forward and three-way merges:</p>
+<ul class="simple">
+<li><p>Fast-forward merge: This merge strategy is used when the target branch can be updated to point to the commit of the source branch without needing to create a new commit.</p></li>
+<li><p>Three-way merge: A three-way merge is used when the two branches have diverged and a new commit is required to reconcile the differences.</p></li>
+</ul>
+<section id="fast-forward-merge">
+<h3>Fast-forward merge<a class="headerlink" href="#fast-forward-merge" title="Link to this heading">#</a></h3>
+<p>Let’s first understand visually how a fast-forward merge of the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code> would look like by comparing the current state of the repository with the state after the merge.</p>
+<p>This is how the repository looks like now:</p>
+<div class="mermaid">
+            flowchart RL
+    C2((C2)) --&gt; C1((C1))
+    C3((C3)) --&gt; C2
+    main --&gt; C2
+    feature --&gt; C3
+    HEAD{HEAD} --&gt; feature
+        </div><p>How can we incorporate the changes from <code class="docutils literal notranslate"><span class="pre">feature</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>? If we look at the commit history, we can see that <code class="docutils literal notranslate"><span class="pre">main</span></code> is behind <code class="docutils literal notranslate"><span class="pre">feature</span></code> by one commit. To update <code class="docutils literal notranslate"><span class="pre">main</span></code> with the changes from <code class="docutils literal notranslate"><span class="pre">feature</span></code>, we can simply move the <code class="docutils literal notranslate"><span class="pre">main</span></code> pointer to the same commit as <code class="docutils literal notranslate"><span class="pre">feature</span></code>. This is possible whenever you can update a branch to match another by advancing its pointer through the commit history until it reaches the same commit. This process is known as a ‘fast-forward’ because it involves moving the pointer forward to the commit of the other branch without creating a new merge commit.</p>
+<p>So after the fast-forward merge, the repository would look like this:</p>
+<div class="mermaid">
+            flowchart RL
+    C2((C2)) --&gt; C1((C1))
+    C3((C3)) --&gt; C2
+    main --&gt; C3
+    feature --&gt; C3
+    HEAD{HEAD} --&gt; main
+        </div><div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Since <code class="docutils literal notranslate"><span class="pre">main</span></code> was behind <code class="docutils literal notranslate"><span class="pre">feature</span></code> by one commit, the <code class="docutils literal notranslate"><span class="pre">main</span></code> pointer was simply moved to the same commit as <code class="docutils literal notranslate"><span class="pre">feature</span></code> and now it points to <code class="docutils literal notranslate"><span class="pre">C3</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature</span></code> still points to <code class="docutils literal notranslate"><span class="pre">C3</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> now points to <code class="docutils literal notranslate"><span class="pre">main</span></code> since in order to do the merge we had to switch first to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+</ul>
+</div>
+<p>Now that we understand what a fast-forward merge is, let’s see how to do it in Git. To perform a fast-forward merge, first switch to the branch you want to merge into, and then merge the other branch into it using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">&lt;branch-name&gt;</span></code>. For example, to merge <code class="docutils literal notranslate"><span class="pre">feature</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>feature
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 2cc8aac..ed3640b
+Fast-forward
+ file1.txt | 1 <span class=" -Color -Color-Green">+</span>
+ 1 file changed, 1 insertion(+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Git tell us that there was one file changed, file1.txt, and that there was 1 insertions (which we know is the third line).</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<p>After the fast-forward merge, there are no changes to commit, the working tree is clean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit ed3640b0333c585e503c1dd0456ffe898d52bed8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:01 2024 +0100
+
+    Add third line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 2cc8aac08dc79aaccb3c19693b62d179ed2fd757</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:59 2024 +0100
+
+    Add second line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:51 2024 +0100
+
+    Create file1.txt with the first line
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that all the changes that we discussed in the diagram have been made. The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch now points to the same commit as <code class="docutils literal notranslate"><span class="pre">feature</span></code>, and the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch still points to the same commit. The <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer is now pointing to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</section>
+</section>
+<section id="impact-of-switching-branches-on-the-working-directory">
+<h2>Impact of switching branches on the working directory<a class="headerlink" href="#impact-of-switching-branches-on-the-working-directory" title="Link to this heading">#</a></h2>
+<p>We will now explore what happens to the working directory when we switch branches. To see this, let’s first add a new file and make changes to an existing file on the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch, and then switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>feature
+touch<span class="w"> </span>file2.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is first line.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file2.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is the fourth line.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add file2 and modify file1&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;feature&#39;
+[feature 4f48618] Add file2 and modify file1
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file2.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+cat<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file1.txt  file2.txt
+This is the first line.
+This is the second line.
+This is the third line.
+This is the fourth line.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+cat<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file1.txt
+This is the first line.
+This is the second line.
+This is the third line.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We see that the file <code class="docutils literal notranslate"><span class="pre">file2.txt</span></code> is no longer in the working directory after switching to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>The changes made to <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> on the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch are removed after switching to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+</ul>
+</div>
+<p>Git updates the files in your working directory to reflect the state of the files in the new branch. This means that any files unique to the previous branch but not present in the new one may be removed, and any files unique to the new branch may be added or modified.</p>
+</section>
+<section id="switching-branches-with-uncommitted-changes">
+<h2>Switching branches with uncommitted changes<a class="headerlink" href="#switching-branches-with-uncommitted-changes" title="Link to this heading">#</a></h2>
+<p>Git prevents loss of work by disallowing branch switching with uncommitted changes. To see this in action, let’s make changes to <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> on the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch and then try to switch to <code class="docutils literal notranslate"><span class="pre">main</span></code> without committing the changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>feature
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is the fifth line.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
+git<span class="w"> </span>switch<span class="w"> </span>main
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;feature&#39;
+error: Your local changes to the following files would be overwritten by checkout:
+	file1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Git does not allow branch switching with uncommitted changes to protect against data loss.</p></li>
+</ul>
+</div>
+</section>
+<section id="modifying-an-staged-file">
+<h2>Modifying an staged file<a class="headerlink" href="#modifying-an-staged-file" title="Link to this heading">#</a></h2>
+<p>Changes made after staging are not automatically included in the staged snapshot. To include changes in the staged snapshot, the file must be staged again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is the sixth line.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch feature
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+	<span class=" -Color -Color-Green">modified:   file1.txt</span>
+
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+	<span class=" -Color -Color-Red">modified:   file1.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-what-to-notice admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>The file <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> is staged and has uncommitted changes at the same time.</p></li>
+</ul>
+</div>
+<p>We can also see the status in a more compact form using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status<span class="w"> </span>-s
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">M</span><span class=" -Color -Color-Red">M</span> file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first character in the output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">-s</span></code> shows the status of the staged snapshot, and the second character shows the status of the working directory.</p>
+<div class="admonition-what-to-notice admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>As we saw before, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> has both staged and not staged modifications.</p></li>
+</ul>
+</div>
+<p>Let’s now stage the latest changes to <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status<span class="w"> </span>-s
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">M</span>  file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>now all modifications has been staged and we can commit them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add fifth and sixth lines to file1.txt&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 99a9875] Add fifth and sixth lines to file1.txt
+ 1 file changed, 2 insertions(+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="viewing-all-commits">
+<h2>Viewing all commits<a class="headerlink" href="#viewing-all-commits" title="Link to this heading">#</a></h2>
+<p>When working with multiple branches in Git, you might find yourself on a branch that is behind others in terms of commits. For instance, if you’re on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch that hasn’t been updated with the latest commits from a <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch, using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command while on <code class="docutils literal notranslate"><span class="pre">main</span></code> will only show the commit history up to the point main is currently at. This means you won’t see the commits that are on <code class="docutils literal notranslate"><span class="pre">feature</span></code> or any other branch until they are merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>This is because <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> displays by default only the commit history of that branch, starting from the current commit and tracing back through the history of commits that lead to the current state of the branch.</p>
+<p>Let’s see this in action by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command while on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>log
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+<span class=" -Color -Color-Yellow">commit ed3640b0333c585e503c1dd0456ffe898d52bed8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:01 2024 +0100
+
+    Add third line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 2cc8aac08dc79aaccb3c19693b62d179ed2fd757</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:59 2024 +0100
+
+    Add second line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:51 2024 +0100
+
+    Create file1.txt with the first line
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now compare this with the output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--all</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>log<span class="w"> </span>--all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already on &#39;main&#39;
+<span class=" -Color -Color-Yellow">commit 99a9875cc2ba92d423e745b693e129f2d03a3e62 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:10 2024 +0100
+
+    Add fifth and sixth lines to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 4f486184669b825380c024b3689caccb10a8cfca</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:09 2024 +0100
+
+    Add file2 and modify file1
+
+<span class=" -Color -Color-Yellow">commit ed3640b0333c585e503c1dd0456ffe898d52bed8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:01 2024 +0100
+
+    Add third line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 2cc8aac08dc79aaccb3c19693b62d179ed2fd757</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:59 2024 +0100
+
+    Add second line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:51 2024 +0100
+
+    Create file1.txt with the first line
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>Commits from <code class="docutils literal notranslate"><span class="pre">feature</span></code> are visible with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--all</span></code>, showing the comprehensive history across branches.</p></li>
+</ul>
+</div>
+</section>
+<section id="checking-out-a-commit-and-the-detached-head-state">
+<h2>Checking out a commit and the detached HEAD State<a class="headerlink" href="#checking-out-a-commit-and-the-detached-head-state" title="Link to this heading">#</a></h2>
+<p>We have seen that we can move the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer to a specific branch by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">&lt;branch-name&gt;</span></code> but we can also move the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer to a specific commit by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;commit-hash&gt;</span></code>. We can also checkout a commit relative to the current position of the branch pointer by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch&gt;~&lt;number&gt;</span></code>. This is useful for exploring the history of a repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>feature~2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: switching to &#39;feature~2&#39;.
+
+You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c &lt;new-branch-name&gt;
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ed3640b Add third line to file1.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">HEAD detached at </span>ed3640b
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 99a9875cc2ba92d423e745b693e129f2d03a3e62 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:10 2024 +0100
+
+    Add fifth and sixth lines to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 4f486184669b825380c024b3689caccb10a8cfca</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:09 2024 +0100
+
+    Add file2 and modify file1
+
+<span class=" -Color -Color-Yellow">commit ed3640b0333c585e503c1dd0456ffe898d52bed8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:26:01 2024 +0100
+
+    Add third line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 2cc8aac08dc79aaccb3c19693b62d179ed2fd757</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:59 2024 +0100
+
+    Add second line to file1.txt
+
+<span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34</span>
+Author: msdp-book &lt;msdp.book@gmail.com&gt;
+Date:   Sat Mar 2 23:25:51 2024 +0100
+
+    Create file1.txt with the first line
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We moved the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer two commits back from the current position of the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch.</p></li>
+<li><p>By coincidence, the commit we checked out is the same as the commit <code class="docutils literal notranslate"><span class="pre">main</span></code> is pointing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is not pointing to <code class="docutils literal notranslate"><span class="pre">main</span></code> is pointing to the commit directly, note that there is no arrow from <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code>, as we used to see before.</p></li>
+</ul>
+</div>
+<p>When you check out a commit, you are in a detached HEAD state. This means that the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer is no longer pointing to a branch, but to a specific commit. This is useful for inspecting the state of the repository at a specific point in time, but it is not recommended to make changes in this state. If you make changes and commit them, they will be based on the commit you checked out, not on the tip of any branch. This means that if you switch back to a branch, the changes you made in the detached HEAD state will not be part of the branch. To exit a detached HEAD state and retain your changes, you can create a new branch from the current commit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>new-branch-name
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;new-branch-name&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This command creates and switch to the new branch (in one command) starting from the current commit, effectively bringing your HEAD back to a non-detached state and ensuring that any commits made in the detached HEAD state are not lost.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch new-branch-name
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<p>After creating and switching to the new branch we are not in a detached HEAD state anymore, and the changes we made are now part of the new branch.</p>
+</section>
+<section id="deleting-a-branch">
+<h2>Deleting a branch<a class="headerlink" href="#deleting-a-branch" title="Link to this heading">#</a></h2>
+<p>Finally, once your feature it’s merged, you usually don’t want to keep the feature branch around. To delete a branch, first you need to ensure that you are not currently on the branch you want to delete by switching to another branch or commit. Then use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">&lt;branch-name&gt;</span></code> command. For example, to delete the <code class="docutils literal notranslate"><span class="pre">new-branch-name</span></code> branch:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>new-branch-name
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+Deleted branch new-branch-name (was ed3640b).
+</pre></div>
+</div>
+</div>
+</div>
+<p>The -d option deletes the branch safely, meaning it will prevent you from deleting the branch that contained unmerged changes. If you are sure you want to delete the branch even if it contains unmerged changes, you can use the -D option, which forces the deletion.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            name: "bash",
+            path: "./ch1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.3 Branches</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch15_gitlab.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.5 Remote Repositories</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-merges">Types of Merges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-forward-merge">Fast-forward merge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-switching-branches-on-the-working-directory">Impact of switching branches on the working directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches-with-uncommitted-changes">Switching branches with uncommitted changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-an-staged-file">Modifying an staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-all-commits">Viewing all commits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-out-a-commit-and-the-detached-head-state">Checking out a commit and the detached HEAD State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch">Deleting a branch</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matias Callara
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
