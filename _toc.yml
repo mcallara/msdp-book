@@ -10,7 +10,7 @@ chapters:
   - file: ch1/ch12
   - file: ch1/ch13
   - file: ch1/ch14
-#  - file: ch1/ch15_gitlab
+  - file: ch1/ch15_gitlab
 # - file: ch1/ssh_gitlab
 #- file: ch2/ch20
 #  sections:
