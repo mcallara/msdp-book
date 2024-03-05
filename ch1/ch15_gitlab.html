@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -187,7 +187,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5 Remote Repositories</a></li>
@@ -416,8 +415,8 @@ document.write(`
 <p>In this section you will see how to create and manage your first remote repository with Gitlab, including remote configuration, pushing changes, and cloning repositories.</p>
 <section id="creating-a-remote-repository-in-gitlab">
 <h2>Creating a remote repository in GitLab<a class="headerlink" href="#creating-a-remote-repository-in-gitlab" title="Link to this heading">#</a></h2>
-<p>In this section, you will set up your local project to push changes to a remote repository on GitLab.
-Inside the <code class="docutils literal notranslate"><span class="pre">my-project</span></code> directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.</p>
+<p>Let’s set up your local project to push changes to a remote repository on GitLab.</p>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">my-project</span></code> directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@gitlab.com:msdp.book/my-project.git
@@ -524,7 +523,7 @@ origin	git@gitlab.com:msdp.book/my-project.git (push)
 Counting objects: 100% (9/9), done.
 Delta compression using up to 96 threads
 Compressing objects: 100% (4/4), done.
-Writing objects: 100% (9/9), 762 bytes | 762.00 KiB/s, done.
+Writing objects: 100% (9/9), 763 bytes | 763.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: 
 remote: 
@@ -598,21 +597,21 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit ed3640b0333c585e503c1dd0456ffe898d52bed8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 6f6658b2658e5b34e04efa5ea5755ccd9e7ea6a7 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Mar 2 23:26:01 2024 +0100
+Date:   Tue Mar 5 15:40:00 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2cc8aac08dc79aaccb3c19693b62d179ed2fd757</span>
+<span class=" -Color -Color-Yellow">commit 5e7dfe6e4f75ebc675c48a6bfce3fdf6bc5c0674</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Mar 2 23:25:59 2024 +0100
+Date:   Tue Mar 5 15:39:59 2024 +0100
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 20de958a1c7217332659e1ef91ad9822097d9e34</span>
+<span class=" -Color -Color-Yellow">commit d5541057452ede06c676bff5a5a3f63d084f10a2</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Mar 2 23:25:51 2024 +0100
+Date:   Tue Mar 5 15:39:51 2024 +0100
 
     Create file1.txt with the first line
 </pre></div>
