@@ -10,16 +10,16 @@ chapters:
   - file: ch1/ch12
   - file: ch1/ch13
   - file: ch1/ch14
+  - file: ch1/ssh_gitlab
   - file: ch1/ch15_gitlab
-# - file: ch1/ssh_gitlab
-#- file: ch2/ch20
-#  sections:
-#  - file: ch2/ch21
-#  - file: ch2/ch22
+- file: ch2/ch20
+  sections:
+  - file: ch2/ch21
+  - file: ch2/ch22
 #- file: ch3/ch30
 #  sections:
 #  - file: ch3/ch31
-##  - file: ch3/ch32
+#  - file: ch3/ch32
 #  - file: ch3/mystock
 #- file: ch4/ch40
 #  sections:
