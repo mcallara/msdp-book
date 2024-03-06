@@ -1,4 +1,14 @@
-# Quick Guide: Add your public SSH Keys from Your Computer to GitLab
+# Setting up your GitLab account
+
+## Sign Up for a GitLab Account
+
+1. Open your web browser and go to the [GitLab sign-up website](https://gitlab.com/users/sign_up).
+2. In the registration page you can choose between different sign-up options. You can sign up using your Google, GitHub, or GitLab account, or you can create a new account by providing your email address and a password. If you choose to sign up with your email address, enter your email in the designated field and create a strong password. Make sure to follow any password requirements that GitLab may have.
+3. After entering your email and password, click on the "Register" button to proceed.
+GitLab may send you a confirmation email to verify your email address. Check your inbox and follow the instructions in the email to complete the verification process.
+4. Once your email is verified, you will be redirected to your GitLab account dashboard. From here, you can start creating and managing your repositories, collaborate with others, and explore the various features offered by GitLab.
+
+## Add your public SSH Keys from Your Computer to GitLab
 
 Copying SSH keys from your computer to GitLab allows you to securely authenticate with GitLab repositories without having to enter your username and password each time. Here's a quick guide on how to do it:
 

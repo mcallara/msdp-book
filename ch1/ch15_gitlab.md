@@ -24,7 +24,8 @@ In this section you will see how to create and manage your first remote reposito
 
 ## Creating a remote repository in GitLab
 
-In this section, you will set up your local project to push changes to a remote repository on GitLab.
+Let's start by setting up your local project to push changes to a remote repository on GitLab.
+
 Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.
 
 ```{code-cell} bash
