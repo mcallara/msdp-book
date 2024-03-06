@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1 Introduction to Version Control &#8212; Modern Software Development Practices</title>
+    <title>Setting up your GitLab account &#8212; Modern Software Development Practices</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch10';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ssh_gitlab';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.1 Git and the Command Line" href="ch11.html" />
-    <link rel="prev" title="Welcome to Modern Software Development Practices" href="../intro.html" />
+    <link rel="next" title="1.5 Remote Repositories" href="ch15_gitlab.html" />
+    <link rel="prev" title="1.4 Merging Branches" href="ch14.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,12 +185,12 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up your GitLab account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
@@ -265,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch10.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ssh_gitlab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/ch1/ch10.md" target="_blank"
+      <li><a href="../_sources/ch1/ssh_gitlab.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1 Introduction to Version Control</h1>
+    <h1>Setting up your GitLab account</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,7 +389,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-up-for-a-gitlab-account">Sign Up for a GitLab Account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-public-ssh-keys-from-your-computer-to-gitlab">Add your public SSH Keys from Your Computer to GitLab</a></li>
 </ul>
             </nav>
         </div>
@@ -401,27 +402,76 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-version-control">
-<h1>1 Introduction to Version Control<a class="headerlink" href="#introduction-to-version-control" title="Link to this heading">#</a></h1>
-<p>It starts innocently with adding “final” to the filename, which soon turns into “final_final,” and before you know it, you’re staring at “final_version_really_this_time.” Does this situation sound familiar? You’re not alone.</p>
-<p>Having the ability to track versions of your project without a hassle and to collaborate with others without mixing up your work are critical requirements for any software project. This is where version control comes in. This chapter will introduce you to the basics of version control and one of the most popular version control systems, Git.</p>
-<p>First, you will learn how to use Git from the command line. Then, you will learn how to use Git with a graphical user interface (GUI) tool. Finally, you will learn how to use Git with a web-based platform, GitHub.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
-</ul>
-</div>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-your-gitlab-account">
+<h1>Setting up your GitLab account<a class="headerlink" href="#setting-up-your-gitlab-account" title="Link to this heading">#</a></h1>
+<section id="sign-up-for-a-gitlab-account">
+<h2>Sign Up for a GitLab Account<a class="headerlink" href="#sign-up-for-a-gitlab-account" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open your web browser and go to the <a class="reference external" href="https://gitlab.com/users/sign_up">GitLab sign-up website</a>.</p></li>
+<li><p>In the registration page you can choose between different sign-up options. You can sign up using your Google, GitHub, or GitLab account, or you can create a new account by providing your email address and a password. If you choose to sign up with your email address, enter your email in the designated field and create a strong password. Make sure to follow any password requirements that GitLab may have.</p></li>
+<li><p>After entering your email and password, click on the “Register” button to proceed.
+GitLab may send you a confirmation email to verify your email address. Check your inbox and follow the instructions in the email to complete the verification process.</p></li>
+<li><p>Once your email is verified, you will be redirected to your GitLab account dashboard. From here, you can start creating and managing your repositories, collaborate with others, and explore the various features offered by GitLab.</p></li>
+</ol>
+</section>
+<section id="add-your-public-ssh-keys-from-your-computer-to-gitlab">
+<h2>Add your public SSH Keys from Your Computer to GitLab<a class="headerlink" href="#add-your-public-ssh-keys-from-your-computer-to-gitlab" title="Link to this heading">#</a></h2>
+<p>Copying SSH keys from your computer to GitLab allows you to securely authenticate with GitLab repositories without having to enter your username and password each time. Here’s a quick guide on how to do it:</p>
+<ol class="arabic">
+<li><p><strong>Locate Your SSH Keys:</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.oreilly.com/library/view/learning-git/9781098133900/">Skoulikari, A. (2023). Learning git: A hands-on and visual guide to the basics of git. O’Reilly.</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=i_23KUAEtUM">Using Git with VSC (Official Beginner Tutorial)</a></p></li>
+<li><p>Open a terminal or command prompt on your computer.</p></li>
+<li><p>Navigate to the directory where your SSH keys are stored. By default, SSH keys are usually stored in <code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code> directory on Unix-like systems (such as Linux or macOS) or <code class="docutils literal notranslate"><span class="pre">C:\Users\YourUsername\.ssh\</span></code> directory on Windows.</p></li>
 </ul>
+</li>
+<li><p><strong>Generate SSH Keys (if you don’t have them already):</strong></p>
+<ul>
+<li><p>If you don’t have SSH keys yet, you can generate them using the <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">4096</span> <span class="o">-</span><span class="n">C</span> <span class="s2">&quot;your_email@example.com&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Follow the prompts to generate the keys. Press Enter to accept the default file location (<code class="docutils literal notranslate"><span class="pre">~/.ssh/id_rsa</span></code>) and no passphrase, or customize it as needed.</p></li>
+</ul>
+</li>
+<li><p><strong>Display Your Public SSH Key:</strong></p>
+<ul>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to display your public SSH key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span>
+</pre></div>
+</div>
+</li>
+<li><p>This will output your public SSH key to the terminal.</p></li>
+</ul>
+</li>
+<li><p><strong>Copy Your Public SSH Key:</strong></p>
+<ul class="simple">
+<li><p>Select the entire content of your public SSH key displayed in the terminal, starting with <code class="docutils literal notranslate"><span class="pre">ssh-rsa</span></code> and ending with your email address.</p></li>
+<li><p>Copy the selected text to your clipboard.</p></li>
+</ul>
+</li>
+<li><p><strong>Add SSH Key to GitLab:</strong></p>
+<ul class="simple">
+<li><p>Log in to your GitLab account.</p></li>
+<li><p>Click on your profile avatar in the upper right corner and select “Settings” from the dropdown menu.</p></li>
+<li><p>In the left sidebar, click on “SSH Keys”.</p></li>
+<li><p>Paste the copied public SSH key into the “Key” field.</p></li>
+<li><p>Optionally, provide a descriptive title for the key in the “Title” field (e.g., “My Laptop SSH Key”).</p></li>
+<li><p>Click the “Add key” button to save the SSH key.</p></li>
+</ul>
+</li>
+<li><p><strong>Verify SSH Key Addition:</strong></p>
+<ul>
+<li><p>To verify that your SSH key has been successfully added, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@gitlab</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</li>
+<li><p>If the key was added correctly, you will see a message confirming your connection to GitLab.</p></li>
+</ul>
+</li>
+</ol>
+<p>That’s it! You’ve successfully copied your SSH key from your computer to GitLab, allowing you to securely authenticate with GitLab repositories using SSH.</p>
 </section>
 </section>
 
@@ -456,20 +506,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="ch14.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to Modern Software Development Practices</p>
+        <p class="prev-next-title">1.4 Merging Branches</p>
       </div>
     </a>
     <a class="right-next"
-       href="ch11.html"
+       href="ch15_gitlab.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.1 Git and the Command Line</p>
+        <p class="prev-next-title">1.5 Remote Repositories</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -489,7 +539,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-up-for-a-gitlab-account">Sign Up for a GitLab Account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-public-ssh-keys-from-your-computer-to-gitlab">Add your public SSH Keys from Your Computer to GitLab</a></li>
 </ul>
   </nav></div>
 
