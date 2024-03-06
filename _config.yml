@@ -3,6 +3,7 @@
 
 title: Modern Software Development Practices
 author: Matias Callara
+copyright: "2024"
 logo: tds-logo-small.png
 
 only_build_toc_files: true
@@ -10,7 +11,7 @@ only_build_toc_files: true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  exclude_patterns: [home/*, .venv/*, .git/*, .pytest_cache/*] 
+  exclude_patterns: [_build,home/*, .venv/*, .git/*, .pytest_cache/*] 
   #  execute_notebooks: force
   execute_notebooks: cache
   allow_errors: true
