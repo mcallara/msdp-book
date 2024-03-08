@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -395,6 +395,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository-in-gitlab">Creating a remote repository in GitLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-remote-repository-to-your-local-repository">Adding a remote repository to your local repository</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-remote-repository-connections">List the remote repository connections</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-workings-remote-config">Inner workings: remote config</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-references">Checking references</a></li>
@@ -424,6 +425,10 @@ document.write(`
 <h2>Creating a remote repository in GitLab<a class="headerlink" href="#creating-a-remote-repository-in-gitlab" title="Link to this heading">#</a></h2>
 <p>Let’s start by setting up your local project to push changes to a remote repository on GitLab.</p>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">my-project</span></code> directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.</p>
+<section id="adding-a-remote-repository-to-your-local-repository">
+<h3>Adding a remote repository to your local repository<a class="headerlink" href="#adding-a-remote-repository-to-your-local-repository" title="Link to this heading">#</a></h3>
+<p>To add a remote repository, use the <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">add</span> <span class="pre">&lt;short</span> <span class="pre">name&gt;</span> <span class="pre">&lt;url&gt;</span></code> command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using <code class="docutils literal notranslate"><span class="pre">origin</span></code> as the short name of the remote repository. For the URL we will use the SSH URL of the remote repository on GitLab.</p>
+<p>For Gitlab user <code class="docutils literal notranslate"><span class="pre">msdp.book</span></code>, and a repository named <code class="docutils literal notranslate"><span class="pre">my-project</span></code> the command to add the remote repository would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@gitlab.com:msdp.book/my-project.git
@@ -443,6 +448,7 @@ document.write(`
 These are two common conventions but you can use any names you want.</p></li>
 </ul>
 </div>
+</section>
 <section id="list-the-remote-repository-connections">
 <h3>List the remote repository connections<a class="headerlink" href="#list-the-remote-repository-connections" title="Link to this heading">#</a></h3>
 <p>Git provides the <code class="docutils literal notranslate"><span class="pre">remote</span></code> command to list the remote repositories linked to your local repository.</p>
@@ -725,6 +731,7 @@ Receiving objects: 100% (9/9), done.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository-in-gitlab">Creating a remote repository in GitLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-remote-repository-to-your-local-repository">Adding a remote repository to your local repository</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-remote-repository-connections">List the remote repository connections</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-workings-remote-config">Inner workings: remote config</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-references">Checking references</a></li>

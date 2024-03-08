@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -466,11 +466,12 @@ If you create the pseudo-code of you solution, then the AI will be able to help 
 </section>
 <section id="getting-in-line-suggestions">
 <h2>Getting in line suggestions<a class="headerlink" href="#getting-in-line-suggestions" title="Link to this heading">#</a></h2>
-<p>Let’s open VSC, create a new directory <code class="docutils literal notranslate"><span class="pre">ch2</span></code> and use the option “Open Folder” to open this directory. Now, create a new file <code class="docutils literal notranslate"><span class="pre">time_intervals.py</span></code>.</p>
+<p>Let’s open VSC, create a new directory <code class="docutils literal notranslate"><span class="pre">ch2</span></code> in the explorer and use the option “File” &gt;&gt; “Open Folder” to open this directory as the root of your peoject. Now, create a new file <code class="docutils literal notranslate"><span class="pre">time_intervals.py</span></code>.</p>
 </section>
 <section id="querying-copilot-with-the-inline-chat">
 <h2>Querying Copilot with the inline chat<a class="headerlink" href="#querying-copilot-with-the-inline-chat" title="Link to this heading">#</a></h2>
-<p>As soon as we create the new Python file, we see the message “Press Ctrl+I to ask Github Copilot Chat to do something”.</p>
+<p>As soon as we create the new Python file, we see the message “Press Ctrl+I to ask Github Copilot Chat to do something. Start typing to dismiss”.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/0_message.png"><img alt="message" class="bg-primary mb-1 align-center" src="../_images/0_message.png" style="width: 600px;" /></a>
 <p>Go ahead and press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. You will see a chat window open. Write “create a function that given two time intervals returns their intersection” and press enter. You will see that the AI will start to provide suggestions for the implementation of the function. If you are satisfied with the suggestion, you can press <code class="docutils literal notranslate"><span class="pre">Accept</span></code> to accept it.</p>
 <p>This is what I got:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_intersection</span><span class="p">(</span><span class="n">interval1</span><span class="p">,</span> <span class="n">interval2</span><span class="p">):</span>
@@ -492,6 +493,7 @@ If you create the pseudo-code of you solution, then the AI will be able to help 
 <section id="explaining-code">
 <h2>Explaining code<a class="headerlink" href="#explaining-code" title="Link to this heading">#</a></h2>
 <p>To understand the code, we can use Copilot to explain it. We need to select the code, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and the use the command “/explain” and press enter. Copilot will open the Chat window and will provide an explanation of the code.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/1_func_explanation.png"><img alt="func_explanation" class="bg-primary mb-1 align-center" src="../_images/1_func_explanation.png" style="width: 600px;" /></a>
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
@@ -501,6 +503,7 @@ If you create the pseudo-code of you solution, then the AI will be able to help 
 </ul>
 </div>
 <p>We accept the suggested question and click on “Can you provide an example usage of the find_intersection function?”</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/2_howto.png"><img alt="how_to" class="bg-primary mb-1 align-center" src="../_images/2_howto.png" style="width: 600px;" /></a>
 </section>
 <section id="generating-documentation">
 <h2>Generating documentation<a class="headerlink" href="#generating-documentation" title="Link to this heading">#</a></h2>
@@ -509,7 +512,9 @@ If you create the pseudo-code of you solution, then the AI will be able to help 
 <section id="creating-tests">
 <h2>Creating tests<a class="headerlink" href="#creating-tests" title="Link to this heading">#</a></h2>
 <p>With out newly documented function, we can now use the <code class="docutils literal notranslate"><span class="pre">/tests</span></code> command to create tests for our function. This time, Copilot does not add code to the current file but instead it suggest the creation of a new file, <code class="docutils literal notranslate"><span class="pre">test_time_intervals.py</span></code>. This suggested file name follows a common naming convention for test files which is to use the same name as the file to be tested, but with the prefix <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/3_test.png"><img alt="test" class="bg-primary mb-1 align-center" src="../_images/3_test.png" style="width: 600px;" /></a>
 <p>You can also combine the command with more detailed instructions. For example, you can use the command <code class="docutils literal notranslate"><span class="pre">/tests</span> <span class="pre">with</span> <span class="pre">pytest</span></code>.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/4_generated_tests.png"><img alt="generated_test" class="bg-primary mb-1 align-center" src="../_images/4_generated_tests.png" style="width: 600px;" /></a>
 </section>
 <section id="generating-sample-code">
 <h2>Generating sample code<a class="headerlink" href="#generating-sample-code" title="Link to this heading">#</a></h2>
