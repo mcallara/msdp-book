@@ -36,7 +36,7 @@ Copying SSH keys from your computer to GitLab allows you to securely authenticat
 
 5. **Add SSH Key to GitLab:**
    - Log in to your GitLab account.
-   - Click on your profile avatar in the upper right corner and select "Settings" from the dropdown menu.
+   - Click on your profile avatar in the upper right corner and select "Preferences" from the dropdown menu.
    - In the left sidebar, click on "SSH Keys".
    - Paste the copied public SSH key into the "Key" field.
    - Optionally, provide a descriptive title for the key in the "Title" field (e.g., "My Laptop SSH Key").
