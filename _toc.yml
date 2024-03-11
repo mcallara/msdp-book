@@ -16,11 +16,11 @@ chapters:
   sections:
   - file: ch2/ch21
   - file: ch2/ch22
-#- file: ch3/ch30
-#  sections:
-#  - file: ch3/ch31
+- file: ch3/ch30
+  sections:
+  - file: ch3/ch31
 #  - file: ch3/ch32
-#  - file: ch3/mystock
+  - file: ch3/portfolio
 #- file: ch4/ch40
 #  sections:
 #  - file: ch4/ch41
