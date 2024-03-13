@@ -1,0 +1,881 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.3 Dependency Management and Virtual Environments &#8212; Modern Software Development Practices</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4/ch43';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="4.2 Python Project Management with Poetry" href="ch42.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/tds-logo-small.png" class="logo__image only-light" alt="Modern Software Development Practices - Home"/>
+    <script>document.write(`<img src="../_static/tds-logo-small.png" class="logo__image only-dark" alt="Modern Software Development Practices - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Modern Software Development Practices
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch11.html">1.1 Git and the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch13.html">1.3 Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch14.html">1.4 Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ssh_gitlab.html">Setting up your GitLab account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/portfolio.html">3.2 Test Driven Development (TDD)</a></li>
+</ul>
+</li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch41.html">4.1 Managing Python Versions</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ch42.html">4.2 Python Project Management with Poetry</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3 Dependency Management and Virtual Environments</a></li>
+
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mcallara/msdp-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch4/ch43.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ch4/ch43.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4.3 Dependency Management and Virtual Environments</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Dependency Management and Virtual Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dependencies">Adding Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dev-dependencies">Adding Dev Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-constraints">Version Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment-management-with-poetry">Virtual Environment Management with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-poetry-to-store-virtual-environments-within-the-project">Configuring Poetry to Store Virtual Environments Within the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-your-virtual-environment">Creating and Using Your Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands-within-the-virtual-environment">Running Commands Within the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-the-virtual-environment">Activating the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-and-managing-multiple-environments">Switching Between and Managing Multiple Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-and-listing-environment-information">Displaying and Listing Environment Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-environments-associated-with-your-project">Deleting Environments Associated with Your Project</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-installing-with-and-without-poetry-lock">Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-the-poetry-lock-file-to-version-control">Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-dependencies-to-their-latest-versions">Updating Dependencies to Their Latest Versions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies-only-installations">Managing Dependencies Only Installations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-further-reading">Resources and Further Reading</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dependency-management-and-virtual-environments">
+<h1>4.3 Dependency Management and Virtual Environments<a class="headerlink" href="#dependency-management-and-virtual-environments" title="Link to this heading">#</a></h1>
+<section id="dependency-management">
+<h2>Dependency Management<a class="headerlink" href="#dependency-management" title="Link to this heading">#</a></h2>
+<p>We already discussed why managing dependencies is an important aspect of our software development process. Poetry simplifies this task through an intuitive set of commands and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file for configuration.</p>
+<section id="adding-dependencies">
+<h3>Adding Dependencies<a class="headerlink" href="#adding-dependencies" title="Link to this heading">#</a></h3>
+<p>To see how we declare dependencies in a Poetry project. Let’s first add a first simple module to our <code class="docutils literal notranslate"><span class="pre">my-package</span></code> project to simulate a common use case. To do so, let’s create a new file called <code class="docutils literal notranslate"><span class="pre">analysis.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">my-package/my-package</span></code> directory with the following content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>Pandas is a popular library for data manipulation and analysis in Python very frequently used in Data Science projects.</p>
+<p>Now we want, to use Poetry to keep track that our project requires <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as a dependency. To add <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as a dependency, run the following command in your project directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pandas
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We see that if the project was setup with python 3.8, Poetry will not add <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as a dependency and let us know that pandas requires python 3.9 or higher.</p></li>
+</ul>
+</div>
+<p>We can then go to the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file and bump the python version to 3.9 and run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">pandas</span></code> again.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.9&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">$&#39;[tool.poetry]</span>
+<span class="s1">name = &quot;my-package&quot;</span>
+<span class="s1">version = &quot;0.1.0&quot;</span>
+<span class="s1">description = &quot;&quot;</span>
+<span class="s1">authors = [&quot;msdp-book &lt;msdp.book@gmail.com&gt;&quot;]</span>
+<span class="s1">readme = &quot;README.md&quot;</span>
+
+<span class="s1">[tool.poetry.dependencies]</span>
+<span class="s1">python = &quot;^3.9&quot;</span>
+
+
+<span class="s1">[build-system]</span>
+<span class="s1">requires = [&quot;poetry-core&quot;]</span>
+<span class="s1">build-backend = &quot;poetry.core.masonry.api&quot;&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>pyproject.toml
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating virtualenv <span class=" -Color -Color-Cyan">my-package</span> in /home/callaram/tds/home/ch4/my-package/.venv
+Using version <span class=" -Color -Color-Bold">^2.2.1</span> for <span class=" -Color -Color-Cyan">pandas</span>
+
+<span class=" -Color -Color-Blue">Updating dependencies</span>
+<span class=" -Color -Color-Blue">Resolving dependencies...</span> <span class=" -Color -Color-Faint">(0.0s)</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Red">The current project&#39;s supported Python range (&gt;=3.8,&lt;4.0) is not compatible with some of the required packages Python requirement:</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">  - pandas requires Python &gt;=3.9, so it will not be satisfied for Python &gt;=3.8,&lt;3.9</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Red">Because no versions of pandas match &gt;2.2.1,&lt;3.0.0</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red"> and pandas (2.2.1) requires Python &gt;=3.9, pandas is forbidden.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">So, because my-package depends on pandas (^2.2.1), version solving failed.</span>
+
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">• </span><span class=" -Color -Color-Bold">Check your dependencies Python requirement</span>: The Python requirement can be specified via the `<span class=" -Color -Color-Bold">python</span>` or `<span class=" -Color -Color-Bold">markers</span>` properties
+    
+    For <span class=" -Color -Color-Bold">pandas</span>, a possible solution would be to set the `<span class=" -Color -Color-Bold">python</span>` property to <span class=" -Color -Color-Yellow">&quot;&gt;=3.9,&lt;4.0&quot;</span>
+
+    <span class=" -Color -Color-Blue">https://python-poetry.org/docs/dependency-specification/#python-restricted-dependencies</span>,
+    <span class=" -Color -Color-Blue">https://python-poetry.org/docs/dependency-specification/#using-environment-markers</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We see that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> was added as a dependency.</p></li>
+<li><p>We also see that a <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file was created.</p></li>
+</ul>
+</div>
+</section>
+<section id="adding-dev-dependencies">
+<h3>Adding Dev Dependencies<a class="headerlink" href="#adding-dev-dependencies" title="Link to this heading">#</a></h3>
+<p>For development dependencies, which are not required in production, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span> <span class="pre">--group</span> <span class="pre">&lt;group_name&gt;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pytest<span class="w"> </span>--group<span class="w"> </span>dev
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using version <span class=" -Color -Color-Bold">^8.1.1</span> for <span class=" -Color -Color-Cyan">pytest</span>
+
+<span class=" -Color -Color-Blue">Updating dependencies</span>
+<span class=" -Color -Color-Blue">Resolving dependencies...</span> <span class=" -Color -Color-Faint">(0.1s)</span>
+
+<span class=" -Color -Color-Bold">Package operations</span>: <span class=" -Color -Color-Blue">6</span> installs, <span class=" -Color -Color-Blue">0</span> updates, <span class=" -Color -Color-Blue">0</span> removals
+
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Bold">1.2.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Bold">1.2.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Green">1.2.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Green">2.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Green">24.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Bold">8.1.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Bold">8.1.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Green">8.1.1</span>)
+
+<span class=" -Color -Color-Blue">Writing lock file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="version-constraints">
+<h3>Version Constraints<a class="headerlink" href="#version-constraints" title="Link to this heading">#</a></h3>
+<p>Poetry keeps track of the dependencies in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">[tool.poetry.dependencies]</span></code> section. You can define the version constraints to ensure compatibility and stability of your project. For example, we look now at the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file of our <code class="docutils literal notranslate"><span class="pre">my-package</span></code> project we see that the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> version is specified as <code class="docutils literal notranslate"><span class="pre">^2.2.1</span></code>, which means that any version of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> greater than or equal to <code class="docutils literal notranslate"><span class="pre">2.2.1</span></code> and less than <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> is acceptable. This is a common practice to ensure that your project remains compatible with future versions of its dependencies.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.9&quot;</span>
+<span class="n">pandas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^2.2.1&quot;</span>
+
+
+<span class="k">[tool.poetry.group.dev.dependencies]</span>
+<span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^8.1.1&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="virtual-environment-management-with-poetry">
+<h2>Virtual Environment Management with Poetry<a class="headerlink" href="#virtual-environment-management-with-poetry" title="Link to this heading">#</a></h2>
+<p>If we now want to run our package, we need to install it in a virtual environment along with the dependencies that we defined. Poetry makes it easy to create and install packages in virtual environments.</p>
+<section id="configuring-poetry-to-store-virtual-environments-within-the-project">
+<h3>Configuring Poetry to Store Virtual Environments Within the Project<a class="headerlink" href="#configuring-poetry-to-store-virtual-environments-within-the-project" title="Link to this heading">#</a></h3>
+<p>By default, Poetry stores virtual environments in a centralized location. However, you can configure Poetry to create the virtual environment within your project’s directory by setting the <code class="docutils literal notranslate"><span class="pre">virtualenvs.in-project</span></code> configuration to <code class="docutils literal notranslate"><span class="pre">true</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>This configuration makes it easier to manage project environments, especially when working with version control systems or when you need to share the project with others.</p>
+</section>
+<section id="creating-and-using-your-virtual-environment">
+<h3>Creating and Using Your Virtual Environment<a class="headerlink" href="#creating-and-using-your-virtual-environment" title="Link to this heading">#</a></h3>
+<p>This is now when the clean conda environment that we created in the previous section comes in handy. Although Poetry can help us managing package versions, it cannot help us (yet) to manage the Python versions. So in order to create the environment, we will need to pass the path to the python executable of the conda environment that we created with the appropiate python version. Otherwise, it will use the system python version.</p>
+<p>We use the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> to list all the environments and their paths. We then use the path to the python executable of the environment that we created to create the virtual environment for our project.</p>
+<p>So in my case the path is</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/callaram/.conda/envs/py3.10.4_clean/bin/python
+</pre></div>
+</div>
+<p>now, to create the environment I can use the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>env<span class="w"> </span>use<span class="w"> </span>/home/callaram/.conda/envs/py3.10.4_clean/bin/python
+</pre></div>
+</div>
+<div class="admonition-what-to-notice admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We also see that a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory was created in the project directory.</p></li>
+</ul>
+</div>
+<p>and we can use the command <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> to install the dependencies in the virtual environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+<div class="admonition-what-to-notice admonition">
+<p class="admonition-title">What to notice</p>
+<ul class="simple">
+<li><p>We see that the dependencies are installed in the virtual environment.</p></li>
+<li><p>We see that also the dependencies of our dependencies are installed.</p></li>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file exists, Poetry will install dependencies according to the versions listed there to ensure consistency across environments.</p></li>
+</ul>
+</div>
+</section>
+<section id="running-commands-within-the-virtual-environment">
+<h3>Running Commands Within the Virtual Environment<a class="headerlink" href="#running-commands-within-the-virtual-environment" title="Link to this heading">#</a></h3>
+<p>If you need to run a single command within the context of your virtual environment without activating it, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code>. For example, to run a Python script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>my_package/analysis.py
+</pre></div>
+</div>
+</section>
+<section id="activating-the-virtual-environment">
+<h3>Activating the Virtual Environment<a class="headerlink" href="#activating-the-virtual-environment" title="Link to this heading">#</a></h3>
+<p>To activate the project’s virtual environment, you can use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">shell</span></code> command. This command spawns a new shell instance with the virtual environment activated, allowing you to run Python and other commands within the context of your project’s dependencies.</p>
+</section>
+<section id="switching-between-and-managing-multiple-environments">
+<h3>Switching Between and Managing Multiple Environments<a class="headerlink" href="#switching-between-and-managing-multiple-environments" title="Link to this heading">#</a></h3>
+<p>Poetry allows you to manage multiple virtual environments for different Python versions or dependency configurations. Use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">use</span></code> command to switch between different Python interpreters or virtual environments associated with your project.</p>
+</section>
+<section id="displaying-and-listing-environment-information">
+<h3>Displaying and Listing Environment Information<a class="headerlink" href="#displaying-and-listing-environment-information" title="Link to this heading">#</a></h3>
+<p>To view details about the current environment, including its location and Python version, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">info</span></code>. To list all environments associated with the project, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">list</span></code>.</p>
+</section>
+<section id="deleting-environments-associated-with-your-project">
+<h3>Deleting Environments Associated with Your Project<a class="headerlink" href="#deleting-environments-associated-with-your-project" title="Link to this heading">#</a></h3>
+<p>If you need to remove a virtual environment managed by Poetry, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">env</span> <span class="pre">remove</span></code> followed by the environment’s name or Python executable path. This is useful for cleaning up or resetting your project’s environments.</p>
+<section id="differences-between-installing-with-and-without-poetry-lock">
+<h4>Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code><a class="headerlink" href="#differences-between-installing-with-and-without-poetry-lock" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>With <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></strong>: Ensures that the exact versions of dependencies are installed, as specified in the lock file. This is critical for consistency and reproducibility across development, testing, and production environments.</p></li>
+<li><p><strong>Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></strong>: Poetry resolves dependencies based on the version constraints in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and generates a new <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file. This might lead to installing newer versions of dependencies than previously used if they still satisfy the specified constraints.</p></li>
+</ul>
+</section>
+</section>
+<section id="committing-the-poetry-lock-file-to-version-control">
+<h3>Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control<a class="headerlink" href="#committing-the-poetry-lock-file-to-version-control" title="Link to this heading">#</a></h3>
+<p>Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file to your version control system is recommended. It locks the project to specific versions of dependencies, ensuring that other developers and environments use the exact same versions, thereby avoiding “it works on my machine” problems.</p>
+</section>
+<section id="updating-dependencies-to-their-latest-versions">
+<h3>Updating Dependencies to Their Latest Versions<a class="headerlink" href="#updating-dependencies-to-their-latest-versions" title="Link to this heading">#</a></h3>
+<p>To update dependencies to their latest versions that still comply with the version constraints defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
+<section id="managing-dependencies-only-installations">
+<h3>Managing Dependencies Only Installations<a class="headerlink" href="#managing-dependencies-only-installations" title="Link to this heading">#</a></h3>
+<p>The current project is installed in editable mode by default. If you want to install the dependencies without installing the package itself, you can use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span> <span class="pre">--no-root</span></code> command. This is particularly useful for CI/CD environments where you might need the dependencies for testing or building the project but not the project package itself.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="poetry-virtual-environments-with-visual-studio-code">
+<h1>Poetry Virtual Environments with Visual Studio Code<a class="headerlink" href="#poetry-virtual-environments-with-visual-studio-code" title="Link to this heading">#</a></h1>
+<p>Visual Studio Code (VS Code) has built-in support for Python development, including the detection and use of virtual environments. When you create a virtual environment in the root folder of your project, VS Code can automatically detect this environment and suggest it for use in the workspace. This seamless integration allows you to run and debug your Python code within the context of the project’s virtual environment directly from the IDE.</p>
+<p>To use the detected virtual environment in VS Code, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the Command Palette (Ctrl+Shift+P on Windows/Linux, Command+Shift+P on macOS).</p></li>
+<li><p>Type and select “Python: Select Interpreter.”</p></li>
+<li><p>Choose the virtual environment from the list. This environment will typically be located in your project’s root directory and prefixed with <code class="docutils literal notranslate"><span class="pre">./.venv</span></code> or similar, indicating that it is the local environment created by Poetry.</p></li>
+</ol>
+<p>Once the virtual environment is selected, VS Code will use it for running and debugging your project’s Python files. This ensures that you are working with the specific dependencies defined for your project, enhancing consistency and reliability during development.</p>
+<section id="resources-and-further-reading">
+<h2>Resources and Further Reading<a class="headerlink" href="#resources-and-further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Official Poetry Documentation: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">Basic Usage</a></p></li>
+<li><p>Managing Virtual Environments with Poetry: <a class="reference external" href="https://python-poetry.org/docs/managing-environments#managing-environments">Managing Environments</a></p></li>
+<li><p>Understanding Python Environments: <a class="reference external" href="https://testdriven.io/blog/python-environments/">TestDriven.io Blog</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            name: "bash",
+            path: "./ch4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch42.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4.2 Python Project Management with Poetry</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.3 Dependency Management and Virtual Environments</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dependencies">Adding Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-dev-dependencies">Adding Dev Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-constraints">Version Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment-management-with-poetry">Virtual Environment Management with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-poetry-to-store-virtual-environments-within-the-project">Configuring Poetry to Store Virtual Environments Within the Project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-your-virtual-environment">Creating and Using Your Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-commands-within-the-virtual-environment">Running Commands Within the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-the-virtual-environment">Activating the Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-between-and-managing-multiple-environments">Switching Between and Managing Multiple Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-and-listing-environment-information">Displaying and Listing Environment Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-environments-associated-with-your-project">Deleting Environments Associated with Your Project</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-installing-with-and-without-poetry-lock">Differences Between Installing With and Without <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-the-poetry-lock-file-to-version-control">Committing the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> File to Version Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-dependencies-to-their-latest-versions">Updating Dependencies to Their Latest Versions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies-only-installations">Managing Dependencies Only Installations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-further-reading">Resources and Further Reading</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matias Callara
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3 Testing and Test Driven Development (TDD) &#8212; Modern Software Development Practices</title>
+    <title>4 Python Packages, Virtual Environments and Dependency Management &#8212; Modern Software Development Practices</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch3/ch30';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4/ch40';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1 Testing" href="ch31.html" />
-    <link rel="prev" title="2.1 Debugging in Python with Visual Studio Code" href="../ch2/ch22.html" />
+    <link rel="next" title="4.1 Managing Python Versions" href="ch41.html" />
+    <link rel="prev" title="3.2 Test Driven Development (TDD)" href="../ch3/portfolio.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,18 +199,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3 Testing and Test Driven Development (TDD)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="portfolio.html">3.2 Test Driven Development (TDD)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/portfolio.html">3.2 Test Driven Development (TDD)</a></li>
 </ul>
 </li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4 Python Packages, Virtual Environments and Dependency Management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch41.html">4.1 Managing Python Versions</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch42.html">4.2 Python Project Management with Poetry</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
 
 </ul>
 </li>
@@ -285,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch3/ch30.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch4/ch40.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/ch3/ch30.md" target="_blank"
+      <li><a href="../_sources/ch4/ch40.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,9 +386,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -399,21 +397,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3 Testing and Test Driven Development (TDD)</h1>
+    <h1>4 Python Packages, Virtual Environments and Dependency Management</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3 Testing and Test Driven Development (TDD)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -423,31 +411,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="testing-and-test-driven-development-tdd">
-<h1>3 Testing and Test Driven Development (TDD)<a class="headerlink" href="#testing-and-test-driven-development-tdd" title="Link to this heading">#</a></h1>
-<p>Poll time. How does your development process look like?</p>
-<ol class="arabic simple">
-<li><p>I don’t test my code at all.</p></li>
-<li><p>I implement some code and then I test it.</p></li>
-<li><p>I create a test and then implement the code.</p></li>
-</ol>
-<p>Why do we test our code? This chapter is not only about ensuring that your code works as expected, but also about a good process to achieve this.</p>
-<blockquote class="epigraph">
-<div><p>Where should you start building a system? With stories you want to be able to tell about the finished system.</p>
-<p class="attribution">—Kent Beck</p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-packages-virtual-environments-and-dependency-management">
+<h1>4 Python Packages, Virtual Environments and Dependency Management<a class="headerlink" href="#python-packages-virtual-environments-and-dependency-management" title="Link to this heading">#</a></h1>
+<p>As a developer, data scientist or data engineer, you will often find yourself working on projects that depend on external libraries. For example, consider a project that uses the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library for data manipulation and the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> library for machine learning. Both of these libraries have their dependencies, and these dependencies may have their dependencies, and so on.</p>
+<p>Furthermore, it is common for different projects to require different versions of the same library. For example, you may decide to use the latest <code class="docutils literal notranslate"><span class="pre">pandas</span></code> version for a new project which introduced a new feature that you need while an older existing project may rely on a feature from an older <code class="docutils literal notranslate"><span class="pre">pandas</span></code> version that is now deprecated. It wouldn’t be ideal to have to uninstall and reinstall <code class="docutils literal notranslate"><span class="pre">pandas</span></code> every time you switch between projects.</p>
+<p>Wouldn’t it be great if you could have taylor made environments for each project with the exact packages that each project needs? This is where the concept of Virtual Environments comes in. Virtual environments allow you to create isolated development spaces, enabling different versions of libraries to coexist on the same machine without conflict.</p>
+<p>Imagine now that some new colleagues join your project. They will need to install the same libraries and the same versions of those libraries that you are using. This can be a daunting task, especially if the project has many dependencies. This is where dependency management tools come in. The idea is to make it easy to track all the specific versions of the libraries that your project depends. This way, you can easily share the exact environment needed to run your project with your colleagues.</p>
+<p>In this chapter, we will learn how to manage the requirements of your Python projects. We will start by learning how to manage different Python versions using Conda, a popular environment and package manager and then we will learn how to structure your project and manage virtual environments using Poetry, a modern dependency management tool for Python.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="portfolio.html">3.2 Test Driven Development (TDD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch41.html#references">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch42.html">4.2 Python Project Management with Poetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch42.html#references">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch43.html#poetry-virtual-environments-with-visual-studio-code">Poetry Virtual Environments with Visual Studio Code</a></li>
 </ul>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="references">
-<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Beck, K. (2002) Test Driven Development: By Example. Addison-Wesley Professional.</p></li>
-</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,7 +443,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch3"
+            path: "./ch4"
         },
         predefinedOutput: true
     }
@@ -481,20 +461,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ch2/ch22.html"
+       href="../ch3/portfolio.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.1 Debugging in Python with Visual Studio Code</p>
+        <p class="prev-next-title">3.2 Test Driven Development (TDD)</p>
       </div>
     </a>
     <a class="right-next"
-       href="ch31.html"
+       href="ch41.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3.1 Testing</p>
+        <p class="prev-next-title">4.1 Managing Python Versions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,22 +485,7 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3 Testing and Test Driven Development (TDD)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

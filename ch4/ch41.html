@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3 Testing and Test Driven Development (TDD) &#8212; Modern Software Development Practices</title>
+    <title>4.1 Managing Python Versions &#8212; Modern Software Development Practices</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch3/ch30';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4/ch41';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1 Testing" href="ch31.html" />
-    <link rel="prev" title="2.1 Debugging in Python with Visual Studio Code" href="../ch2/ch22.html" />
+    <link rel="next" title="4.2 Python Project Management with Poetry" href="ch42.html" />
+    <link rel="prev" title="4 Python Packages, Virtual Environments and Dependency Management" href="ch40.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,18 +199,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3 Testing and Test Driven Development (TDD)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="portfolio.html">3.2 Test Driven Development (TDD)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/ch31.html">3.1 Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch3/portfolio.html">3.2 Test Driven Development (TDD)</a></li>
 </ul>
 </li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 Managing Python Versions</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch42.html">4.2 Python Project Management with Poetry</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
 
 </ul>
 </li>
@@ -285,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch3/ch30.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch4/ch41.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/ch3/ch30.md" target="_blank"
+      <li><a href="../_sources/ch4/ch41.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3 Testing and Test Driven Development (TDD)</h1>
+    <h1>4.1 Managing Python Versions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,7 +409,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3 Testing and Test Driven Development (TDD)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.1 Managing Python Versions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-conda-environment-with-a-specific-python-version-on-linux">Creating a Conda Environment with a Specific Python Version on Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-conda-environment">Create a New Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-the-conda-environment">Activate the Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deactivate-the-environment">Deactivate the Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-all-available-conda-environments">Listing All Available Conda Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-python-executable-path">Accessing the Python Executable Path</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 
@@ -423,31 +433,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="testing-and-test-driven-development-tdd">
-<h1>3 Testing and Test Driven Development (TDD)<a class="headerlink" href="#testing-and-test-driven-development-tdd" title="Link to this heading">#</a></h1>
-<p>Poll time. How does your development process look like?</p>
-<ol class="arabic simple">
-<li><p>I don’t test my code at all.</p></li>
-<li><p>I implement some code and then I test it.</p></li>
-<li><p>I create a test and then implement the code.</p></li>
-</ol>
-<p>Why do we test our code? This chapter is not only about ensuring that your code works as expected, but also about a good process to achieve this.</p>
-<blockquote class="epigraph">
-<div><p>Where should you start building a system? With stories you want to be able to tell about the finished system.</p>
-<p class="attribution">—Kent Beck</p>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch31.html">3.1 Testing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="portfolio.html">3.2 Test Driven Development (TDD)</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="managing-python-versions">
+<h1>4.1 Managing Python Versions<a class="headerlink" href="#managing-python-versions" title="Link to this heading">#</a></h1>
+<div class="cell tag_remove-input docutils container">
 </div>
+<section id="creating-a-conda-environment-with-a-specific-python-version-on-linux">
+<h2>Creating a Conda Environment with a Specific Python Version on Linux<a class="headerlink" href="#creating-a-conda-environment-with-a-specific-python-version-on-linux" title="Link to this heading">#</a></h2>
+<p>Conda is an environment and package manager that allows you to create isolated environments for different projects, specifying exact versions of Python and other packages needed. For detailed installation instructions for Conda, refer to the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/">Conda documentation</a>.</p>
+<section id="create-a-new-conda-environment">
+<h3>Create a New Conda Environment<a class="headerlink" href="#create-a-new-conda-environment" title="Link to this heading">#</a></h3>
+<p>To create a new Conda environment with a specific version of Python, use the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>py3.10.4_clean<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.4
+</pre></div>
+</div>
+<p>This command creates a new environment named <code class="docutils literal notranslate"><span class="pre">py3.10.4_clean</span></code>, specifically with Python version 3.10.4. Replace <code class="docutils literal notranslate"><span class="pre">3.10.4</span></code> with any version of Python you require for your project.</p>
+</section>
+<section id="activate-the-conda-environment">
+<h3>Activate the Conda Environment<a class="headerlink" href="#activate-the-conda-environment" title="Link to this heading">#</a></h3>
+<p>With the environment created, you need to activate it to start using it. Activate your new environment with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>py3.10.4_clean
+</pre></div>
+</div>
+<p>Activating the environment sets up your terminal to use the Python version and any packages installed in this isolated environment.</p>
+</section>
+<section id="deactivate-the-environment">
+<h3>Deactivate the Environment<a class="headerlink" href="#deactivate-the-environment" title="Link to this heading">#</a></h3>
+<p>When you’re finished with your work in the environment, you can deactivate it, returning your terminal to its base configuration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+</section>
+</section>
+<section id="listing-all-available-conda-environments">
+<h2>Listing All Available Conda Environments<a class="headerlink" href="#listing-all-available-conda-environments" title="Link to this heading">#</a></h2>
+<p>To view a list of all Conda environments available on your system, you can use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>list
+</pre></div>
+</div>
+<p>or its shorthand version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>info<span class="w"> </span>--envs
+</pre></div>
+</div>
+<p>This command will display a list of all Conda environments, showing their names and the paths to their directories.</p>
+</section>
+<section id="accessing-the-python-executable-path">
+<h2>Accessing the Python Executable Path<a class="headerlink" href="#accessing-the-python-executable-path" title="Link to this heading">#</a></h2>
+<p>Each environment listed by the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> command includes a path to its directory. This path is useful for accessing the Python executable specific to an environment. For instance, if you’re integrating tools, scripts, or IDEs with a specific environment, you might need to specify the path to the Python executable within that environment.</p>
+<p>The path displayed next to each environment name leads directly to the environment’s root directory. Inside this directory, you can find the Python executable in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> folder. For example, the path to the Python executable for an environment named <code class="docutils literal notranslate"><span class="pre">py3.10.4_clean</span></code> might look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/username/miniconda3/envs/py3.10.4_clean/bin/python
+</pre></div>
+</div>
+<p>This path allows you to invoke Python directly from that environment, ensuring that any Python scripts or commands are executed with the environment’s specific Python version and dependencies.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="references">
 <h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Beck, K. (2002) Test Driven Development: By Example. Addison-Wesley Professional.</p></li>
-</ul>
+<p><a class="reference external" href="https://docs.conda.io/en/latest/">Conda documentation</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,7 +504,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch3"
+            path: "./ch4"
         },
         predefinedOutput: true
     }
@@ -481,20 +522,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ch2/ch22.html"
+       href="ch40.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.1 Debugging in Python with Visual Studio Code</p>
+        <p class="prev-next-title">4 Python Packages, Virtual Environments and Dependency Management</p>
       </div>
     </a>
     <a class="right-next"
-       href="ch31.html"
+       href="ch42.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3.1 Testing</p>
+        <p class="prev-next-title">4.2 Python Project Management with Poetry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -514,7 +555,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3 Testing and Test Driven Development (TDD)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.1 Managing Python Versions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-conda-environment-with-a-specific-python-version-on-linux">Creating a Conda Environment with a Specific Python Version on Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-conda-environment">Create a New Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activate-the-conda-environment">Activate the Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deactivate-the-environment">Deactivate the Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-all-available-conda-environments">Listing All Available Conda Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-python-executable-path">Accessing the Python Executable Path</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
 

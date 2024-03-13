@@ -123,3 +123,7 @@ cd ..
 git clone git@gitlab.com:msdp.book/my-project.git my-project-remote
 ls
 ```
+
+## Deleting a remote repository
+
+To delete the remote repository in Gitlab, navigate to the repository settings and click on the `General`. Navegate to the `Advanced` section and click on `Expand`. At the bottom of the page, you will find the `Delete project` button. Click on it and confirm the deletion.

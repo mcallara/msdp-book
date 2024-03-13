@@ -205,6 +205,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch4/ch40.html">4 Python Packages, Virtual Environments and Dependency Management</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch41.html">4.1 Managing Python Versions</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch42.html">4.2 Python Project Management with Poetry</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
+
+</ul>
+</li>
 </ul>
 
     </div>
@@ -411,6 +420,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repository">Cloning a repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-remote-repository">Deleting a remote repository</a></li>
 </ul>
             </nav>
         </div>
@@ -542,7 +552,7 @@ origin	git@gitlab.com:msdp.book/my-project.git (push)
 Counting objects: 100% (9/9), done.
 Delta compression using up to 96 threads
 Compressing objects: 100% (4/4), done.
-Writing objects: 100% (9/9), 764 bytes | 764.00 KiB/s, done.
+Writing objects: 100% (9/9), 760 bytes | 760.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: 
 remote: 
@@ -616,21 +626,21 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit ca28ff9e1c8ba88734f6ee627244cd06797a8912 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit b4d50cf289d2e95ca81d8cd2d1e0b7006e7dd0dd (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Mon Mar 11 19:45:19 2024 +0100
+Date:   Wed Mar 13 19:58:26 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit c37af7e048037dbe3917f075579206a340eb5aae</span>
+<span class=" -Color -Color-Yellow">commit a5c315d5d8cc6cf8e13c7bf8dc61841c4e0decd6</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Mon Mar 11 19:45:17 2024 +0100
+Date:   Wed Mar 13 19:58:25 2024 +0100
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 7c7e45868e10fbb88bb225b5a0b2932779cc8460</span>
+<span class=" -Color -Color-Yellow">commit da364527b8cc830769c9a332fb43d0cb5339e266</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Mon Mar 11 19:45:09 2024 +0100
+Date:   Wed Mar 13 19:58:17 2024 +0100
 
     Create file1.txt with the first line
 </pre></div>
@@ -669,6 +679,10 @@ Receiving objects: 100% (9/9), done.
 </div>
 </div>
 </div>
+</section>
+<section id="deleting-a-remote-repository">
+<h2>Deleting a remote repository<a class="headerlink" href="#deleting-a-remote-repository" title="Link to this heading">#</a></h2>
+<p>To delete the remote repository in Gitlab, navigate to the repository settings and click on the <code class="docutils literal notranslate"><span class="pre">General</span></code>. Navegate to the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> section and click on <code class="docutils literal notranslate"><span class="pre">Expand</span></code>. At the bottom of the page, you will find the <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">project</span></code> button. Click on it and confirm the deletion.</p>
 </section>
 </section>
 
@@ -747,6 +761,7 @@ Receiving objects: 100% (9/9), done.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-repository">Cloning a repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-remote-repository">Deleting a remote repository</a></li>
 </ul>
   </nav></div>
 
