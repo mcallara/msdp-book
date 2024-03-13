@@ -21,11 +21,11 @@ chapters:
   - file: ch3/ch31
 #  - file: ch3/ch32
   - file: ch3/portfolio
-#- file: ch4/ch40
-#  sections:
-#  - file: ch4/ch41
-#  - file: ch4/ch42
-#  - file: ch4/ch43
+- file: ch4/ch40
+  sections:
+  - file: ch4/ch41
+  - file: ch4/ch42
+  - file: ch4/ch43
 #- file: ch5/ch50
 #  sections:
 #  - file: ch5/ch51_gitlab
