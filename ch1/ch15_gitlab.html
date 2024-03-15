@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -212,6 +212,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../ch4/ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
 
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -552,7 +560,7 @@ origin	git@gitlab.com:msdp.book/my-project.git (push)
 Counting objects: 100% (9/9), done.
 Delta compression using up to 96 threads
 Compressing objects: 100% (4/4), done.
-Writing objects: 100% (9/9), 760 bytes | 760.00 KiB/s, done.
+Writing objects: 100% (9/9), 761 bytes | 761.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: 
 remote: 
@@ -626,21 +634,21 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit b4d50cf289d2e95ca81d8cd2d1e0b7006e7dd0dd (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Wed Mar 13 19:58:26 2024 +0100
+Date:   Fri Mar 15 19:16:24 2024 +0100
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit a5c315d5d8cc6cf8e13c7bf8dc61841c4e0decd6</span>
+<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Wed Mar 13 19:58:25 2024 +0100
+Date:   Fri Mar 15 19:16:22 2024 +0100
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit da364527b8cc830769c9a332fb43d0cb5339e266</span>
+<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Wed Mar 13 19:58:17 2024 +0100
+Date:   Fri Mar 15 19:16:17 2024 +0100
 
     Create file1.txt with the first line
 </pre></div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch4/ch43';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5 Software Development Life Cycle, Versioning and Packaging." href="../ch5/ch50.html" />
     <link rel="prev" title="4.2 Python Project Management with Poetry" href="ch42.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,6 +212,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3 Dependency Management and Virtual Environments</a></li>
 
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
 </li>
 </ul>
@@ -477,22 +486,6 @@ document.write(`
 <span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;^3.9&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">$&#39;[tool.poetry]</span>
-<span class="s1">name = &quot;my-package&quot;</span>
-<span class="s1">version = &quot;0.1.0&quot;</span>
-<span class="s1">description = &quot;&quot;</span>
-<span class="s1">authors = [&quot;msdp-book &lt;msdp.book@gmail.com&gt;&quot;]</span>
-<span class="s1">readme = &quot;README.md&quot;</span>
-
-<span class="s1">[tool.poetry.dependencies]</span>
-<span class="s1">python = &quot;^3.9&quot;</span>
-
-
-<span class="s1">[build-system]</span>
-<span class="s1">requires = [&quot;poetry-core&quot;]</span>
-<span class="s1">build-backend = &quot;poetry.core.masonry.api&quot;&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>pyproject.toml
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pandas
@@ -500,25 +493,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating virtualenv <span class=" -Color -Color-Cyan">my-package</span> in /home/callaram/tds/home/ch4/my-package/.venv
-Using version <span class=" -Color -Color-Bold">^2.2.1</span> for <span class=" -Color -Color-Cyan">pandas</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">The currently activated Python version 3.8.2 is not supported by the project (^3.9).</span>
+<span class=" -Color -Color-Yellow">Trying to find and use a compatible version.</span> 
 
-<span class=" -Color -Color-Blue">Updating dependencies</span>
-<span class=" -Color -Color-Blue">Resolving dependencies...</span> <span class=" -Color -Color-Faint">(0.0s)</span>
-
-<span class=" -Color -Color-Bold -Color-Bold-Red">The current project&#39;s supported Python range (&gt;=3.8,&lt;4.0) is not compatible with some of the required packages Python requirement:</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">  - pandas requires Python &gt;=3.9, so it will not be satisfied for Python &gt;=3.8,&lt;3.9</span>
-
-<span class=" -Color -Color-Bold -Color-Bold-Red">Because no versions of pandas match &gt;2.2.1,&lt;3.0.0</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red"> and pandas (2.2.1) requires Python &gt;=3.9, pandas is forbidden.</span>
-<span class=" -Color -Color-Bold -Color-Bold-Red">So, because my-package depends on pandas (^2.2.1), version solving failed.</span>
-
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">• </span><span class=" -Color -Color-Bold">Check your dependencies Python requirement</span>: The Python requirement can be specified via the `<span class=" -Color -Color-Bold">python</span>` or `<span class=" -Color -Color-Bold">markers</span>` properties
-    
-    For <span class=" -Color -Color-Bold">pandas</span>, a possible solution would be to set the `<span class=" -Color -Color-Bold">python</span>` property to <span class=" -Color -Color-Yellow">&quot;&gt;=3.9,&lt;4.0&quot;</span>
-
-    <span class=" -Color -Color-Blue">https://python-poetry.org/docs/dependency-specification/#python-restricted-dependencies</span>,
-    <span class=" -Color -Color-Blue">https://python-poetry.org/docs/dependency-specification/#using-environment-markers</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">Poetry was unable to find a compatible version. If you have one, you can explicitly use it via the &quot;env use&quot; command.</span>
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
@@ -544,73 +522,13 @@ Using version <span class=" -Color -Color-Bold">^2.2.1</span> for <span class=" 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using version <span class=" -Color -Color-Bold">^8.1.1</span> for <span class=" -Color -Color-Cyan">pytest</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">The currently activated Python version 3.8.2 is not supported by the project (^3.9).</span>
+<span class=" -Color -Color-Yellow">Trying to find and use a compatible version.</span> 
 
-<span class=" -Color -Color-Blue">Updating dependencies</span>
-<span class=" -Color -Color-Blue">Resolving dependencies...</span> <span class=" -Color -Color-Faint">(0.1s)</span>
-
-<span class=" -Color -Color-Bold">Package operations</span>: <span class=" -Color -Color-Blue">6</span> installs, <span class=" -Color -Color-Blue">0</span> updates, <span class=" -Color -Color-Blue">0</span> removals
-
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Bold">1.2.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Bold">1.2.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">exceptiongroup</span> (<span class=" -Color -Color-Green">1.2.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Bold">2.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">iniconfig</span> (<span class=" -Color -Color-Green">2.0.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Bold">24.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Bold">1.4.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Bold">2.0.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">packaging</span> (<span class=" -Color -Color-Green">24.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pluggy</span> (<span class=" -Color -Color-Green">1.4.0</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">tomli</span> (<span class=" -Color -Color-Green">2.0.1</span>)
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Bold">8.1.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Blue">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Bold">8.1.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
-  <span class=" -Color -Color-Bold -Color-Bold-Green">•</span> Installing <span class=" -Color -Color-Cyan">pytest</span> (<span class=" -Color -Color-Green">8.1.1</span>)
-
-<span class=" -Color -Color-Blue">Writing lock file</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">Poetry was unable to find a compatible version. If you have one, you can explicitly use it via the &quot;env use&quot; command.</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -777,6 +695,15 @@ Using version <span class=" -Color -Color-Bold">^2.2.1</span> for <span class=" 
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">4.2 Python Project Management with Poetry</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../ch5/ch50.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5 Software Development Life Cycle, Versioning and Packaging.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
