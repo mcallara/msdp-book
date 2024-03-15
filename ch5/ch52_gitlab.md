@@ -12,17 +12,21 @@ kernelspec:
   name: bash
 ---
 
+% Ensure that my-package exist in Gitlab before running with a valid GITLAB_TOKEN
+
 # 5.2 Software Versioning
 ```{code-cell} bash
-:tags: [remove-input]
+:tags: ["remove-input","remove-output"]
 cd ../home
-mkdir ch53
-cd ch53
+mkdir ch5
+cd ch5
+git clone git@gitlab.com:msdp.book/my-package.git
+cd my-package
 ```
 
 ## What is Versioning?
 
-Versioning is the process of assigning unique version numbers to distinct states of software projects, allowing developers and users to track progress, manage changes, and ensure compatibility between different components. It plays a critical role in software development and release management, offering a structured way to reflect the history, stability, and compatibility of software products over time. Through versioning, teams can effectively communicate the impact of changes, manage dependencies, and facilitate the adoption of new features while maintaining the integrity of existing systems.
+Versioning is the process of assigning unique version  to distinct states of software projects, allowing developers and users to track progress, manage changes, and ensure compatibility between different components. It plays a critical role in software development and release management, offering a structured way to reflect the history, stability, and compatibility of software products over time. Through versioning, teams can effectively communicate the impact of changes, manage dependencies, and facilitate the adoption of new features while maintaining the integrity of existing systems.
 
 ## What is Semantic Versioning?
 
@@ -36,51 +40,78 @@ Additional labels for pre-release and build metadata are available as extensions
 
 The principles of Semantic Versioning help ensure a consistent, predictable approach to versioning that is directly tied to the significance of the changes made. It allows developers and consumers of software to make informed decisions about upgrading and integrating with other systems. By adhering to SemVer, projects can communicate the nature of changes efficiently, reduce the potential for conflicts, and facilitate easier dependency management in the complex ecosystem of software development.
 
-# Automate Semantic Versioning in Poetry Projects with Python Semantic Release
+## Automate Semantic Versioning in Poetry Projects with Python Semantic Release
 
-Using `python-semantic-release` to automate semantic versioning in projects managed with Poetry on GitHub involves setting up `python-semantic-release` in your project, configuring it to work with Poetry, and automating the release process through GitHub Actions.
+We can use a python package called `python-semantic-release` to automate semantic versioning in projects managed with Poetry on Gitlab. This package automates the process of determining the next version number based on the changes made to the project, generating release notes, and publishing the release to a repository. By integrating `python-semantic-release` with Gitlab CI/CD, we can automate the entire release process, ensuring that version numbers are incremented correctly and that releases are published consistently.
 
-## Prerequisites
+## Automating the semantic versioning of My Package
 
-- A GitHub repository with a Python project managed by Poetry.
-- Basic understanding of semantic versioning, Git, and GitHub Actions.
+Let's see how to automate semantic versioning in a Python project managed with Poetry using `python-semantic-release` and Gitlab CI/CD. We will use the `my-package` project that we created in the previous section and configure it to use `python-semantic-release` for versioning and release management.
+
+## Creating a personal access token
+
+To allow `python-semantic-release` to interact with your Gitlab repository, you need to create a personal access token. This token will be used to authenticate the tool when it performs actions such as creating releases and tags.
+
+To create a new personal access token, go to your Gitlab account Preferences and click on ["Access Tokens"](https://gitlab.com/-/user_settings/personal_access_tokens) in the "User Settings" section. Then, click on "Add new token" and fill in the required details.
+You can use:
+- Token name: semantic_release
+- check in select scope: `api`, `read_user`, `read_repository`, and `write_repository`. Once you've created the token, copy it to your clipboard, as you'll need it later.
+
+## Adding the token to the gitlab ci cd variables
+
+To add the token to the gitlab ci cd variables, go to the settings of the repository and then to the [CI/CD section](https://gitlab.com/msdp.book/semver/-/settings/ci_cd). Browse until you find the "Variables" section and click on "Expand" to reveal the form for adding a new variable. Now click on "Add variable" and add a new variable with:
+
+- Type: Variable (default)
+- Environment: All (default)
+- Protect Variable, Mask Variable, Expand variable reference
+- Key: GITLAB_TOKEN
+- Value: <your token>
+- with the name GITLAB_TOKEN
 
 ## Setup Your Python Project with Poetry
 
-Ensure your project is set up with Poetry and has a `pyproject.toml` file at its root. This file should define your project's dependencies and metadata. If your project isn't set up with Poetry yet, you can start by running:
+To ensure that our project is set up with Poetry and has a `pyproject.toml` file at its root, we need to initialize the project using Poetry. 
+
+Let's now initialize the poetry project in the `my-package` directory by running the following command inside the directory:
 
 ```{code-block} bash
 poetry init
 ```
 
-And follow the prompts to create your `pyproject.toml`.
-
-In this section, we will use the `poetry-demo` project.
-
 ```{code-cell} bash
-poetry new poetry-demo
-```
+:tags: [remove-input]
+echo $'[tool.poetry]
+name = "my-package"
+version = "0.1.0"
+description = ""
+authors = ["msdp-book <msdp.book@gmail.com>"]
+readme = "README.md"
 
-Navegate to the root folder of the project.
+[tool.poetry.dependencies]
+python = "^3.8"
 
-```{code-cell} bash
-cd poetry-demo
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+' >> pyproject.toml
 ```
 
 ## Change the Python Versions Supported by the Project
 
-Since `python-semantic-release` requires `Python >=3.8`, before installing python-semantic-release, it is important that 
-you check and change the Python version supported by the project.
-In the `pyproject.toml` file, look for:
+Since `python-semantic-release` requires `Python >=3.8`, before installing python-semantic-release, it is important that you check and change, if needed, the Python version supported by the project.
+In the `pyproject.toml` file, look for the section `[tool.poetry.dependencies]` and change the Python version to `^3.8` if a lower version is specified.
 
-```toml
+For example, if you find:
+
+```{code-block} toml
 [tool.poetry.dependencies]
 python = "^3.7"
 ```
 
 Change it to: 
 
-```toml
+```{code-block}  toml
 [tool.poetry.dependencies]
 python = "^3.8"
 ```
@@ -90,9 +121,9 @@ python = "^3.8"
 sed -i 's/python = "^3.7"/python = "^3.8"/' pyproject.toml
 ```
 
-## Install Python Semantic Release
+## Add Python Semantic Release as a dependency of your project
 
-Add `python-semantic-release` to your development dependencies using Poetry. This ensures that the semantic release process is part of your development workflow.
+Add `python-semantic-release` to your development dependencies using Poetry.
 
 ```{code-cell} bash
 :tags: [scroll-output]
@@ -101,11 +132,9 @@ poetry add --group dev python-semantic-release
 
 ## Configure Python Semantic Release
 
-Create a configuration file for `python-semantic-release` in your project's root directory. You can either use a `.toml` file (e.g., `pyproject.toml`) or a `.semantic-release.toml` file for configuration.
+To configure `python-semantic-release`, we will use the `pyproject.toml`. We will add two sections to the file: `[tool.semantic_release]` and `[tool.semantic_release.remote]`. The first section will define the version variable, whether to commit the version number, and whether to upload to PyPI. The second section will define the remote repository's name and type.
 
-If you're using `pyproject.toml`, add the following configuration under `[tool.semantic_release]`:
-
-```toml
+```{code-block} toml
 [tool.semantic_release]
 version_variable = "pyproject.toml:version"
 commit_version_number = true
@@ -118,32 +147,30 @@ type = "gitlab"
 
 ```{code-cell} bash
 :tags: [remove-input]
-echo >> pyproject.toml
-echo '[tool.semantic_release]' >> pyproject.toml
-echo 'version_toml = ["pyproject.toml:tool.poetry.version",]' >> pyproject.toml
-echo 'commit_version_number = true' >> pyproject.toml
-echo 'upload_to_pypi = "false"' >> pyproject.toml
-echo '' >> pyproject.toml
-echo '[tool.semantic_release.remote]' >> pyproject.toml
-echo 'name = "origin"' >> pyproject.toml
-echo 'type = "gitlab"' >> pyproject.toml
+echo $'
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
+commit_version_number = true
+upload_to_pypi = "false"
+
+[tool.semantic_release.remote]
+name = "origin"
+type = "gitlab"' >> pyproject.toml
 ```
 
 ## Setup Gitlab for Continuous Deployment
 
-To automate the release process, you'll use GitHub Actions. Create a `.gitlab-ci.yml` file in your repository with the following content:
+Now we will add a semantic-release step to our `.gitlab-ci.yml` file to automate the versioning and release process. This step will run in the `deploy` stage and will be triggered when a commit is made to the default branch that follows semantic versioning in its commit message.
+
+Let's replace the content of the `.gitlab-ci.yml` file with the following configuration:
 
 ```{code-block} yaml
 image: python:latest
 
-variables:
-  GITLAB_TOKEN: $CI_JOB_TOKEN
-
 before_script:
-  - git config --global user.name "Bot"
-  - git config --global user.email "ci@domain.com"
   - git checkout "$CI_COMMIT_REF_NAME"
-  - git status
+  - pip install poetry
+  - poetry install --only dev --no-root
   
 semantic-release:
   stage: deploy
@@ -152,29 +179,21 @@ semantic-release:
       when: never
     - when: always
   script:
-    - echo $CI_COMMIT_REF_NAME
-    - echo $CI_COMMIT_TAG
-    - echo $CI_DEFAULT_BRANCH
-    - echo $CI_COMMIT_MESSAGE
-    - pip install python-semantic-release
-    - semantic-release -vvv version
-    - semantic-release -vvv publish
-    - cat pyproject.toml
+    - poetry run semantic-release -vvv version
+    - poetry run semantic-release -vvv publish
 ```
+
+We are using the `python:latest` image to run our CI/CD pipeline. We also set up the `before_script` to configure the git user and checkout the branch. The `semantic-release` job is defined to run in the `deploy` stage and is triggered when a commit is made to the default branch that follows semantic versioning in its commit message. The job will install `python-semantic-release` and run the `version` and `publish` commands. Finally, it will display the contents of the `pyproject.toml` file for verification.
 
 ```{code-cell} bash
 :tags: [remove-input]
 touch .gitlab-ci.yml
 echo $'image: python:latest
 
-variables:
-  GITLAB_TOKEN: $CI_JOB_TOKEN
-
 before_script:
-  - git config --global user.name "Bot"
-  - git config --global user.email "ci@domain.com"
   - git checkout "$CI_COMMIT_REF_NAME"
-  - git status
+  - pip install poetry
+  - poetry install --only dev --no-root
   
 semantic-release:
   stage: deploy
@@ -183,61 +202,46 @@ semantic-release:
       when: never
     - when: always
   script:
-    - echo $CI_COMMIT_REF_NAME
-    - echo $CI_COMMIT_TAG
-    - echo $CI_DEFAULT_BRANCH
-    - echo $CI_COMMIT_MESSAGE
-    - pip install python-semantic-release
-    - semantic-release -vvv version
-    - semantic-release -vvv publish
-    - cat pyproject.toml' >> .gitlab-ci.yml
+    - poetry run semantic-release -vvv version
+    - poetry run semantic-release -vvv publish
+    ' >> .gitlab-ci.yml
 ```
-## Create a new repository 
 
-Create a new empty repository in Gitlab and name it `semver`.
+## Commit all changes
 
-
-## Commit and Push Your Changes
-
-After configuring everything, commit your changes (including the `pyproject.toml` modifications and GitHub Actions workflow) and push them to your GitHub repository.
-
-% MANUAL STEP:
-% make sure you create a new access token
-% https://gitlab.com/-/user_settings/personal_access_tokens
-% you create an access token with the following scopes:
-% api, read_user, read_repository, write_repository
+Commit all the changes to the repository, using the message "feat(semantic-release): add semantic release to the repository".
 
 ```{code-cell} bash
-git init --initial-branch=master
-git remote add origin https://gitlab.com/msdp.book/semver.git
+:tags: ["remove-input","remove-output"]
+# git init --initial-branch=main
+# git remote add origin git@gitlab.com:msdp.book/semver.git
 git add .
 git commit -m "feat(semantic-release): add python-semantic-release and gitlab-ci.yml"
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
-
-% MANUAL STEP:
-% and then add it to the gitlab ci cd variables
-% https://gitlab.com/msdp.book/semver/-/settings/ci_cd
-% with the name GITLAB_TOKEN
 
 ## Make Semantic Commits
 
 To ensure `python-semantic-release` correctly increments version numbers, use semantic commit messages (e.g., `fix:`, `feat:`, `BREAKING CHANGE:`) for your commits. This practice helps the tool to automatically determine the next version number based on the changes made.
+You can find more information about semantic commits messages supported by `python-semantic-release` [here](https://python-semantic-release.readthedocs.io/en/latest/commit-parsing.html).
 
 ```{admonition} What to notice
 :class: hint
 
-After pushing our first commit and successfully running `python-semantic-release`, the tool will automatically generate both a release and a tag for your project, as well as a `CHANGELOG.md` file. You can find the generated release in the [Releases section](https://github.com/msdp.book/semver/releases) of the `semver` repository. This section provides detailed information about what's new, improved, or fixed in each release, along with any associated assets.
+- After pushing our first commit and successfully running `python-semantic-release`, the tool will automatically generate both a release and a tag for your project, as well as a `CHANGELOG.md` file. You can find the generated release in the [Releases section](https://Gitlab.com/msdp.book/my-package/releases) of the `my-package` repository. This section provides detailed information about what's new, improved, or fixed in each release, along with any associated assets.
 
-Similarly, the automatically created tag, marking the specific point in the repository's history for the release, can be found in the [Tags section](https://github.com/msdp.book/semver/tags). Tags serve as important reference points, indicating version releases and facilitating easy navigation through the project's version history.
+Similarly, the automatically created tag, marking the specific point in the repository's history for the release, can be found in the [Tags section](https://Gitlab.com/msdp.book/my-package/tags). Tags serve as important reference points, indicating version releases and facilitating easy navigation through the project's version history.
 ```
 
-# Create a new commit and see how it bumps the version
+## See it in action
 
-```{code-cell} bash
-touch test3.py
-git add test3.py
-git commit -m "feat(test3): add new test2 module"
+You can create a new commit with a semantic commit message and push it to the repository to see `python-semantic-release` in action. For example, you can create a new file in the repository and push it to the default branch.
+
+```{code-block} bash
+cd tests
+touch test.py
+git add test.py
+git commit -m "feat(test): add new test module"
 git push --set-upstream origin master
 ```
 
@@ -245,3 +249,6 @@ git push --set-upstream origin master
 %```{code-cell} bash
 %gh repo delete semver --yes
 %```
+
+## References 
+[Semantic Versioning](https://semver.org/)
