@@ -18,7 +18,9 @@ def main():
         if payer in balances:
             balances[payer] += amount
 
-    total_expenses = sum(balances.values())
+    total_expenses = 0
+    for value in balances.values():
+        total_expenses += value
     share = total_expenses / len(participants)
     print("\nExpense Summary:")
     for name in participants:
