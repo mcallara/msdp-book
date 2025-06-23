@@ -40,6 +40,8 @@ git remote add origin https://gitlab.com/msdp.book/my-project.git
 ```{admonition} Note
 :class: note
  - For the URL, we used the HTTPS URL of the remote repository. You will be prompted for your credentials when pushing or pulling.
+ - If you used Single Sign-On (SSO) to log in to GitLab, you will need to create a personal access token with the `api` scope and use it as your password when prompted.
+ - If you want to use SSH instead of HTTPS, you can use the SSH URL of the remote repository.
 Conventions:
  - We used `origin` for the remote repository reference. 
  - We used the name of the local repository (`my-project`) for the name of our remote repository. 
