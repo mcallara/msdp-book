@@ -70,7 +70,7 @@ cd poetry-demo
 ## Change the Python Versions Supported by the Project
 
 Since `python-semantic-release` requires `Python >=3.8`, before installing python-semantic-release, it is important that 
-you check and change the Python version supported by the project.
+you verify (and change if needed) the Python version supported by the project.
 In the `pyproject.toml` file, look for:
 
 ```toml
@@ -116,9 +116,9 @@ upload_to_pypi = "false"
 :tags: [remove-input]
 echo >> pyproject.toml
 echo '[tool.semantic_release]' >> pyproject.toml
-echo 'version_variable = "pyproject.toml:version"' >> pyproject.toml
+echo 'version_toml = ["pyproject.toml:project.version"]' >> pyproject.toml
 echo 'commit_version_number = true' >> pyproject.toml
-echo 'upload_to_pypi = "false"' >> pyproject.toml
+echo 'upload_to_pypi = false' >> pyproject.toml
 ```
 
 ## Setup GitHub Actions for Continuous Deployment
