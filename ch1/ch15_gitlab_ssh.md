@@ -29,17 +29,18 @@ Let's start by setting up your local project to push changes to a remote reposit
 Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.
 
 ### Adding a remote repository to your local repository
-To add a remote repository, use the `remote add <short name> <url>` command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using `origin` as the short name of the remote repository. For the URL we will use the HTTPS URL of the remote repository on GitLab. 
+To add a remote repository, use the `remote add <short name> <url>` command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using `origin` as the short name of the remote repository. For the URL we will use the SSH URL of the remote repository on GitLab. 
 
 For Gitlab user `msdp.book`, and a repository named `my-project` the command to add the remote repository would be:
 
 ```{code-cell} bash
-git remote add origin https://gitlab.com/msdp.book/my-project.git
+git remote add origin git@gitlab.com:msdp.book/my-project.git
 ```
 
 ```{admonition} Note
 :class: note
- - For the URL, we used the HTTPS URL of the remote repository. You will be prompted for your credentials when pushing or pulling.
+ - For the URL, we used the SSH URL of the remote repository to leverage the SSH key authentication. You can also use the HTTPS URL and provide your credentials when prompted.
+
 Conventions:
  - We used `origin` for the remote repository reference. 
  - We used the name of the local repository (`my-project`) for the name of our remote repository. 
@@ -119,7 +120,7 @@ Clone the `my-project` into a new directory named `my-project-remote`.
 
 ```{code-cell} bash
 cd ..
-git clone https://gitlab.com/msdp.book/my-project.git my-project-remote
+git clone git@gitlab.com:msdp.book/my-project.git my-project-remote
 ls
 ```
 
