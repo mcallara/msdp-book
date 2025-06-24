@@ -15,7 +15,12 @@ kernelspec:
 # 5.2 Software Versioning
 ```{code-cell} bash
 :tags: [remove-input]
-cd ../home
+
+if [ -d ../home ]; then
+  cd ../home
+else
+  cd /tmp
+fi
 mkdir ch52
 cd ch52
 ```

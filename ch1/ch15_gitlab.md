@@ -14,8 +14,11 @@ kernelspec:
 
 ```{code-cell} bash
 :tags: [remove-input]
-cd ../home/ch1
-cd my-project
+if [ -d ../home ]; then
+  cd ../home/ch1/my-project
+else
+  cd /tmp/ch1/my-project
+fi
 ```
 
 # 1.5 Remote Repositories

@@ -26,7 +26,12 @@ kernelspec:
 # 5.3 Packaging
 ```{code-cell} bash
 :tags: [remove-input]
-cd ../home/ch5/my-package
+if [ -d ../home ]; then
+  cd ../home/ch5/my-package
+else
+  cd /tmp/ch5/my-package
+fi
+
 ```
 In this chapter, we'll explore the essentials of Python packages, package registries, and how to utilize Poetry for package management. Additionally, we will delve into automating the build and publish process using the GitLab CI/CD pipeline, by continuing our work with the `poetry-demo` project.
 

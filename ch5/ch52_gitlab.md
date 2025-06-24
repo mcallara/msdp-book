@@ -17,7 +17,11 @@ kernelspec:
 # 5.2 Software Versioning
 ```{code-cell} bash
 :tags: ["remove-input","remove-output"]
-cd ../home
+if [ -d ../home ]; then
+  cd ../home
+else
+  cd /tmp
+fi
 mkdir ch5
 cd ch5
 git clone git@gitlab.com:msdp.book/my-package.git
