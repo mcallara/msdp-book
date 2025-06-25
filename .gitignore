@@ -3,3 +3,5 @@ home
 .venv/
 venv/
 outputs_books/
+*.pyc
+.vscode
