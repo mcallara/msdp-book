@@ -32,9 +32,14 @@ Use `my-project` as the repository name, and select Private. You can also add a 
 
 Click Create repository.
 
+```{code-cell} bash
+:tags: ["remove-input","remove-output"]
+gh repo create my-project --private
+```
+
 ## Setting up your local project to push changes to a remote repository on Github
 
-Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on Github. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Github will create the remote repository when we push the first changes.
+Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on Github.
 
 ### Adding a remote repository to your local repository
 To add a remote repository, use the `remote add <short name> <url>` command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using `origin` as the short name of the remote repository. For the URL we will use the SSH URL of the remote repository on Github. 
@@ -135,3 +140,8 @@ ls
 ## Deleting a remote repository
 
 To delete the remote repository in Github, navigate to the repository settings, scroll down to the Danger Zone section, and click on "Delete this repository". You will be prompted to confirm the deletion by typing the repository name.
+
+```{code-cell} bash
+:tags: ["remove-input","remove-output"]
+gh repo delete my-project --yes
+```

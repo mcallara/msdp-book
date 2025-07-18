@@ -228,6 +228,8 @@ Similarly, the automatically created tag, marking the specific point in the repo
 ```
 
 % Teardown
+% don't teardown to be able to inspect the repository
 %```{code-cell} bash
+%:tags: ["remove-input","remove-output"]
 %gh repo delete semver --yes
-%```
+```

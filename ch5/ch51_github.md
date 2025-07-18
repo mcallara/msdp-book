@@ -43,8 +43,6 @@ Furthermore, GitHub Actions provides a set of predefined environment variables t
 
 To get started with GitHub Actions, we will now create our first workflow in a new repository. We will use the GitHub web interface to create a new repository named `my-package` that will only contain a README file, and then we will define a simple workflow in a `.github/workflows/ci.yml` file.
 
-Go to the [GitHub website](https://github.com/) and sign in with your account. Then, click on the "New" button to create a new repository. Name your project "First Pipeline" and click on the "Create repository" button. This will create a new repository in GitHub containing only a README file.
-
 Let's now add a workflow file to the repository. This file will define a workflow with three jobs. To do this, click on "Add file" > "Create new file" in the repository, name the file `.github/workflows/ci.yml`, and paste the following content into the file. Then, commit the changes.
 
 ```yaml
@@ -176,3 +174,9 @@ jobs:
 
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Continuous integration vs delivery vs deployment.](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
+
+% Teardown
+```{code-cell} bash
+:tags: ["remove-input","remove-output"]
+gh repo delete my-package --yes
+```

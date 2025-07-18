@@ -65,8 +65,7 @@ To add the token to the gitlab ci cd variables, go to the settings of the reposi
 - Environment: All (default)
 - Protect Variable, Mask Variable, Expand variable reference
 - Key: GITLAB_TOKEN
-- Value: <your token>
-- with the name GITLAB_TOKEN
+- Value: `<your token>`
 
 ## Setup Your Python Project with Poetry
 
