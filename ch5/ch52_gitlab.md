@@ -52,14 +52,14 @@ Let's see how to automate semantic versioning in a Python project managed with P
 
 To allow `python-semantic-release` to interact with your Gitlab repository, you need to create a personal access token. This token will be used to authenticate the tool when it performs actions such as creating releases and tags.
 
-To create a new personal access token, go to your Gitlab account Preferences and click on ["Access Tokens"](https://gitlab.com/-/user_settings/personal_access_tokens) in the "User Settings" section. Then, click on "Add new token" and fill in the required details.
+To create a new personal access token, go to your GitLab account Preferences and click on ["Access Tokens"](https://gitlab.com/-/user_settings/personal_access_tokens) in the "User Settings" section. Then, click on "Add new token" and fill in the required details.
 You can use:
 - Token name: semantic_release
-- check in select scope: `api`, `read_user`, `read_repository`, and `write_repository`. Once you've created the token, copy it to your clipboard, as you'll need it later.
+- Check the following scopes: `api`, `read_user`, `read_repository`, and `write_repository`. Once you've created the token, copy it to your clipboard, as you'll need it later.
 
-## Adding the token to the gitlab ci cd variables
+## Adding the token to the GitLab CI/CD variables
 
-To add the token to the gitlab ci cd variables, go to the settings of the repository and then to the [CI/CD section](https://gitlab.com/msdp.book/semver/-/settings/ci_cd). Browse until you find the "Variables" section and click on "Expand" to reveal the form for adding a new variable. Now click on "Add variable" and add a new variable with:
+To add the token to the GitLab CI/CD variables, go to the settings of the repository and then to the [CI/CD section](https://gitlab.com/msdp.book/semver/-/settings/ci_cd). Browse until you find the "Variables" section and click on "Expand" to reveal the form for adding a new variable. Now click on "Add variable" and add a new variable with:
 
 - Type: Variable (default)
 - Environment: All (default)
