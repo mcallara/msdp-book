@@ -20,18 +20,18 @@ cd my-project
 
 # 1.5 Remote Repositories
 
-In this section you will see how to create and manage your first remote repository with Gitlab, including remote configuration, pushing changes, and cloning repositories.
+In this section, you will see how to create and manage your first remote repository with GitLab, including remote configuration, pushing changes, and cloning repositories.
 
 ## Creating a remote repository in GitLab
 
 Let's start by setting up your local project to push changes to a remote repository on GitLab.
 
-Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.
+Inside the `my-project` directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, GitLab will create the remote repository when we push the first changes.
 
 ### Adding a remote repository to your local repository
 To add a remote repository, use the `remote add <short name> <url>` command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using `origin` as the short name of the remote repository. For the URL we will use the HTTPS URL of the remote repository on GitLab. 
 
-For Gitlab user `msdp.book`, and a repository named `my-project` the command to add the remote repository would be:
+For GitLab user `msdp.book`, and a repository named `my-project`, the command to add the remote repository would be:
 
 ```{code-cell} bash
 git remote add origin https://gitlab.com/msdp.book/my-project.git
@@ -48,7 +48,7 @@ Conventions:
 These are two common conventions but you can use any names you want.
 ```
 
-### List the remote repository connections
+### List remote repository connections
 
 Git provides the `remote` command to list the remote repositories linked to your local repository. 
 
@@ -127,4 +127,4 @@ ls
 
 ## Deleting a remote repository
 
-To delete the remote repository in Gitlab, navigate to the repository settings and click on the `General`. Navegate to the `Advanced` section and click on `Expand`. At the bottom of the page, you will find the `Delete project` button. Click on it and confirm the deletion.
+To delete the remote repository in GitLab, navigate to the repository settings and click on the `General`. Navigate to the `Advanced` section and click on `Expand`. At the bottom of the page, you will find the `Delete project` button. Click on it and confirm the deletion.

@@ -1,4 +1,4 @@
-# Setting up your GitLab account
+# Setting Up Your GitLab Account
 
 ## Sign Up for a GitLab Account
 
