@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch10';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.1 Git and the Command Line" href="ch11.html" />
+    <link rel="next" title="1.1 Your First Steps with the Command Line" href="ch11g.html" />
     <link rel="prev" title="Welcome to Modern Software Development Practices" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,17 +186,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -216,8 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -417,6 +415,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn-in-this-chapter">What You’ll Learn in This Chapter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-outline">Chapter Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -431,23 +431,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-version-control">
 <h1>1 Introduction to Version Control<a class="headerlink" href="#introduction-to-version-control" title="Link to this heading">#</a></h1>
-<p>It starts innocently with adding “final” to the filename, which soon turns into “final_final,” and before you know it, you’re staring at “final_version_really_this_time.” Does this situation sound familiar? You’re not alone.</p>
-<p>Having the ability to track versions of your project without a hassle and to collaborate with others without mixing up your work are critical requirements for any software project. This is where version control comes in. This chapter will introduce you to the basics of version control and one of the most popular version control systems, Git.</p>
-<p>First, you will learn how to use Git from the command line. Then, you will learn how to use Git with a graphical user interface (GUI) tool. Finally, you will learn how to use Git with a web-based platform, Gitlab.</p>
+<p>It starts innocently with adding “final” to a filename, which soon turns into “final_final,” and before you know it, you’re staring at a folder full of files like “final_version_really_this_time.docx.” If this sounds familiar, you’re not alone. This chaotic approach to managing changes is not only messy but also risky, making it difficult to track your project’s history and collaborate with others.</p>
+<p>To solve this, we use <strong>Version Control Systems (VCS)</strong>. A VCS is a tool that helps you manage your project’s history, allowing you to save “snapshots” of your work at any time. The ability to track versions and collaborate with others without mixing up work is a critical requirement for any modern software project.</p>
+<p>This chapter introduces you to the fundamentals of version control using <strong>Git</strong>, the world’s most popular version control system. We will guide you through using Git in three common environments:</p>
+<ul class="simple">
+<li><p>First, you will learn the essentials of Git from the <strong>command line</strong>, the foundation of all Git operations.</p></li>
+<li><p>Next, you will see how to use Git with a <strong>graphical user interface (GUI)</strong>, which provides a visual way to manage your work.</p></li>
+<li><p>Finally, you will learn to leverage a web-based platform like <strong>GitLab</strong> to collaborate and manage your projects online.</p></li>
+</ul>
+<section id="what-you-ll-learn-in-this-chapter">
+<h2>What You’ll Learn in This Chapter<a class="headerlink" href="#what-you-ll-learn-in-this-chapter" title="Link to this heading">#</a></h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ul class="simple">
+<li><p><strong>Create and manage</strong> a Git repository to track your project’s history.</p></li>
+<li><p><strong>Use essential Git commands</strong> from the command line to save, retrieve, and compare different versions of your work.</p></li>
+<li><p><strong>Work with remote repositories</strong> to collaborate with others and back up your work.</p></li>
+<li><p><strong>Recover from mistakes</strong> by reverting to previous versions when something goes wrong.</p></li>
+</ul>
+</section>
+<section id="chapter-outline">
+<h2>Chapter Outline<a class="headerlink" href="#chapter-outline" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </div>
+</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.oreilly.com/library/view/learning-git/9781098133900/">Skoulikari, A. (2023). Learning git: A hands-on and visual guide to the basics of git. O’Reilly.</a></p></li>
+<li><p><a class="reference external" href="https://www.oreilly.com/library/view/learning-git/9781098133900/">Skoulikari, A. (2023). Learning Git: A hands-on and visual guide to the basics of Git. O’Reilly.</a></p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=i_23KUAEtUM">Using Git with VSC (Official Beginner Tutorial)</a></p></li>
 </ul>
 </section>
@@ -493,11 +511,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="ch11.html"
+       href="ch11g.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.1 Git and the Command Line</p>
+        <p class="prev-next-title">1.1 Your First Steps with the Command Line</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,6 +535,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn-in-this-chapter">What You’ll Learn in This Chapter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-outline">Chapter Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
@@ -542,7 +562,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

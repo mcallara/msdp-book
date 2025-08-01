@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -65,11 +65,11 @@ const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch15_gitlab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch151_gitlab_https';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2 AI-Assisted Software Development and Debugging" href="../ch2/ch20.html" />
-    <link rel="prev" title="Setting up your GitLab account" href="ssh_gitlab.html" />
+    <link rel="prev" title="Setting Up Your GitLab Account" href="ch150_gitlab_auth_https.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,17 +186,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -216,8 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -293,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch15_gitlab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/mcallara/msdp-book/issues/new?title=Issue%20on%20page%20%2Fch1/ch151_gitlab_https.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/ch1/ch15_gitlab.md" target="_blank"
+      <li><a href="../_sources/ch1/ch151_gitlab_https.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +417,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository-in-gitlab">Creating a remote repository in GitLab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-remote-repository-to-your-local-repository">Adding a remote repository to your local repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-remote-repository-connections">List the remote repository connections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-remote-repository-connections">List remote repository connections</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-workings-remote-config">Inner workings: remote config</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-references">Checking references</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-to-the-remote-repository">Pushing to the remote repository</a></li>
@@ -444,18 +442,18 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="remote-repositories">
 <h1>1.5 Remote Repositories<a class="headerlink" href="#remote-repositories" title="Link to this heading">#</a></h1>
-<p>In this section you will see how to create and manage your first remote repository with Gitlab, including remote configuration, pushing changes, and cloning repositories.</p>
+<p>In this section, you will see how to create and manage your first remote repository with GitLab, including remote configuration, pushing changes, and cloning repositories.</p>
 <section id="creating-a-remote-repository-in-gitlab">
 <h2>Creating a remote repository in GitLab<a class="headerlink" href="#creating-a-remote-repository-in-gitlab" title="Link to this heading">#</a></h2>
 <p>Let’s start by setting up your local project to push changes to a remote repository on GitLab.</p>
-<p>Inside the <code class="docutils literal notranslate"><span class="pre">my-project</span></code> directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, Gitlab will create the remote repository when we push the first changes.</p>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">my-project</span></code> directory, we will tell Git that we want to work with a remote repository on GitLab. Even though we have not created the remote repository yet, we can still configure the local repository to push changes to it. If the repository does not exist, GitLab will create the remote repository when we push the first changes.</p>
 <section id="adding-a-remote-repository-to-your-local-repository">
 <h3>Adding a remote repository to your local repository<a class="headerlink" href="#adding-a-remote-repository-to-your-local-repository" title="Link to this heading">#</a></h3>
-<p>To add a remote repository, use the <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">add</span> <span class="pre">&lt;short</span> <span class="pre">name&gt;</span> <span class="pre">&lt;url&gt;</span></code> command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using <code class="docutils literal notranslate"><span class="pre">origin</span></code> as the short name of the remote repository. For the URL we will use the SSH URL of the remote repository on GitLab.</p>
-<p>For Gitlab user <code class="docutils literal notranslate"><span class="pre">msdp.book</span></code>, and a repository named <code class="docutils literal notranslate"><span class="pre">my-project</span></code> the command to add the remote repository would be:</p>
+<p>To add a remote repository, use the <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">add</span> <span class="pre">&lt;short</span> <span class="pre">name&gt;</span> <span class="pre">&lt;url&gt;</span></code> command. This command adds, to your local repository, a reference to a remote repository. We will follow the convention of using <code class="docutils literal notranslate"><span class="pre">origin</span></code> as the short name of the remote repository. For the URL we will use the HTTPS URL of the remote repository on GitLab.</p>
+<p>For GitLab user <code class="docutils literal notranslate"><span class="pre">msdp.book</span></code>, and a repository named <code class="docutils literal notranslate"><span class="pre">my-project</span></code>, the command to add the remote repository would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@gitlab.com:msdp.book/my-project.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://gitlab.com/msdp.book/my-project.git
 </pre></div>
 </div>
 </div>
@@ -463,18 +461,18 @@ document.write(`
 <div class="note admonition">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>For the URL, we used the SSH URL of the remote repository to leverage the SSH key authentication. You can also use the HTTPS URL and provide your credentials when prompted.</p></li>
-</ul>
-<p>Conventions:</p>
-<ul class="simple">
+<li><p>For the URL, we used the HTTPS URL of the remote repository. You will be prompted for your credentials when pushing or pulling.</p></li>
+<li><p>If you used Single Sign-On (SSO) to log in to GitLab, you will need to create a personal access token with the <code class="docutils literal notranslate"><span class="pre">api</span></code> scope and use it as your password when prompted.</p></li>
+<li><p>If you want to use SSH instead of HTTPS, you can use the SSH URL of the remote repository.
+Conventions:</p></li>
 <li><p>We used <code class="docutils literal notranslate"><span class="pre">origin</span></code> for the remote repository reference.</p></li>
 <li><p>We used the name of the local repository (<code class="docutils literal notranslate"><span class="pre">my-project</span></code>) for the name of our remote repository.
 These are two common conventions but you can use any names you want.</p></li>
 </ul>
 </div>
 </section>
-<section id="list-the-remote-repository-connections">
-<h3>List the remote repository connections<a class="headerlink" href="#list-the-remote-repository-connections" title="Link to this heading">#</a></h3>
+<section id="list-remote-repository-connections">
+<h3>List remote repository connections<a class="headerlink" href="#list-remote-repository-connections" title="Link to this heading">#</a></h3>
 <p>Git provides the <code class="docutils literal notranslate"><span class="pre">remote</span></code> command to list the remote repositories linked to your local repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,8 +494,8 @@ These are two common conventions but you can use any names you want.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	git@gitlab.com:msdp.book/my-project.git (fetch)
-origin	git@gitlab.com:msdp.book/my-project.git (push)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>origin	https://gitlab.com/msdp.book/my-project.git (fetch)
+origin	https://gitlab.com/msdp.book/my-project.git (push)
 </pre></div>
 </div>
 </div>
@@ -523,7 +521,7 @@ origin	git@gitlab.com:msdp.book/my-project.git (push)
 	bare = false
 	logallrefupdates = true
 [remote &quot;origin&quot;]
-	url = git@gitlab.com:msdp.book/my-project.git
+	url = https://gitlab.com/msdp.book/my-project.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 </pre></div>
 </div>
@@ -560,21 +558,9 @@ origin	git@gitlab.com:msdp.book/my-project.git (push)
 Counting objects: 100% (9/9), done.
 Delta compression using up to 96 threads
 Compressing objects: 100% (4/4), done.
-Writing objects: 100% (9/9), 761 bytes | 761.00 KiB/s, done.
+Writing objects: 100% (9/9), 764 bytes | 764.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
-remote: 
-remote: 
-remote: The private project msdp.book/my-project was successfully created.
-remote: 
-remote: To configure the remote, run:
-remote:   git remote add origin git@gitlab.com:msdp.book/my-project.git
-remote: 
-remote: To view the project, visit:
-remote:   https://gitlab.com/msdp.book/my-project
-remote: 
-remote: 
-remote: 
-To gitlab.com:msdp.book/my-project.git
+To https://gitlab.com/msdp.book/my-project.git
  * [new branch]      main -&gt; main
 Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;origin&#39;.
 </pre></div>
@@ -634,21 +620,21 @@ Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;ori
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Red">origin/main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:24 2024 +0100
+Date:   Sat Aug 2 01:12:02 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
+<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:22 2024 +0100
+Date:   Sat Aug 2 01:12:01 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
+<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:17 2024 +0100
+Date:   Sat Aug 2 01:11:55 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -670,7 +656,7 @@ Date:   Fri Mar 15 19:16:17 2024 +0100
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
-git<span class="w"> </span>clone<span class="w"> </span>git@gitlab.com:msdp.book/my-project.git<span class="w"> </span>my-project-remote
+git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/msdp.book/my-project.git<span class="w"> </span>my-project-remote
 ls
 </pre></div>
 </div>
@@ -680,8 +666,8 @@ ls
 remote: Enumerating objects: 9, done.
 remote: Counting objects: 100% (9/9), done.
 remote: Compressing objects: 100% (4/4), done.
-remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
-Receiving objects: 100% (9/9), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 749 bytes | 187.00 KiB/s, done.
 <span class=" -Color -Color-C33">my-project</span>  <span class=" -Color -Color-C33">my-project-remote</span>
 </pre></div>
 </div>
@@ -690,7 +676,7 @@ Receiving objects: 100% (9/9), done.
 </section>
 <section id="deleting-a-remote-repository">
 <h2>Deleting a remote repository<a class="headerlink" href="#deleting-a-remote-repository" title="Link to this heading">#</a></h2>
-<p>To delete the remote repository in Gitlab, navigate to the repository settings and click on the <code class="docutils literal notranslate"><span class="pre">General</span></code>. Navegate to the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> section and click on <code class="docutils literal notranslate"><span class="pre">Expand</span></code>. At the bottom of the page, you will find the <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">project</span></code> button. Click on it and confirm the deletion.</p>
+<p>To delete the remote repository in GitLab, navigate to the repository settings and click on the <code class="docutils literal notranslate"><span class="pre">General</span></code>. Navigate to the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> section and click on <code class="docutils literal notranslate"><span class="pre">Expand</span></code>. At the bottom of the page, you will find the <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">project</span></code> button. Click on it and confirm the deletion.</p>
 </section>
 </section>
 
@@ -725,12 +711,12 @@ Receiving objects: 100% (9/9), done.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ssh_gitlab.html"
+       href="ch150_gitlab_auth_https.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setting up your GitLab account</p>
+        <p class="prev-next-title">Setting Up Your GitLab Account</p>
       </div>
     </a>
     <a class="right-next"
@@ -760,7 +746,7 @@ Receiving objects: 100% (9/9), done.
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-remote-repository-in-gitlab">Creating a remote repository in GitLab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-remote-repository-to-your-local-repository">Adding a remote repository to your local repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-remote-repository-connections">List the remote repository connections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-remote-repository-connections">List remote repository connections</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-workings-remote-config">Inner workings: remote config</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-references">Checking references</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-to-the-remote-repository">Pushing to the remote repository</a></li>
@@ -794,7 +780,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

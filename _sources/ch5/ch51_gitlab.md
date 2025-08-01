@@ -141,6 +141,6 @@ deploy_job:
 - Files that are created in a job are not persisted to the next job. This means that the `test-file.txt` and `test-file2.txt` files that we created in the `build_job` and `test_job` jobs are not available in the `deploy_job` job.
 ```
 
-# References
+## References
 
 - [Continuous integration vs delivery vs deployment.](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch1/ch14';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Setting up your GitLab account" href="ssh_gitlab.html" />
+    <link rel="next" title="Setting Up Your GitLab Account" href="ch150_gitlab_auth_https.html" />
     <link rel="prev" title="1.3 Branches" href="ch13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,17 +188,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch10.html">1 Introduction to Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -218,8 +218,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -425,7 +423,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-switching-branches-on-the-working-directory">Impact of switching branches on the working directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches-with-uncommitted-changes">Switching branches with uncommitted changes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-an-staged-file">Modifying an staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-a-staged-file">Modifying a staged file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-all-commits">Viewing all commits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-out-a-commit-and-the-detached-head-state">Checking out a commit and the detached HEAD State</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch">Deleting a branch</a></li>
@@ -454,8 +452,8 @@ document.write(`
 </ul>
 <section id="fast-forward-merge">
 <h3>Fast-forward merge<a class="headerlink" href="#fast-forward-merge" title="Link to this heading">#</a></h3>
-<p>Let’s first understand visually how a fast-forward merge of the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code> would look like by comparing the current state of the repository with the state after the merge.</p>
-<p>This is how the repository looks like now:</p>
+<p>Let’s first understand visually how a fast-forward merge of the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code> would look by comparing the current state of the repository with the state after the merge.</p>
+<p>This is how the repository looks now:</p>
 <div class="mermaid">
             flowchart RL
     C2((C2)) --&gt; C1((C1))
@@ -500,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating d30b4a0..4c34d2d
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 99f63ca..48feaa5
 Fast-forward
  file1.txt | 1 <span class=" -Color -Color-Green">+</span>
  1 file changed, 1 insertion(+)
@@ -511,7 +509,7 @@ Fast-forward
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
-<li><p>Git tell us that there was one file changed, file1.txt, and that there was 1 insertions (which we know is the third line).</p></li>
+<li><p>Git tells us that there was one file changed, file1.txt, and that there was 1 insertion (which we know is the third line).</p></li>
 </ul>
 </div>
 <div class="cell docutils container">
@@ -527,7 +525,7 @@ nothing to commit, working tree clean
 </div>
 </div>
 </div>
-<p>After the fast-forward merge, there are no changes to commit, the working tree is clean.</p>
+<p>After the fast-forward merge, there are no changes to commit; the working tree is clean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
@@ -535,21 +533,21 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:24 2024 +0100
+Date:   Sat Aug 2 01:12:02 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
+<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:22 2024 +0100
+Date:   Sat Aug 2 01:12:01 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
+<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:17 2024 +0100
+Date:   Sat Aug 2 01:11:55 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -575,7 +573,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;feature&#39;
-[feature ae47e9c] Add file2 and modify file1
+[feature fc92856] Add file2 and modify file1
  2 files changed, 2 insertions(+)
  create mode 100644 file2.txt
 </pre></div>
@@ -667,8 +665,8 @@ Aborting
 </ul>
 </div>
 </section>
-<section id="modifying-an-staged-file">
-<h2>Modifying an staged file<a class="headerlink" href="#modifying-an-staged-file" title="Link to this heading">#</a></h2>
+<section id="modifying-a-staged-file">
+<h2>Modifying a staged file<a class="headerlink" href="#modifying-a-staged-file" title="Link to this heading">#</a></h2>
 <p>Changes made after staging are not automatically included in the staged snapshot. To include changes in the staged snapshot, the file must be staged again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -721,7 +719,7 @@ Changes not staged for commit:
 <div class="admonition-what-to-notice admonition">
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
-<li><p>As we saw before, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> has both staged and not staged modifications.</p></li>
+<li><p>As we saw before, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> has both staged and unstaged modifications.</p></li>
 </ul>
 </div>
 <p>Let’s now stage the latest changes to <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code></p>
@@ -744,7 +742,7 @@ Changes not staged for commit:
 </div>
 </div>
 </div>
-<p>now all modifications has been staged and we can commit them:</p>
+<p>now all modifications have been staged and we can commit them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add fifth and sixth lines to file1.txt&quot;</span>
@@ -752,7 +750,7 @@ Changes not staged for commit:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 73aa479] Add fifth and sixth lines to file1.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 307e281] Add fifth and sixth lines to file1.txt
  1 file changed, 2 insertions(+)
 </pre></div>
 </div>
@@ -773,21 +771,21 @@ git<span class="w"> </span>log
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
-<span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:24 2024 +0100
+Date:   Sat Aug 2 01:12:02 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
+<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:22 2024 +0100
+Date:   Sat Aug 2 01:12:01 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
+<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:17 2024 +0100
+Date:   Sat Aug 2 01:11:55 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -804,33 +802,33 @@ git<span class="w"> </span>log<span class="w"> </span>--all
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already on &#39;main&#39;
-<span class=" -Color -Color-Yellow">commit 73aa47900ddb4b5cf6a6fcc222bb6e8f73bc16f4 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 307e28120d184caf9436f7215b8b2c51e25e4087 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:33 2024 +0100
+Date:   Sat Aug 2 01:12:11 2025 +0200
 
     Add fifth and sixth lines to file1.txt
 
-<span class=" -Color -Color-Yellow">commit ae47e9cc31a286967d519a32f7f089776ee1223e</span>
+<span class=" -Color -Color-Yellow">commit fc92856965df974a24497639057c08353f226718</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:31 2024 +0100
+Date:   Sat Aug 2 01:12:10 2025 +0200
 
     Add file2 and modify file1
 
-<span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:24 2024 +0100
+Date:   Sat Aug 2 01:12:02 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
+<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:22 2024 +0100
+Date:   Sat Aug 2 01:12:01 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
+<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:17 2024 +0100
+Date:   Sat Aug 2 01:11:55 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -871,7 +869,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 4c34d2d Add third line to file1.txt
+HEAD is now at 48feaa5 Add third line to file1.txt
 </pre></div>
 </div>
 </div>
@@ -883,7 +881,7 @@ HEAD is now at 4c34d2d Add third line to file1.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">HEAD detached at </span>4c34d2d
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">HEAD detached at </span>48feaa5
 nothing to commit, working tree clean
 </pre></div>
 </div>
@@ -896,33 +894,33 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 73aa47900ddb4b5cf6a6fcc222bb6e8f73bc16f4 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 307e28120d184caf9436f7215b8b2c51e25e4087 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:33 2024 +0100
+Date:   Sat Aug 2 01:12:11 2025 +0200
 
     Add fifth and sixth lines to file1.txt
 
-<span class=" -Color -Color-Yellow">commit ae47e9cc31a286967d519a32f7f089776ee1223e</span>
+<span class=" -Color -Color-Yellow">commit fc92856965df974a24497639057c08353f226718</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:31 2024 +0100
+Date:   Sat Aug 2 01:12:10 2025 +0200
 
     Add file2 and modify file1
 
-<span class=" -Color -Color-Yellow">commit 4c34d2de5a3d346a271ea3c30477f0049ddc88cc (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:24 2024 +0100
+Date:   Sat Aug 2 01:12:02 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit d30b4a05bd3582bd7ec537c09ed0c764cc605e1e</span>
+<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:22 2024 +0100
+Date:   Sat Aug 2 01:12:01 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 2007711caa39b5ad6bee678519eb0b98e71bd1a3</span>
+<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Fri Mar 15 19:16:17 2024 +0100
+Date:   Sat Aug 2 01:11:55 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -933,8 +931,8 @@ Date:   Fri Mar 15 19:16:17 2024 +0100
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
 <li><p>We moved the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer two commits back from the current position of the <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch.</p></li>
-<li><p>By coincidence, the commit we checked out is the same as the commit <code class="docutils literal notranslate"><span class="pre">main</span></code> is pointing.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is not pointing to <code class="docutils literal notranslate"><span class="pre">main</span></code> is pointing to the commit directly, note that there is no arrow from <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code>, as we used to see before.</p></li>
+<li><p>By coincidence, the commit we checked out is the same as the commit to which <code class="docutils literal notranslate"><span class="pre">main</span></code> is pointing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is not pointing to <code class="docutils literal notranslate"><span class="pre">main</span></code>; it is pointing to the commit directly. Note that there is no arrow from <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code>, as we used to see before.</p></li>
 </ul>
 </div>
 <p>When you check out a commit, you are in a detached HEAD state. This means that the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> pointer is no longer pointing to a branch, but to a specific commit. This is useful for inspecting the state of the repository at a specific point in time, but it is not recommended to make changes in this state. If you make changes and commit them, they will be based on the commit you checked out, not on the tip of any branch. This means that if you switch back to a branch, the changes you made in the detached HEAD state will not be part of the branch. To exit a detached HEAD state and retain your changes, you can create a new branch from the current commit:</p>
@@ -950,7 +948,7 @@ Date:   Fri Mar 15 19:16:17 2024 +0100
 </div>
 </div>
 </div>
-<p>This command creates and switch to the new branch (in one command) starting from the current commit, effectively bringing your HEAD back to a non-detached state and ensuring that any commits made in the detached HEAD state are not lost.</p>
+<p>This command creates and switches to the new branch (in one command) starting from the current commit, effectively bringing your HEAD back to a non-detached state and ensuring that any commits made in the detached HEAD state are not lost.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
@@ -964,11 +962,11 @@ nothing to commit, working tree clean
 </div>
 </div>
 </div>
-<p>After creating and switching to the new branch we are not in a detached HEAD state anymore, and the changes we made are now part of the new branch.</p>
+<p>After creating and switching to the new branch we are no longer in a detached HEAD state, and the changes we made are now part of the new branch.</p>
 </section>
 <section id="deleting-a-branch">
 <h2>Deleting a branch<a class="headerlink" href="#deleting-a-branch" title="Link to this heading">#</a></h2>
-<p>Finally, once your feature it’s merged, you usually don’t want to keep the feature branch around. To delete a branch, first you need to ensure that you are not currently on the branch you want to delete by switching to another branch or commit. Then use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">&lt;branch-name&gt;</span></code> command. For example, to delete the <code class="docutils literal notranslate"><span class="pre">new-branch-name</span></code> branch:</p>
+<p>Finally, once your feature is merged, you usually don’t want to keep the feature branch around. To delete a branch, first you need to ensure that you are not currently on the branch you want to delete by switching to another branch or commit. Then use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">&lt;branch-name&gt;</span></code> command. For example, to delete the <code class="docutils literal notranslate"><span class="pre">new-branch-name</span></code> branch:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
@@ -978,12 +976,12 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
-Deleted branch new-branch-name (was 4c34d2d).
+Deleted branch new-branch-name (was 48feaa5).
 </pre></div>
 </div>
 </div>
 </div>
-<p>The -d option deletes the branch safely, meaning it will prevent you from deleting the branch that contained unmerged changes. If you are sure you want to delete the branch even if it contains unmerged changes, you can use the -D option, which forces the deletion.</p>
+<p>The -d option deletes the branch safely, meaning it will prevent you from deleting a branch that contains unmerged changes. If you are sure you want to delete the branch even if it contains unmerged changes, you can use the -D option, which forces the deletion.</p>
 </section>
 </section>
 
@@ -1027,11 +1025,11 @@ Deleted branch new-branch-name (was 4c34d2d).
       </div>
     </a>
     <a class="right-next"
-       href="ssh_gitlab.html"
+       href="ch150_gitlab_auth_https.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up your GitLab account</p>
+        <p class="prev-next-title">Setting Up Your GitLab Account</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1057,7 +1055,7 @@ Deleted branch new-branch-name (was 4c34d2d).
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-of-switching-branches-on-the-working-directory">Impact of switching branches on the working directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches-with-uncommitted-changes">Switching branches with uncommitted changes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-an-staged-file">Modifying an staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-a-staged-file">Modifying a staged file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-all-commits">Viewing all commits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-out-a-commit-and-the-detached-head-state">Checking out a commit and the detached HEAD State</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-branch">Deleting a branch</a></li>
@@ -1085,7 +1083,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

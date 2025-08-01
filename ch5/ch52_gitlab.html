@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -186,17 +186,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -216,8 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -422,7 +420,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">Automate Semantic Versioning in Poetry Projects with Python Semantic Release</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-the-semantic-versioning-of-my-package">Automating the semantic versioning of My Package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-personal-access-token">Creating a personal access token</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-token-to-the-gitlab-ci-cd-variables">Adding the token to the gitlab ci cd variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-token-to-the-gitlab-ci-cd-variables">Adding the token to the GitLab CI/CD variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-python-project-with-poetry">Setup Your Python Project with Poetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-the-python-versions-supported-by-the-project">Change the Python Versions Supported by the Project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-python-semantic-release-as-a-dependency-of-your-project">Add Python Semantic Release as a dependency of your project</a></li>
@@ -471,23 +469,22 @@ document.write(`
 <section id="creating-a-personal-access-token">
 <h2>Creating a personal access token<a class="headerlink" href="#creating-a-personal-access-token" title="Link to this heading">#</a></h2>
 <p>To allow <code class="docutils literal notranslate"><span class="pre">python-semantic-release</span></code> to interact with your Gitlab repository, you need to create a personal access token. This token will be used to authenticate the tool when it performs actions such as creating releases and tags.</p>
-<p>To create a new personal access token, go to your Gitlab account Preferences and click on <a class="reference external" href="https://gitlab.com/-/user_settings/personal_access_tokens">“Access Tokens”</a> in the “User Settings” section. Then, click on “Add new token” and fill in the required details.
+<p>To create a new personal access token, go to your GitLab account Preferences and click on <a class="reference external" href="https://gitlab.com/-/user_settings/personal_access_tokens">“Access Tokens”</a> in the “User Settings” section. Then, click on “Add new token” and fill in the required details.
 You can use:</p>
 <ul class="simple">
 <li><p>Token name: semantic_release</p></li>
-<li><p>check in select scope: <code class="docutils literal notranslate"><span class="pre">api</span></code>, <code class="docutils literal notranslate"><span class="pre">read_user</span></code>, <code class="docutils literal notranslate"><span class="pre">read_repository</span></code>, and <code class="docutils literal notranslate"><span class="pre">write_repository</span></code>. Once you’ve created the token, copy it to your clipboard, as you’ll need it later.</p></li>
+<li><p>Check the following scopes: <code class="docutils literal notranslate"><span class="pre">api</span></code>, <code class="docutils literal notranslate"><span class="pre">read_user</span></code>, <code class="docutils literal notranslate"><span class="pre">read_repository</span></code>, and <code class="docutils literal notranslate"><span class="pre">write_repository</span></code>. Once you’ve created the token, copy it to your clipboard, as you’ll need it later.</p></li>
 </ul>
 </section>
 <section id="adding-the-token-to-the-gitlab-ci-cd-variables">
-<h2>Adding the token to the gitlab ci cd variables<a class="headerlink" href="#adding-the-token-to-the-gitlab-ci-cd-variables" title="Link to this heading">#</a></h2>
-<p>To add the token to the gitlab ci cd variables, go to the settings of the repository and then to the <a class="reference external" href="https://gitlab.com/msdp.book/semver/-/settings/ci_cd">CI/CD section</a>. Browse until you find the “Variables” section and click on “Expand” to reveal the form for adding a new variable. Now click on “Add variable” and add a new variable with:</p>
+<h2>Adding the token to the GitLab CI/CD variables<a class="headerlink" href="#adding-the-token-to-the-gitlab-ci-cd-variables" title="Link to this heading">#</a></h2>
+<p>To add the token to the GitLab CI/CD variables, go to the settings of the repository and then to the <a class="reference external" href="https://gitlab.com/msdp.book/semver/-/settings/ci_cd">CI/CD section</a>. Browse until you find the “Variables” section and click on “Expand” to reveal the form for adding a new variable. Now click on “Add variable” and add a new variable with:</p>
 <ul class="simple">
 <li><p>Type: Variable (default)</p></li>
 <li><p>Environment: All (default)</p></li>
 <li><p>Protect Variable, Mask Variable, Expand variable reference</p></li>
 <li><p>Key: GITLAB_TOKEN</p></li>
-<li><p>Value: <your token></p></li>
-<li><p>with the name GITLAB_TOKEN</p></li>
+<li><p>Value: <code class="docutils literal notranslate"><span class="pre">&lt;your</span> <span class="pre">token&gt;</span></code></p></li>
 </ul>
 </section>
 <section id="setup-your-python-project-with-poetry">
@@ -527,10 +524,554 @@ In the <code class="docutils literal notranslate"><span class="pre">pyproject.to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Cannot declare (&#39;tool&#39;, &#39;poetry&#39;) twice (at line 28, column 13)</span>
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating virtualenv <span class=" -Color -Color-Cyan">my-package</span> in /home/callaram/tds/home/ch5/my-package/.venv
+Using version <span class=" -Color -Color-Bold">^10.2.0</span> for <span class=" -Color -Color-Cyan">python-semantic-release</span>
+
+<span class=" -Color -Color-Blue">Updating dependencies</span>
+<span class=" -Color -Color-Blue">Resolving dependencies...</span> <span class=" -Color -Color-Faint">(1.1s)</span>
+
+<span class=" -Color -Color-Bold">Package operations</span>: <span class=" -Color -Color-Blue">30</span> installs, <span class=" -Color -Color-Blue">0</span> updates, <span class=" -Color -Color-Blue">0</span> removals
+
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">certifi</span> (<span class=" -Color -Color-Bold">2025.7.14</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">certifi</span> (<span class=" -Color -Color-Bold">2025.7.14</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Bold">3.10</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Green">3.10</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Green">3.10</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">certifi</span> (<span class=" -Color -Color-Green">2025.7.14</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Bold">3.4.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Green">3.10</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Green">3.10</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">charset-normalizer</span> (<span class=" -Color -Color-Green">3.4.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">idna</span> (<span class=" -Color -Color-Green">3.10</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Bold">2.2.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">urllib3</span> (<span class=" -Color -Color-Green">2.2.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">mdurl</span> (<span class=" -Color -Color-Bold">0.1.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">mdurl</span> (<span class=" -Color -Color-Bold">0.1.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">mdurl</span> (<span class=" -Color -Color-Green">0.1.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Bold">2.32.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Bold">5.0.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Bold">4.13.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Green">4.13.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Green">4.13.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Green">5.0.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Green">4.13.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Green">5.0.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Green">4.13.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests</span> (<span class=" -Color -Color-Green">2.32.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">smmap</span> (<span class=" -Color -Color-Green">5.0.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">typing-extensions</span> (<span class=" -Color -Color-Green">4.13.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">annotated-types</span> (<span class=" -Color -Color-Bold">0.7.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">annotated-types</span> (<span class=" -Color -Color-Bold">0.7.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">annotated-types</span> (<span class=" -Color -Color-Green">0.7.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Bold">8.1.8</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Bold">2.1.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Bold">3.20.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Bold">1.17.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">click</span> (<span class=" -Color -Color-Green">8.1.8</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Bold">4.0.12</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">gitdb</span> (<span class=" -Color -Color-Green">4.0.12</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Bold">3.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Bold">1.0.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markdown-it-py</span> (<span class=" -Color -Color-Green">3.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">markupsafe</span> (<span class=" -Color -Color-Green">2.1.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Bold">2.27.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">pydantic-core</span> (<span class=" -Color -Color-Green">2.27.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Bold">2.19.2</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">pygments</span> (<span class=" -Color -Color-Green">2.19.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">requests-toolbelt</span> (<span class=" -Color -Color-Green">1.0.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">wrapt</span> (<span class=" -Color -Color-Green">1.17.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">zipp</span> (<span class=" -Color -Color-Green">3.20.2</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click-option-group</span> (<span class=" -Color -Color-Bold">0.5.7</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Bold">1.2.18</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Bold">1.2.18</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">click-option-group</span> (<span class=" -Color -Color-Bold">0.5.7</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Bold">1.2.18</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Bold">1.2.18</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Green">1.2.18</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Bold">1.3.1</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Green">1.3.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Green">1.2.18</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Green">1.3.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">click-option-group</span> (<span class=" -Color -Color-Green">0.5.7</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">deprecated</span> (<span class=" -Color -Color-Green">1.2.18</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">dotty-dict</span> (<span class=" -Color -Color-Green">1.3.1</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Bold">3.1.45</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Bold">6.4.5</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Bold">1.5.4</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Bold">0.13.3</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Green">6.4.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Bold">14.1.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Green">6.4.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">gitpython</span> (<span class=" -Color -Color-Green">3.1.45</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">importlib-resources</span> (<span class=" -Color -Color-Green">6.4.5</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Bold">3.1.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">jinja2</span> (<span class=" -Color -Color-Green">3.1.6</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Bold">2.10.6</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">pydantic</span> (<span class=" -Color -Color-Green">2.10.6</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Bold">4.13.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">python-gitlab</span> (<span class=" -Color -Color-Green">4.13.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">rich</span> (<span class=" -Color -Color-Green">14.1.0</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">shellingham</span> (<span class=" -Color -Color-Green">1.5.4</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">tomlkit</span> (<span class=" -Color -Color-Green">0.13.3</span>)
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-semantic-release</span> (<span class=" -Color -Color-Bold">10.2.0</span>): <span class=" -Color -Color-Blue">Pending...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Blue">-</span> Installing <span class=" -Color -Color-Cyan">python-semantic-release</span> (<span class=" -Color -Color-Bold">10.2.0</span>): <span class=" -Color -Color-Blue">Installing...</span>
+  <span class=" -Color -Color-Bold -Color-Bold-Green">-</span> Installing <span class=" -Color -Color-Cyan">python-semantic-release</span> (<span class=" -Color -Color-Green">10.2.0</span>)
+
+<span class=" -Color -Color-Blue">Writing lock file</span>
 </pre></div>
 </div>
 </div>
@@ -680,7 +1221,7 @@ git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-semantic-versioning-in-poetry-projects-with-python-semantic-release">Automate Semantic Versioning in Poetry Projects with Python Semantic Release</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-the-semantic-versioning-of-my-package">Automating the semantic versioning of My Package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-personal-access-token">Creating a personal access token</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-token-to-the-gitlab-ci-cd-variables">Adding the token to the gitlab ci cd variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-token-to-the-gitlab-ci-cd-variables">Adding the token to the GitLab CI/CD variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-your-python-project-with-poetry">Setup Your Python Project with Poetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-the-python-versions-supported-by-the-project">Change the Python Versions Supported by the Project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-python-semantic-release-as-a-dependency-of-your-project">Add Python Semantic Release as a dependency of your project</a></li>
@@ -714,7 +1255,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

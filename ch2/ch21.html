@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch2/ch21';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1 Debugging in Python with Visual Studio Code" href="ch22.html" />
+    <link rel="next" title="2.2 Debugging in Python with Visual Studio Code" href="ch22.html" />
     <link rel="prev" title="2 AI-Assisted Software Development and Debugging" href="ch20.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,17 +186,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch1/ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch1/ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20.html">2 AI-Assisted Software Development and Debugging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -216,8 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
-
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -419,11 +417,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-configuration">Installation and Configuration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-access-to-github-copilot">Getting access to GitHub Copilot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-github-copilot-and-github-copilot-chat-extensions">Installing the GitHub Copilot and Github Copilot Chat extensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-github-copilot-and-github-copilot-chat-extensions">Installing the GitHub Copilot and GitHub Copilot Chat extensions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-world-example">A real-world example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-in-line-suggestions">Getting in line suggestions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-inline-suggestions">Getting inline suggestions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-copilot-with-the-inline-chat">Querying Copilot with the inline chat</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-code">Explaining code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-documentation">Generating documentation</a></li>
@@ -432,7 +430,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-other-parts-of-the-development-process">Integration in other parts of the development process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with Github Copilot Individual and Business.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with GitHub Copilot Individual and Business</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -445,25 +443,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell tag_remove-input docutils container">
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="ai-assisted-software-development">
+  <section class="tex2jax_ignore mathjax_ignore" id="ai-assisted-software-development">
 <h1>2.1 AI-Assisted Software Development<a class="headerlink" href="#ai-assisted-software-development" title="Link to this heading">#</a></h1>
-<p>In this section, we will explore how to develop software with the help of an AI assistan. One of the things I like the most about AI assisted software development is the fact that it allows me to stay in the flow. I can focus on the problem I am trying to solve and let the AI take care of syntax details, the boilerplate code, remebering conventions, generating solutions to simpler intermediate problems.</p>
+<p>In this section, we will explore how to develop software with the help of an AI assistant. One of the things I like the most about AI-assisted software development is the fact that it allows me to stay in the flow. I can focus on the problem I am trying to solve and let the AI take care of syntax details, the boilerplate code, remembering conventions, and generating solutions to simpler intermediate problems.</p>
 <p>Before jumping into it, let’s check the prerequisites.</p>
 <section id="installation-and-configuration">
 <h2>Installation and Configuration<a class="headerlink" href="#installation-and-configuration" title="Link to this heading">#</a></h2>
-<p>We will use two Visual Studio Code extensions: GitHub Copilot and Github Copilot Chat.</p>
+<p>We will use two Visual Studio Code extensions: GitHub Copilot and GitHub Copilot Chat.</p>
 <ul class="simple">
 <li><p>GitHub Copilot is a code completion tool that uses AI to provide suggestions for code completion, inline documentation, and more.</p></li>
 <li><p>GitHub Copilot Chat is an extension that allows you to interact with GitHub Copilot using a chat interface.</p></li>
 </ul>
 <section id="getting-access-to-github-copilot">
 <h3>Getting access to GitHub Copilot<a class="headerlink" href="#getting-access-to-github-copilot" title="Link to this heading">#</a></h3>
-<p>To follow along with this section, you will need a Github account with access to the GitHub Copilot Individual or Business plan. If you activated your Student Developer Pack, you can access the GitHub Copilot Individual plan for free. Note that it usually takes a few days for the activation to be completed.</p>
+<p>To follow along with this section, you will need a GitHub account with access to the GitHub Copilot Individual or Business plan. If you activated your Student Developer Pack, you can access the GitHub Copilot Individual plan for free. Note that it usually takes a few days for the activation to be completed.</p>
 </section>
 <section id="installing-the-github-copilot-and-github-copilot-chat-extensions">
-<h3>Installing the GitHub Copilot and Github Copilot Chat extensions<a class="headerlink" href="#installing-the-github-copilot-and-github-copilot-chat-extensions" title="Link to this heading">#</a></h3>
+<h3>Installing the GitHub Copilot and GitHub Copilot Chat extensions<a class="headerlink" href="#installing-the-github-copilot-and-github-copilot-chat-extensions" title="Link to this heading">#</a></h3>
 <p>You can install both extensions by searching for them in the Visual Studio Code Extensions Marketplace. To make sure that you install the correct extensions, you can install them from the terminal by following these steps:</p>
 <ol class="arabic simple">
 <li><p>Open the terminal.</p></li>
@@ -473,7 +469,7 @@ document.write(`
 code<span class="w"> </span>--install-extension<span class="w"> </span>github.copilot-chat
 </pre></div>
 </div>
-<p>Once the extensions are installed, you will see a pop up message asking you to sign in to use Github Copilot. Once you sign in, you will see that a Copilot icon appears in the bottom right corner of the screen. This means that you are able to use the extensions and you are ready to go.</p>
+<p>Once the extensions are installed, you will see a pop-up message asking you to sign in to use GitHub Copilot. Once you sign in, you will see that a Copilot icon appears in the bottom right corner of the screen. This means that you are able to use the extensions and you are ready to go.</p>
 <div class="note admonition">
 <p class="admonition-title">Keep in mind</p>
 <ul class="simple">
@@ -484,67 +480,107 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 </section>
 <section id="a-real-world-example">
 <h2>A real-world example<a class="headerlink" href="#a-real-world-example" title="Link to this heading">#</a></h2>
-<p>Imagine that you are building a planning solution. The solution requires at some point to implement a function that given two time intervals returns their intersection.
-If you create the pseudo-code of you solution, then the AI will be able to help you with the implementation of the function.</p>
+<p>Imagine you’re working on a Python project that helps you split expenses with your friends using a command-line interface (CLI).</p>
 </section>
-<section id="getting-in-line-suggestions">
-<h2>Getting in line suggestions<a class="headerlink" href="#getting-in-line-suggestions" title="Link to this heading">#</a></h2>
-<p>Let’s open VSC, create a new directory <code class="docutils literal notranslate"><span class="pre">ch2</span></code> in the explorer and use the option “File” &gt;&gt; “Open Folder” to open this directory as the root of your peoject. Now, create a new file <code class="docutils literal notranslate"><span class="pre">time_intervals.py</span></code>.</p>
+<section id="getting-inline-suggestions">
+<h2>Getting inline suggestions<a class="headerlink" href="#getting-inline-suggestions" title="Link to this heading">#</a></h2>
+<p>Let’s open VSC, create a new directory <code class="docutils literal notranslate"><span class="pre">ch2</span></code> in the explorer and use the option “File” &gt;&gt; “Open Folder” to open this directory as the root of your project. Now, create a new file <code class="docutils literal notranslate"><span class="pre">expense_splitter.py</span></code>.</p>
 </section>
 <section id="querying-copilot-with-the-inline-chat">
 <h2>Querying Copilot with the inline chat<a class="headerlink" href="#querying-copilot-with-the-inline-chat" title="Link to this heading">#</a></h2>
-<p>As soon as we create the new Python file, we see the message “Press Ctrl+I to ask Github Copilot Chat to do something. Start typing to dismiss”.</p>
+<p>As soon as we create the new Python file, we see the message “Press Ctrl+I to ask GitHub Copilot Chat to do something. Start typing to dismiss”.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/0_message.png"><img alt="message" class="bg-primary mb-1 align-center" src="../_images/0_message.png" style="width: 600px;" /></a>
-<p>Go ahead and press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. You will see a chat window open. Write “create a function that given two time intervals returns their intersection” and press enter. You will see that the AI will start to provide suggestions for the implementation of the function. If you are satisfied with the suggestion, you can press <code class="docutils literal notranslate"><span class="pre">Accept</span></code> to accept it.</p>
+<p>Go ahead and press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. You will see a chat window open. Prompt :</p>
+<div class="highlight-{admonition}Prompt notranslate"><div class="highlight"><pre><span></span>Write a Python module that divides expenses among friends for trips or outings. The app should:
+- User input expenses, specifying the payer and the total amount in the format [(“Person1”:[34,2,3,45]),(“Person2”:[3,4,26]),...].
+- I don’t want an interactive script, I want to pass the input as an argument.
+- Automatically split shared expenses equally among all participants.
+- Show a summary of how much each person should pay or receive.
+</pre></div>
+</div>
+<p>You will see that the AI will start to provide suggestions for the implementation of the function. If you are satisfied with the suggestion, you can press <code class="docutils literal notranslate"><span class="pre">Accept</span></code> to accept it.</p>
 <p>This is what I got:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_intersection</span><span class="p">(</span><span class="n">interval1</span><span class="p">,</span> <span class="n">interval2</span><span class="p">):</span>
-    <span class="n">start1</span><span class="p">,</span> <span class="n">end1</span> <span class="o">=</span> <span class="n">interval1</span>
-    <span class="n">start2</span><span class="p">,</span> <span class="n">end2</span> <span class="o">=</span> <span class="n">interval2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-    <span class="c1"># Check if there is no intersection</span>
-    <span class="k">if</span> <span class="n">end1</span> <span class="o">&lt;</span> <span class="n">start2</span> <span class="ow">or</span> <span class="n">end2</span> <span class="o">&lt;</span> <span class="n">start1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
+<span class="k">def</span> <span class="nf">split_expenses</span><span class="p">(</span><span class="n">expenses</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Splits expenses equally among all participants.</span>
 
-    <span class="c1"># Calculate the intersection</span>
-    <span class="n">intersection_start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">start1</span><span class="p">,</span> <span class="n">start2</span><span class="p">)</span>
-    <span class="n">intersection_end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">end1</span><span class="p">,</span> <span class="n">end2</span><span class="p">)</span>
+<span class="sd">    Args:</span>
+<span class="sd">        expenses: Dict mapping person to list of their paid expenses.</span>
 
-    <span class="k">return</span> <span class="p">(</span><span class="n">intersection_start</span><span class="p">,</span> <span class="n">intersection_end</span><span class="p">)</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple of:</span>
+<span class="sd">            - Dict of net balances (positive: to receive, negative: to pay)</span>
+<span class="sd">            - Dict of total paid per person</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">participants</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">expenses</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">total_paid</span> <span class="o">=</span> <span class="p">{</span><span class="n">person</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">amounts</span><span class="p">)</span> <span class="k">for</span> <span class="n">person</span><span class="p">,</span> <span class="n">amounts</span> <span class="ow">in</span> <span class="n">expenses</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">total_expense</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">total_paid</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">per_person_share</span> <span class="o">=</span> <span class="n">total_expense</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">participants</span><span class="p">)</span>
+
+    <span class="n">net_balances</span> <span class="o">=</span> <span class="p">{</span><span class="n">person</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">total_paid</span><span class="p">[</span><span class="n">person</span><span class="p">]</span> <span class="o">-</span> <span class="n">per_person_share</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">participants</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">net_balances</span><span class="p">,</span> <span class="n">total_paid</span>
+
+<span class="k">def</span> <span class="nf">print_summary</span><span class="p">(</span><span class="n">net_balances</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">total_paid</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expense Summary:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">net_balances</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;should receive&quot;</span> <span class="k">if</span> <span class="n">net_balances</span><span class="p">[</span><span class="n">person</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;should pay&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">person</span><span class="si">}</span><span class="s2"> paid </span><span class="si">{</span><span class="n">total_paid</span><span class="p">[</span><span class="n">person</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">net_balances</span><span class="p">[</span><span class="n">person</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: python expense_splitter.py &#39;&lt;expenses_dict&gt;&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Example: python expense_splitter.py &#39;{</span><span class="se">\&quot;</span><span class="s2">Alice</span><span class="se">\&quot;</span><span class="s2">:[34,2,3,45],</span><span class="se">\&quot;</span><span class="s2">Bob</span><span class="se">\&quot;</span><span class="s2">:[3,4,26],</span><span class="se">\&quot;</span><span class="s2">Carol</span><span class="se">\&quot;</span><span class="s2">:[10,20]}&#39;&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Parse the input argument as a dictionary</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">expenses</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expenses</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid input format. Please provide a dictionary like: &#39;{</span><span class="se">\&quot;</span><span class="s2">Alice</span><span class="se">\&quot;</span><span class="s2">:[34,2],</span><span class="se">\&quot;</span><span class="s2">Bob</span><span class="se">\&quot;</span><span class="s2">:[3,4]}&#39;&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">net_balances</span><span class="p">,</span> <span class="n">total_paid</span> <span class="o">=</span> <span class="n">split_expenses</span><span class="p">(</span><span class="n">expenses</span><span class="p">)</span>
+    <span class="n">print_summary</span><span class="p">(</span><span class="n">net_balances</span><span class="p">,</span> <span class="n">total_paid</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="explaining-code">
 <h2>Explaining code<a class="headerlink" href="#explaining-code" title="Link to this heading">#</a></h2>
-<p>To understand the code, we can use Copilot to explain it. We need to select the code, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and the use the command “/explain” and press enter. Copilot will open the Chat window and will provide an explanation of the code.</p>
+<p>To understand the code, we can use Copilot to explain it. We need to select the code, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and the use the command <code class="docutils literal notranslate"><span class="pre">/explain</span></code> and press enter. Copilot will open the Chat window and will provide an explanation of the code.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/1_func_explanation.png"><img alt="func_explanation" class="bg-primary mb-1 align-center" src="../_images/1_func_explanation.png" style="width: 600px;" /></a>
 <div class="hint admonition">
 <p class="admonition-title">What to notice</p>
 <ul class="simple">
 <li><p>In the chat window, we can see which references were considered for the explanation.</p></li>
 <li><p>We can open the chat in the editor for a better view of the explanation.</p></li>
-<li><p>Copilot suggest the next question.</p></li>
+<li><p>Copilot suggests the next steps like testing or handling edge cases.</p></li>
 </ul>
 </div>
-<p>We accept the suggested question and click on “Can you provide an example usage of the find_intersection function?”</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/2_howto.png"><img alt="how_to" class="bg-primary mb-1 align-center" src="../_images/2_howto.png" style="width: 600px;" /></a>
 </section>
 <section id="generating-documentation">
 <h2>Generating documentation<a class="headerlink" href="#generating-documentation" title="Link to this heading">#</a></h2>
-<p>Now that we have a better understading of how the function works. We can ask copilot to add some documentation to the function. We can select the function, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and use the command “/doc” and press enter. Copilot will open the Chat window and will provide a docstring for the function.</p>
+<p>Now that we have a better understanding of how the script works, we can ask Copilot to add some documentation to the functions in it. We can select the function <code class="docutils literal notranslate"><span class="pre">print_summary</span></code>, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and use the command <code class="docutils literal notranslate"><span class="pre">/doc</span></code> and press enter. Copilot will open the Chat window and will provide a docstring for the function.</p>
+<img alt="test" class="bg-primary mb-1" src="../_images/2_doc.png" />
 </section>
 <section id="creating-tests">
 <h2>Creating tests<a class="headerlink" href="#creating-tests" title="Link to this heading">#</a></h2>
-<p>With out newly documented function, we can now use the <code class="docutils literal notranslate"><span class="pre">/tests</span></code> command to create tests for our function. This time, Copilot does not add code to the current file but instead it suggest the creation of a new file, <code class="docutils literal notranslate"><span class="pre">test_time_intervals.py</span></code>. This suggested file name follows a common naming convention for test files which is to use the same name as the file to be tested, but with the prefix <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/3_test.png"><img alt="test" class="bg-primary mb-1 align-center" src="../_images/3_test.png" style="width: 600px;" /></a>
+<p>With our newly documented function, we can now use the <code class="docutils literal notranslate"><span class="pre">/tests</span></code> command to create tests for our function. This time, Copilot does not add code to the current file but instead suggests the creation of a new file, <code class="docutils literal notranslate"><span class="pre">test_expense_splitter.py</span></code>. This suggested file name follows a common naming convention for test files, which is to use the same name as the file to be tested, but with the prefix <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p>
+<img alt="test" class="bg-primary mb-1" src="../_images/3_test.png" />
 <p>You can also combine the command with more detailed instructions. For example, you can use the command <code class="docutils literal notranslate"><span class="pre">/tests</span> <span class="pre">with</span> <span class="pre">pytest</span></code>.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/4_generated_tests.png"><img alt="generated_test" class="bg-primary mb-1 align-center" src="../_images/4_generated_tests.png" style="width: 600px;" /></a>
 </section>
 <section id="generating-sample-code">
 <h2>Generating sample code<a class="headerlink" href="#generating-sample-code" title="Link to this heading">#</a></h2>
-<p>Copilot is also great for generating sample code. To test this functionality, let’s ask Copilot
+<p>Copilot is also great for generating sample code. To test this functionality, let’s ask Copilot:
 “create a new file named <a class="reference external" href="http://syntax.py">syntax.py</a> with two sample dataframes that contain a common column.”</p>
-<p>We will see that copilot:
-First, propose a code snippet that creates two sample dataframes with a common column. If we hover over the code, we can see that there will be a symbol with three dots that will allow us to access the option “Insert into New File”.</p>
+<p>We will see that Copilot:
+First, proposes a code snippet that creates two sample dataframes with a common column. If we hover over the code, we can see that there will be a symbol with three dots that will allow us to access the option “Insert into New File”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create the first dataframe</span>
@@ -563,7 +599,7 @@ First, propose a code snippet that creates two sample dataframes with a common c
 </pre></div>
 </div>
 <p>Second, it will explain how to create a new file using VSC.
-Finally, it will remaid us to ensure that we have Pandas installed and share the command to install it.</p>
+Finally, it will remind us to ensure that we have Pandas installed and share the command to install it.</p>
 <p>Let’s go ahead and create the new file and name it <code class="docutils literal notranslate"><span class="pre">syntax.py</span></code>.</p>
 </section>
 <section id="getting-help-with-syntax">
@@ -590,16 +626,23 @@ Finally, it will remaid us to ensure that we have Pandas installed and share the
 <li><p>Consider suggesting alternative approaches or variations.</p></li>
 <li><p>Provide feedback to help improve the AI’s understanding and suggestions.</p></li>
 <li><p>Experiment and iterate with the AI to find the best solution.</p></li>
+<li><p>Ask for expert opinion in some field. Start your prompts like “As an expert software developer …”</p></li>
 </ul>
 </section>
 <section id="integration-in-other-parts-of-the-development-process">
 <h2>Integration in other parts of the development process<a class="headerlink" href="#integration-in-other-parts-of-the-development-process" title="Link to this heading">#</a></h2>
-<p>Github copilot can also support other parts of the software development process. For example, it can suggest commit messages in the commit message box in the source control view.</p>
-<p><a class="reference external" href="https://docs.gitlab.com/ee/user/ai_features.html">Gitlab Duo</a>, the AI assistant from Gitlab,
-is experimenting with features like issue description generation, merge request, template population, suggested reviewers, merge request summary, code review summary, vulnerability resolution, value stream forecasting, and product analytics among others.</p>
+<p>GitHub Copilot can also support other parts of the software development process and is adding new features every day. To date, it has the following features available:</p>
+<ul class="simple">
+<li><p>Code Review: Automatically suggest improvements, detect bugs, and summarize code changes in pull/merge requests.</p></li>
+<li><p>Bug Fixing: Propose fixes for detected issues or vulnerabilities.</p></li>
+<li><p>Onboarding: Help new team members understand codebases by generating summaries or answering questions about the code</p></li>
+<li><p>Coding Agent: You can assign GitHub issues to Copilot, or ask Copilot to create a pull request.</p></li>
+<li><p>Commit message suggestion: Copilot can suggest descriptive commit messages based on your code changes.</p></li>
+</ul>
+<p>Also, there are other companies that offer tools similar to Copilot, but these tend to be more “agentic”—taking a more proactive role in the development process—such as Windsurf, Lovable, and Cursor.</p>
 </section>
 <section id="data-privacy-with-github-copilot-individual-and-business">
-<h2>Data Privacy with Github Copilot Individual and Business.<a class="headerlink" href="#data-privacy-with-github-copilot-individual-and-business" title="Link to this heading">#</a></h2>
+<h2>Data Privacy with GitHub Copilot Individual and Business<a class="headerlink" href="#data-privacy-with-github-copilot-individual-and-business" title="Link to this heading">#</a></h2>
 <p>At the time of writing, GitHub Copilot is available in two versions: GitHub Copilot Individual and GitHub Copilot Business. The main difference between the two versions is how user engagement data, prompts, and suggestions are used and shared.</p>
 <p>The Business plan is characterized by its stringent data policies, underscoring a commitment to data minimization and the protection of privacy. This commitment is evidenced by explicit guidelines on the retention and subsequent disposal of data, practices that resonate with the privacy expectations of business entities and align with the global trend towards rigorous data governance and minimal data retention mandates.</p>
 <p>Concretely, in the case of the Business plan,</p>
@@ -665,7 +708,7 @@ is experimenting with features like issue description generation, merge request,
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2.1 Debugging in Python with Visual Studio Code</p>
+        <p class="prev-next-title">2.2 Debugging in Python with Visual Studio Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -687,11 +730,11 @@ is experimenting with features like issue description generation, merge request,
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-configuration">Installation and Configuration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-access-to-github-copilot">Getting access to GitHub Copilot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-github-copilot-and-github-copilot-chat-extensions">Installing the GitHub Copilot and Github Copilot Chat extensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-github-copilot-and-github-copilot-chat-extensions">Installing the GitHub Copilot and GitHub Copilot Chat extensions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-world-example">A real-world example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-in-line-suggestions">Getting in line suggestions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-inline-suggestions">Getting inline suggestions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-copilot-with-the-inline-chat">Querying Copilot with the inline chat</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-code">Explaining code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-documentation">Generating documentation</a></li>
@@ -700,7 +743,7 @@ is experimenting with features like issue description generation, merge request,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-other-parts-of-the-development-process">Integration in other parts of the development process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with Github Copilot Individual and Business.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with GitHub Copilot Individual and Business</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
@@ -726,7 +769,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -187,17 +187,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch1/ch10.html">1 Introduction to Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch1/ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch1/ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -217,7 +217,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -419,8 +418,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-course-was-born">How this course was born</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are software development practices still relevant?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-expect-from-the-course">What do you expect from the course?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are Software Development Practices Still Relevant?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-hope-to-gain">What Do You Hope to Gain?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
 </ul>
             </nav>
         </div>
@@ -436,36 +436,51 @@ document.write(`
 <h1>Welcome to Modern Software Development Practices<a class="headerlink" href="#welcome-to-modern-software-development-practices" title="Link to this heading">#</a></h1>
 <section id="about-the-author">
 <h2>About the Author<a class="headerlink" href="#about-the-author" title="Link to this heading">#</a></h2>
-<p>Hello. I’m Matias Callara and for more than 10 years I’ve been working at the intersection between Machine Learning, Operational Research and Decision Theory. This will not be a surprise to you if you consider my academic career. I’m an Industrial Engineer with a Master in Optimization and a Ph.D. in Informatics (where I worked applying Machine Learning for behavior prediction in the Cloud Computing Software Company).</p>
+<p>Hello. I’m Matias Callara, and for more than 10 years, I’ve been working at the intersection of Machine Learning, Operational Research, and Decision Theory. This should come as no surprise if you consider my academic background. I’m an Industrial Engineer with a Master’s in Optimization and a Ph.D. in Informatics, where I applied Machine Learning to predict behavior in the Cloud Computing Software industry.</p>
 </section>
 <section id="how-this-course-was-born">
 <h2>How this course was born<a class="headerlink" href="#how-this-course-was-born" title="Link to this heading">#</a></h2>
-<p>My role as a tech lead and portfolio manager, responsible for several products, drove me to find and share tools that could help our team work smarter and more effectively. I focused on making sure these tools were easy for everyone to use and encouraged teams to adopt them.</p>
-<p>This course is designed to benefit those with academic backgrounds unrelated to software development. We will explore key topics, from code management with Git to testing and debugging strategies, to equip students with tools and techniques that will hopefully make them enjoy their work alone or as part of a software development team.</p>
+<p>My role as a tech lead and portfolio manager, responsible for several products, drove me to find and share tools that could help our team work smarter and more effectively. I focused on ensuring these tools were easy for everyone to use and encouraged teams to adopt them.</p>
+<p>This course is designed to benefit those with academic backgrounds unrelated to software development. We will explore key topics, from code management with Git to testing and debugging strategies, to equip students with tools and techniques that will hopefully make them enjoy their work, whether alone or as part of a software development team.</p>
 </section>
 <section id="are-software-development-practices-still-relevant">
-<h2>Are software development practices still relevant?<a class="headerlink" href="#are-software-development-practices-still-relevant" title="Link to this heading">#</a></h2>
-<p>Is Software Development still relevants in times of Gen AI?
-Programming as an Art: even though AI could program for you, you may still want to do it yourself because you enjoy it.
-Programming and thought process: programming is an activity that allws me to build complex solutions.</p>
+<h2>Are Software Development Practices Still Relevant?<a class="headerlink" href="#are-software-development-practices-still-relevant" title="Link to this heading">#</a></h2>
+<p>With tools like Generative AI now capable of writing code, it’s natural to question the future of software development and the skills required to succeed in it. No one can predict the future with certainty, so instead of making bold claims, let’s explore this question from first principles.</p>
+<p>Let’s start with a foundational truth: building useful software is about managing complexity. Whether the code is written by a person or generated by an AI, any non-trivial application is a complex system of interlocking parts. This complexity doesn’t disappear; it has to be managed. Software development practices are, at their core, the methods we’ve developed over decades for managing that complexity.</p>
+<p>Consider these underlying principles:</p>
+<ul class="simple">
+<li><p><strong>Clarity of Intent</strong>: Before any code can be created, a human must clearly define the problem and the desired outcome. You must translate a vague need into a precise set of logical instructions. This process of problem decomposition and specifying intent is a fundamental skill of structured thought.</p></li>
+<li><p><strong>Systematic Verification</strong>: An AI can generate code, but who is accountable for it? Ultimately, a human must verify that the code is correct, secure, and reliable. The principles of testing and debugging are not just about finding typos; they are a systematic process for ensuring quality and taking responsibility for the final product.</p></li>
+<li><p><strong>Managing Change</strong>: Software is never truly “finished.” It evolves. Version control systems like Git are not just for backing up files; they provide a structured way to manage change over time, collaborate with others, and understand the history of a project. This need to manage evolution is a constant.</p></li>
+</ul>
+<p>Viewed from this perspective, learning software development practices is less about learning the transient syntax of a programming language and more about mastering durable principles of structured thinking, quality control, and complexity management. These are skills that retain their value regardless of how the code itself is generated.</p>
 </section>
-<section id="what-do-you-expect-from-the-course">
-<h2>What do you expect from the course?<a class="headerlink" href="#what-do-you-expect-from-the-course" title="Link to this heading">#</a></h2>
-<p>Before starting this journey, it is useful to have a somehow clear vision of where we want to get. I think this is a good moment to ask you to write down your expectations. What do you expect from this course? What do you want to learn? What do you want to be able to do after completing the course?</p>
+<section id="what-do-you-hope-to-gain">
+<h2>What Do You Hope to Gain?<a class="headerlink" href="#what-do-you-hope-to-gain" title="Link to this heading">#</a></h2>
+<p>Given the uncertainties we’ve just discussed, it’s more important than ever to be clear about your own learning objectives. So, before we dive in, I encourage you to pause and reflect on what brought you here.</p>
+<p>Please answer the following questions for yourself:</p>
+<ul class="simple">
+<li><p>What is my primary expectation for this course?</p></li>
+<li><p>What kind of structured thinking skills do I hope to develop?</p></li>
+<li><p>What do I want to be able to build or competently manage after this course?</p></li>
+</ul>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ch1/ch10.html">1 Introduction to Version Control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch11.html">1.1 Git and the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch11g.html">1.1 Your First Steps with the Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch12.html">1.2 Local repositories and commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch1/ch13.html">1.3 Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch1/ch14.html">1.4 Merging Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ssh_gitlab.html">Setting up your GitLab account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch1/ch15_gitlab.html">1.5 Remote Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch150_gitlab_auth_https.html">Setting Up Your GitLab Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch1/ch151_gitlab_https.html">1.5 Remote Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><ul>
@@ -485,7 +500,6 @@ Programming and thought process: programming is an activity that allws me to bui
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch51_gitlab.html">5.1 CI/CD pipelines with Gitlab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch5/ch51_gitlab.html#references">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch52_gitlab.html">5.2 Software Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch5/ch53_gitlab.html">5.3 Packaging</a></li>
 </ul>
@@ -552,8 +566,9 @@ Programming and thought process: programming is an activity that allws me to bui
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">About the Author</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-course-was-born">How this course was born</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are software development practices still relevant?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-expect-from-the-course">What do you expect from the course?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-software-development-practices-still-relevant">Are Software Development Practices Still Relevant?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-hope-to-gain">What Do You Hope to Gain?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
 </ul>
   </nav></div>
 
@@ -578,7 +593,7 @@ By Matias Callara
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
