@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch2/ch21';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2 Debugging in Python with Visual Studio Code" href="ch22.html" />
+    <link rel="next" title="2.1 Debugging in Python with Visual Studio Code" href="ch22.html" />
     <link rel="prev" title="2 AI-Assisted Software Development and Debugging" href="ch20.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20.html">2 AI-Assisted Software Development and Debugging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -426,6 +426,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-code">Explaining code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-documentation">Generating documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tests">Creating tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-copilot-chat-interface">Opening the Copilot Chat Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-the-chat-interface">Key Features of the Chat Interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-sample-code">Generating sample code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>
@@ -443,7 +445,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ai-assisted-software-development">
+  <div class="cell tag_remove-input docutils container">
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="ai-assisted-software-development">
 <h1>2.1 AI-Assisted Software Development<a class="headerlink" href="#ai-assisted-software-development" title="Link to this heading">#</a></h1>
 <p>In this section, we will explore how to develop software with the help of an AI assistant. One of the things I like the most about AI-assisted software development is the fact that it allows me to stay in the flow. I can focus on the problem I am trying to solve and let the AI take care of syntax details, the boilerplate code, remembering conventions, and generating solutions to simpler intermediate problems.</p>
 <p>Before jumping into it, let’s check the prerequisites.</p>
@@ -488,10 +492,10 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 </section>
 <section id="querying-copilot-with-the-inline-chat">
 <h2>Querying Copilot with the inline chat<a class="headerlink" href="#querying-copilot-with-the-inline-chat" title="Link to this heading">#</a></h2>
-<p>As soon as we create the new Python file, we see the message “Press Ctrl+I to ask GitHub Copilot Chat to do something. Start typing to dismiss”.</p>
+<p>As soon as we create the new Python file, we see a message that indicates that we can press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> to open a GitHub Copilot Chat.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/0_message.png"><img alt="message" class="bg-primary mb-1 align-center" src="../_images/0_message.png" style="width: 600px;" /></a>
-<p>Go ahead and press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. You will see a chat window open. Prompt :</p>
-<div class="highlight-{admonition}Prompt notranslate"><div class="highlight"><pre><span></span>Write a Python module that divides expenses among friends for trips or outings. The app should:
+<p>Go ahead and press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>. You will see an inline chat window open. Insert, the following prompt in the chat window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Write a Python module that divides expenses among friends for trips or outings. The app should:
 - User input expenses, specifying the payer and the total amount in the format [(“Person1”:[34,2,3,45]),(“Person2”:[3,4,26]),...].
 - I don’t want an interactive script, I want to pass the input as an argument.
 - Automatically split shared expenses equally among all participants.
@@ -567,7 +571,7 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 <section id="generating-documentation">
 <h2>Generating documentation<a class="headerlink" href="#generating-documentation" title="Link to this heading">#</a></h2>
 <p>Now that we have a better understanding of how the script works, we can ask Copilot to add some documentation to the functions in it. We can select the function <code class="docutils literal notranslate"><span class="pre">print_summary</span></code>, press <code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code> and use the command <code class="docutils literal notranslate"><span class="pre">/doc</span></code> and press enter. Copilot will open the Chat window and will provide a docstring for the function.</p>
-<img alt="test" class="bg-primary mb-1" src="../_images/2_doc.png" />
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/2_doc.png"><img alt="test" class="bg-primary mb-1 align-center" src="../_images/2_doc.png" style="width: 600px;" /></a>
 </section>
 <section id="creating-tests">
 <h2>Creating tests<a class="headerlink" href="#creating-tests" title="Link to this heading">#</a></h2>
@@ -575,12 +579,36 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 <img alt="test" class="bg-primary mb-1" src="../_images/3_test.png" />
 <p>You can also combine the command with more detailed instructions. For example, you can use the command <code class="docutils literal notranslate"><span class="pre">/tests</span> <span class="pre">with</span> <span class="pre">pytest</span></code>.</p>
 </section>
+<section id="opening-the-copilot-chat-interface">
+<h2>Opening the Copilot Chat Interface<a class="headerlink" href="#opening-the-copilot-chat-interface" title="Link to this heading">#</a></h2>
+<p>Unlike the inline chat we used earlier (<code class="docutils literal notranslate"><span class="pre">Ctrl+I</span></code>), we’ll now use the standalone Copilot chat panel, which offers more features and better conversation management. You can access it in two ways:</p>
+<ul class="simple">
+<li><p><strong>Keyboard shortcut</strong>: <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+I</span></code></p></li>
+<li><p><strong>UI</strong>: Click the Copilot icon in the upper right corner of the editor</p></li>
+</ul>
+</section>
+<section id="key-features-of-the-chat-interface">
+<h2>Key Features of the Chat Interface<a class="headerlink" href="#key-features-of-the-chat-interface" title="Link to this heading">#</a></h2>
+<p>The chat interface provides several advantages over inline chat:</p>
+<p><strong>Conversation History</strong>: All your previous interactions with Copilot are preserved, making it easy to reference earlier suggestions and maintain context across multiple coding sessions.</p>
+<p><strong>Enhanced Context Management</strong>: Use the “Add context” button to include specific files, selected code, or workspace information. This helps Copilot provide more targeted and relevant suggestions based on your current project.</p>
+<p><strong>Multiple Interaction Modes</strong>:</p>
+<ul class="simple">
+<li><p><strong>Ask</strong>: Get explanations, suggestions, and answers to questions</p></li>
+<li><p><strong>Edit</strong>: Request direct code modifications and improvements</p></li>
+<li><p><strong>Agent</strong>: Let Copilot take autonomous actions to complete tasks</p></li>
+</ul>
+<p><strong>Model Selection</strong>: Choose from different AI models (e.g., GPT-4o) depending on your needs and subscription level.</p>
+</section>
 <section id="generating-sample-code">
 <h2>Generating sample code<a class="headerlink" href="#generating-sample-code" title="Link to this heading">#</a></h2>
-<p>Copilot is also great for generating sample code. To test this functionality, let’s ask Copilot:
-“create a new file named <a class="reference external" href="http://syntax.py">syntax.py</a> with two sample dataframes that contain a common column.”</p>
-<p>We will see that Copilot:
-First, proposes a code snippet that creates two sample dataframes with a common column. If we hover over the code, we can see that there will be a symbol with three dots that will allow us to access the option “Insert into New File”.</p>
+<p>Beyond code completion and documentation, we can also use Copilot to generate sample code and boilerplate structures. To demonstrate this capability, we’ll create two sample DataFrames with a common column using the dedicated Copilot chat interface and the <code class="docutils literal notranslate"><span class="pre">Agent</span></code> mode.</p>
+<p>Open the Copilot chat interface using <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+I</span></code> and select the <code class="docutils literal notranslate"><span class="pre">Agent</span></code> mode. In this mode, you can ask Copilot to perform tasks on your behalf, such as creating files or writing code.</p>
+<p>In the chat interface, insert the following prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">file</span> <span class="n">named</span> <span class="n">syntax</span><span class="o">.</span><span class="n">py</span> <span class="k">with</span> <span class="n">two</span> <span class="n">sample</span> <span class="n">dataframes</span> <span class="n">that</span> <span class="n">contain</span> <span class="n">a</span> <span class="n">common</span> <span class="n">column</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>We will see that Copilot will create a new file named <code class="docutils literal notranslate"><span class="pre">syntax.py</span></code> and populate it with two sample DataFrames that contain a common column. It will also ask if we want to keep the suggested changes or if we want to undo them.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create the first dataframe</span>
@@ -598,9 +626,7 @@ First, proposes a code snippet that creates two sample dataframes with a common 
 <span class="p">})</span>
 </pre></div>
 </div>
-<p>Second, it will explain how to create a new file using VSC.
-Finally, it will remind us to ensure that we have Pandas installed and share the command to install it.</p>
-<p>Let’s go ahead and create the new file and name it <code class="docutils literal notranslate"><span class="pre">syntax.py</span></code>.</p>
+<p>Finally, it will remind us to ensure that we have Pandas installed and share the command to install it.</p>
 </section>
 <section id="getting-help-with-syntax">
 <h2>Getting help with syntax<a class="headerlink" href="#getting-help-with-syntax" title="Link to this heading">#</a></h2>
@@ -655,12 +681,14 @@ Finally, it will remind us to ensure that we have Pandas installed and share the
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://code.visualstudio.com/docs/copilot/overview">https://code.visualstudio.com/docs/copilot/overview</a>
-<a class="reference external" href="https://www.upwork.com/resources/prompt-engineering-with-github-copilot">https://www.upwork.com/resources/prompt-engineering-with-github-copilot</a>
-<a class="reference external" href="https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/">https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/</a>
-<a class="reference external" href="https://github.blog/2023-05-12-how-i-used-github-copilot-to-build-a-browser-extension/">https://github.blog/2023-05-12-how-i-used-github-copilot-to-build-a-browser-extension/</a>
-<a class="reference external" href="https://docs.github.com/en/site-policy/privacy-policies/github-copilot-business-privacy-statement">GitHub Copilot Business Privacy Statement</a>
-<a class="reference external" href="https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual#about-privacy-for-github-copilot-individual">About privacy for GitHub Copilot Individual</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/copilot/overview">https://code.visualstudio.com/docs/copilot/overview</a></p></li>
+<li><p><a class="reference external" href="https://www.upwork.com/resources/prompt-engineering-with-github-copilot">https://www.upwork.com/resources/prompt-engineering-with-github-copilot</a></p></li>
+<li><p><a class="reference external" href="https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/">https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/</a></p></li>
+<li><p><a class="reference external" href="https://github.blog/2023-05-12-how-i-used-github-copilot-to-build-a-browser-extension/">https://github.blog/2023-05-12-how-i-used-github-copilot-to-build-a-browser-extension/</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/site-policy/privacy-policies/github-copilot-business-privacy-statement">GitHub Copilot Business Privacy Statement</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-individual#about-privacy-for-github-copilot-individual">About privacy for GitHub Copilot Individual</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -708,7 +736,7 @@ Finally, it will remind us to ensure that we have Pandas installed and share the
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2.2 Debugging in Python with Visual Studio Code</p>
+        <p class="prev-next-title">2.1 Debugging in Python with Visual Studio Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -739,6 +767,8 @@ Finally, it will remind us to ensure that we have Pandas installed and share the
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-code">Explaining code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-documentation">Generating documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tests">Creating tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-copilot-chat-interface">Opening the Copilot Chat Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-the-chat-interface">Key Features of the Chat Interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-sample-code">Generating sample code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>

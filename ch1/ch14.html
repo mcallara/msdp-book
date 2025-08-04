@@ -198,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch2/ch20.html">2 AI-Assisted Software Development and Debugging</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch2/ch21.html">2.1 AI-Assisted Software Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.2 Debugging in Python with Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch2/ch22.html">2.1 Debugging in Python with Visual Studio Code</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch3/ch30.html">3 Testing and Test Driven Development (TDD)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -498,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 99f63ca..48feaa5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating f9d5726..77fef4f
 Fast-forward
  file1.txt | 1 <span class=" -Color -Color-Green">+</span>
  1 file changed, 1 insertion(+)
@@ -533,21 +533,21 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 77fef4fe748ba20fed22f8ddb87d7fa9a7b680c8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:02 2025 +0200
+Date:   Mon Aug 4 20:30:53 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
+<span class=" -Color -Color-Yellow">commit f9d5726183e7c67314e743edce2d970ff6b5de2f</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:01 2025 +0200
+Date:   Mon Aug 4 20:30:51 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
+<span class=" -Color -Color-Yellow">commit 0f8babfe9d4e41e130cfed57494682f2311d76df</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:11:55 2025 +0200
+Date:   Mon Aug 4 20:30:46 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -573,7 +573,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;feature&#39;
-[feature fc92856] Add file2 and modify file1
+[feature 20e20dd] Add file2 and modify file1
  2 files changed, 2 insertions(+)
  create mode 100644 file2.txt
 </pre></div>
@@ -750,7 +750,7 @@ Changes not staged for commit:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 307e281] Add fifth and sixth lines to file1.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[feature 26b4077] Add fifth and sixth lines to file1.txt
  1 file changed, 2 insertions(+)
 </pre></div>
 </div>
@@ -771,21 +771,21 @@ git<span class="w"> </span>log
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
-<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 77fef4fe748ba20fed22f8ddb87d7fa9a7b680c8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:02 2025 +0200
+Date:   Mon Aug 4 20:30:53 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
+<span class=" -Color -Color-Yellow">commit f9d5726183e7c67314e743edce2d970ff6b5de2f</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:01 2025 +0200
+Date:   Mon Aug 4 20:30:51 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
+<span class=" -Color -Color-Yellow">commit 0f8babfe9d4e41e130cfed57494682f2311d76df</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:11:55 2025 +0200
+Date:   Mon Aug 4 20:30:46 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -802,33 +802,33 @@ git<span class="w"> </span>log<span class="w"> </span>--all
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Already on &#39;main&#39;
-<span class=" -Color -Color-Yellow">commit 307e28120d184caf9436f7215b8b2c51e25e4087 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 26b40779eac9777f3d0a46e90b88edf4c959d9f5 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:11 2025 +0200
+Date:   Mon Aug 4 20:31:02 2025 +0200
 
     Add fifth and sixth lines to file1.txt
 
-<span class=" -Color -Color-Yellow">commit fc92856965df974a24497639057c08353f226718</span>
+<span class=" -Color -Color-Yellow">commit 20e20dd43c4c02d61236fc14411b8f8df719e362</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:10 2025 +0200
+Date:   Mon Aug 4 20:31:01 2025 +0200
 
     Add file2 and modify file1
 
-<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 77fef4fe748ba20fed22f8ddb87d7fa9a7b680c8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD -&gt; </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:02 2025 +0200
+Date:   Mon Aug 4 20:30:53 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
+<span class=" -Color -Color-Yellow">commit f9d5726183e7c67314e743edce2d970ff6b5de2f</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:01 2025 +0200
+Date:   Mon Aug 4 20:30:51 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
+<span class=" -Color -Color-Yellow">commit 0f8babfe9d4e41e130cfed57494682f2311d76df</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:11:55 2025 +0200
+Date:   Mon Aug 4 20:30:46 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -869,7 +869,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 48feaa5 Add third line to file1.txt
+HEAD is now at 77fef4f Add third line to file1.txt
 </pre></div>
 </div>
 </div>
@@ -881,7 +881,7 @@ HEAD is now at 48feaa5 Add third line to file1.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">HEAD detached at </span>48feaa5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">HEAD detached at </span>77fef4f
 nothing to commit, working tree clean
 </pre></div>
 </div>
@@ -894,33 +894,33 @@ nothing to commit, working tree clean
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 307e28120d184caf9436f7215b8b2c51e25e4087 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">commit 26b40779eac9777f3d0a46e90b88edf4c959d9f5 (</span><span class=" -Color -Color-Bold -Color-Bold-Green">feature</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:11 2025 +0200
+Date:   Mon Aug 4 20:31:02 2025 +0200
 
     Add fifth and sixth lines to file1.txt
 
-<span class=" -Color -Color-Yellow">commit fc92856965df974a24497639057c08353f226718</span>
+<span class=" -Color -Color-Yellow">commit 20e20dd43c4c02d61236fc14411b8f8df719e362</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:10 2025 +0200
+Date:   Mon Aug 4 20:31:01 2025 +0200
 
     Add file2 and modify file1
 
-<span class=" -Color -Color-Yellow">commit 48feaa5aae933d76569ab495ec52c4af8b292afa (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
+<span class=" -Color -Color-Yellow">commit 77fef4fe748ba20fed22f8ddb87d7fa9a7b680c8 (</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">HEAD</span><span class=" -Color -Color-Yellow">, </span><span class=" -Color -Color-Bold -Color-Bold-Green">main</span><span class=" -Color -Color-Yellow">)</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:02 2025 +0200
+Date:   Mon Aug 4 20:30:53 2025 +0200
 
     Add third line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 99f63ca68ac7b729af9fe34f166093d097ebc6ce</span>
+<span class=" -Color -Color-Yellow">commit f9d5726183e7c67314e743edce2d970ff6b5de2f</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:12:01 2025 +0200
+Date:   Mon Aug 4 20:30:51 2025 +0200
 
     Add second line to file1.txt
 
-<span class=" -Color -Color-Yellow">commit 7b7c2e9b791eecf6d30cb8c0bcc39ed30867bcdc</span>
+<span class=" -Color -Color-Yellow">commit 0f8babfe9d4e41e130cfed57494682f2311d76df</span>
 Author: msdp-book &lt;msdp.book@gmail.com&gt;
-Date:   Sat Aug 2 01:11:55 2025 +0200
+Date:   Mon Aug 4 20:30:46 2025 +0200
 
     Create file1.txt with the first line
 </pre></div>
@@ -976,7 +976,7 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
-Deleted branch new-branch-name (was 48feaa5).
+Deleted branch new-branch-name (was 77fef4f).
 </pre></div>
 </div>
 </div>
