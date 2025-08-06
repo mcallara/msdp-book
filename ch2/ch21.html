@@ -432,7 +432,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-other-parts-of-the-development-process">Integration in other parts of the development process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with GitHub Copilot Individual and Business</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-copilot-plans-and-data-privacy-considerations">GitHub Copilot Plans and Data Privacy Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -667,17 +667,18 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 </ul>
 <p>Also, there are other companies that offer tools similar to Copilot, but these tend to be more “agentic”—taking a more proactive role in the development process—such as Windsurf, Lovable, and Cursor.</p>
 </section>
-<section id="data-privacy-with-github-copilot-individual-and-business">
-<h2>Data Privacy with GitHub Copilot Individual and Business<a class="headerlink" href="#data-privacy-with-github-copilot-individual-and-business" title="Link to this heading">#</a></h2>
-<p>At the time of writing, GitHub Copilot is available in two versions: GitHub Copilot Individual and GitHub Copilot Business. The main difference between the two versions is how user engagement data, prompts, and suggestions are used and shared.</p>
-<p>The Business plan is characterized by its stringent data policies, underscoring a commitment to data minimization and the protection of privacy. This commitment is evidenced by explicit guidelines on the retention and subsequent disposal of data, practices that resonate with the privacy expectations of business entities and align with the global trend towards rigorous data governance and minimal data retention mandates.</p>
-<p>Concretely, in the case of the Business plan,</p>
+<section id="github-copilot-plans-and-data-privacy-considerations">
+<h2>GitHub Copilot Plans and Data Privacy Considerations<a class="headerlink" href="#github-copilot-plans-and-data-privacy-considerations" title="Link to this heading">#</a></h2>
+<p>At the time of writing, GitHub Copilot is offered in several tiers tailored to different audiences: Free, Pro, and Pro+ for individual developers, alongside Business and Enterprise for organizations. While the technical features and model access vary between these plans, one of the most significant distinctions lies in how user data, particularly prompts, suggestions, and engagement metrics, is handled.</p>
+<p>The <strong>Business and Enterprise</strong> tiers emphasize robust privacy safeguards. These plans are designed with organizational compliance and governance needs in mind, reflecting global trends toward data minimization and regulatory alignment. Their policies typically involve:</p>
 <ul class="simple">
-<li><p>user engagement data is retained by GitHub for 24 months,</p></li>
-<li><p>prompts are discarded once a suggestion is returned, and</p></li>
-<li><p>suggestions are not retained by GitHub.</p></li>
+<li><p><strong>Prompts</strong> (the code or text you send to Copilot) being discarded immediately after a suggestion is generated.</p></li>
+<li><p><strong>Suggestions</strong> (the AI-generated code returned to you) not being stored by GitHub.</p></li>
+<li><p><strong>Engagement data</strong> (how you interact with suggestions) being retained for a fixed and limited period, commonly up to two years, to support service quality and security monitoring, after which it is deleted.</p></li>
 </ul>
-<p>Conversely, the Individual plan adopts a more expansive strategy towards data utilization. This approach is rooted in the goal of harnessing user interactions to continuously refine and enhance Copilot’s functionalities, foster the development of new developer tools, and fuel academic and product research. This broad use of data serves as a catalyst for innovation within Copilot’s ecosystem, facilitating significant service enhancements and valuable contributions to the technological domain. However, it also prompts a closer examination of the plan’s data retention and disposal protocols, inviting users to consider how their data is managed over time.</p>
+<p>This model reassures organizations that sensitive intellectual property and proprietary code will not be used for AI training or long-term storage, while still allowing GitHub to operate and monitor the service effectively.</p>
+<p>In contrast, <strong>individual plans</strong>, including Free, Pro, and Pro+, permit broader use of engagement data and user interactions. The intent here is to continually improve Copilot’s capabilities, refine the quality of completions, experiment with new features, and contribute to product and academic research. While this approach can accelerate innovation and improve the developer experience, it also means that user prompts and interactions may be retained or analyzed for longer periods and, in some cases, used to train models if the user has explicitly opted in.</p>
+<p>These differing approaches to data handling are not merely administrative details. They shape the privacy profile of each plan. Users selecting a Copilot plan are, in effect, also selecting a data governance model. For organizations, the priority may be strict compliance and minimal data persistence. For individuals, it may be the willingness to exchange certain privacy concessions for more rapid and personalized product improvements. Understanding these trade-offs is essential for making an informed choice about which Copilot tier aligns with one’s privacy expectations and operational needs.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
@@ -773,7 +774,7 @@ code<span class="w"> </span>--install-extension<span class="w"> </span>github.co
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-with-syntax">Getting help with syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-effective-prompting">Some tips for effective prompting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-other-parts-of-the-development-process">Integration in other parts of the development process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-privacy-with-github-copilot-individual-and-business">Data Privacy with GitHub Copilot Individual and Business</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-copilot-plans-and-data-privacy-considerations">GitHub Copilot Plans and Data Privacy Considerations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>

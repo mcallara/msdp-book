@@ -435,9 +435,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="testing">
 <h1>3.1 Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h1>
-<p>Testing is the act of evaluating software to see if it meets specified requirements and functions as expected. There are different types of tests that can be performed at different stages of the software development process. These tests can be classified into two main categories: functional and non-functional tests.</p>
-<p>Functional testing assesses the core functionalities of a software system to verify that it behaves as expected according to specified requirements. It focuses on validating inputs, outputs, and the interactions between different components to ensure that the system performs its intended tasks correctly.</p>
-<p>On the other hand, non-functional testing evaluates aspects of the system beyond its primary functions, such as performance, usability, reliability, and security. Non-functional testing aims to assess the quality attributes of the software, ensuring that it meets standards for efficiency, user experience, resilience, and protection against threats.</p>
+<p>Testing is the act of evaluating software to see if it meets specified requirements and functions as expected. There are different types of tests that can be performed at different stages of the software development process. These tests can be classified into two main categories: <strong>functional</strong> and <strong>non-functional tests</strong>.</p>
+<p><strong>Functional testing</strong> assesses the core functionalities of a software system to verify that it behaves as expected according to specified requirements. It focuses on validating inputs, outputs, and the interactions between different components to ensure that the system performs its intended tasks correctly.</p>
+<p>On the other hand, <strong>non-functional</strong> testing evaluates aspects of the system beyond its primary functions, such as performance, usability, reliability, and security. Non-functional testing aims to assess the quality attributes of the software, ensuring that it meets standards for efficiency, user experience, resilience, and protection against threats.</p>
 <p>While functional testing confirms what the system does, non-functional testing explores how well it does it under various conditions, providing a comprehensive assessment of the software’s overall quality and suitability for its intended purpose.</p>
 <div class="mermaid">
             flowchart TD
@@ -451,13 +451,13 @@ document.write(`
     C --&gt; I[Performance\nTesting]
     C --&gt; J[Usability\nTesting]
     C --&gt; K[Compatibility\nTesting]
-        </div><p>If we focus on functional testing, we can classify tests based on the level at which they are performed. Unit testing focuses on verifying the behavior of individual components or modules in isolation, while integration testing evaluates the interactions between different components to ensure that they work together as expected. System testing assesses the behavior of the entire system as a whole, and acceptance testing validates that the system meets the specified requirements and is ready for deployment.</p>
-<p>We can also classify tests based on the level of automation. Automated testing uses software tools and scripts to execute test cases, validate system behavior, and provide rapid feedback. It’s efficient, repeatable, and ideal for regression testing, but requires initial setup and maintenance effort. While manual testing involves human intervention to execute test cases and verify software functionality by interacting directly with the application’s user interface. It’s intuitive but time-consuming and prone to human error.</p>
-<p>In this chapter, we will focus on functional testing, and in particular automated unit testing. We will explore how to write and run tests using <code class="docutils literal notranslate"><span class="pre">doctest</span></code> and the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> framework and how to integrate testing with Visual Studio Code.</p>
+        </div><p>If we focus on <strong>functional testing</strong>, we can classify tests based on the level at which they are performed. <strong>Unit testing</strong> focuses on verifying the behavior of individual components or modules in isolation, while integration testing evaluates the interactions between different components to ensure that they work together as expected. <strong>System testing</strong> assesses the behavior of the entire system as a whole, and <strong>acceptance testing</strong> validates that the system meets the specified requirements and is ready for deployment.</p>
+<p>We can also classify tests based on the <strong>level of automation</strong>. <strong>Automated testing</strong> uses software tools and scripts to execute test cases, validate system behavior, and provide rapid feedback. It’s efficient, repeatable, and ideal for <strong>regression testing</strong> (a type of testing that ensures new code changes do not negatively affect existing functionality) but requires initial setup and maintenance effort. While <strong>manual testing</strong> involves human intervention to execute test cases and verify software functionality by interacting directly with the application’s user interface. It’s intuitive but time-consuming and prone to human error.</p>
+<p>In this chapter, we will focus on <strong>functional testing</strong>, and in particular <strong>automated unit testing</strong>. We will explore how to write and run tests using <code class="docutils literal notranslate"><span class="pre">doctest</span></code> and the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> framework and how to integrate testing with Visual Studio Code.</p>
 <section id="tests-as-documentation">
 <h2>Tests as documentation<a class="headerlink" href="#tests-as-documentation" title="Link to this heading">#</a></h2>
-<p>Although testing is crucial for verifying that the code behaves as intended and meets the specified requirements. It can also contribute to understanding the inner workings of the code. Through writing tests, developers often gain insights into the behavior of their code, its dependencies, and potential edge cases. Test code can serve as documentation, providing examples of how different parts of the system should behave under various conditions.</p>
-<p>Testing inherently involves defining expected outcomes based on requirements and specifications. In this sense, writing tests requires a clear understanding of how the code should behave under different scenarios. By defining test cases that cover different aspects of the code’s functionality, developers articulate their understanding of the expected behavior, ensuring alignment between the code’s implementation and the desired outcomes.</p>
+<p>Although testing is crucial for verifying that the code behaves as intended and meets the specified requirements. It can also contribute to <strong>understanding the inner workings of the code</strong>. Through writing tests, developers often gain insights into the behavior of their code, its dependencies, and potential edge cases. Test code can serve as documentation, providing examples of how different parts of the system should behave under various conditions.</p>
+<p>Testing inherently involves defining <strong>expected outcomes based on requirements and specifications</strong>. In this sense, writing tests requires a clear understanding of how the code should behave under different scenarios. By defining test cases that cover different aspects of the code’s functionality, developers articulate their understanding of the expected behavior, ensuring alignment between the code’s implementation and the desired outcomes.</p>
 </section>
 <section id="documentation-and-testing-with-doctest">
 <h2>Documentation and Testing with Doctest<a class="headerlink" href="#documentation-and-testing-with-doctest" title="Link to this heading">#</a></h2>
@@ -655,9 +655,9 @@ test_addition.py <span class=" -Color -Color-Green">.                           
 <h2>Arrange-Act-Assert<a class="headerlink" href="#arrange-act-assert" title="Link to this heading">#</a></h2>
 <p>In general, unit tests follow the Arrange-Act-Assert pattern. This means that we:</p>
 <ul class="simple">
-<li><p>Arrange: prepare the environment for the test.</p></li>
-<li><p>Act: perform the action that we want to test.</p></li>
-<li><p>Assert: check if the result is as expected.</p></li>
+<li><p><strong>Arrange</strong>: prepare the environment for the test.</p></li>
+<li><p><strong>Act</strong>: perform the action that we want to test.</p></li>
+<li><p><strong>Assert</strong>: check if the result is as expected.</p></li>
 </ul>
 <p>In the test we just wrote:</p>
 <ul class="simple">
