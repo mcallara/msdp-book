@@ -211,7 +211,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Python Project Management with Poetry</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="ch43.html">4.3 Dependency Management and Virtual Environments</a></li>
-
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch5/ch50.html">5 Software Development Life Cycle, Versioning and Packaging.</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -466,17 +465,8 @@ document.write(`
 <section id="initialising-a-new-project-with-poetry">
 <h2>Initialising a New Project with Poetry<a class="headerlink" href="#initialising-a-new-project-with-poetry" title="Link to this heading">#</a></h2>
 <p>Creating a new project is as simple as running:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>my-package
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Created package <span class=" -Color -Color-Blue">my_package</span> in <span class=" -Color -Color-Blue">my-package</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>This command creates a new directory called <code class="docutils literal notranslate"><span class="pre">my-package</span></code> with a basic project structure and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file pre-configured.</p>
 </section>
@@ -497,7 +487,7 @@ document.write(`
 ├──<span class="w"> </span>LICENSE<span class="w">                  </span>│
 ├──<span class="w"> </span>README.md<span class="w">                </span>┘
 ├──<span class="w"> </span>pyproject.toml<span class="w">           </span><span class="o">]</span><span class="w"> </span>Package<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>configuration
-<span class="p">|</span><span class="w">   </span>my_package/<span class="w">              </span>┐
+├──<span class="w"> </span>my_package/<span class="w">              </span>┐
 │<span class="w">     </span>├──<span class="w"> </span>__init__.py<span class="w">        </span>│<span class="w"> </span>Package<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code
 │<span class="w">     </span>├──<span class="w"> </span>moduleA.py<span class="w">         </span>│
 │<span class="w">     </span>└──<span class="w"> </span>moduleB.py<span class="w">         </span>┘
@@ -544,11 +534,11 @@ document.write(`
 <section id="poetry-and-the-project-structure">
 <h3>Poetry and the project structure<a class="headerlink" href="#poetry-and-the-project-structure" title="Link to this heading">#</a></h3>
 <p>By default, when we create a new project with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>my-package-src
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>my-package
 </pre></div>
 </div>
-<p>, poetry uses flat layout. We can change to src layout with the src flag.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>--src<span class="w"> </span>my-package-src
+<p>, poetry uses src layout. We can change to flat layout with the flat flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>new<span class="w"> </span>--flat<span class="w"> </span>my-package-flat
 </pre></div>
 </div>
 </section>
@@ -584,9 +574,11 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="references">
 <h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://packaging.python.org/en/latest/#">Python Packaging User Guide</a>
-<a class="reference external" href="https://www.pypa.io/en/latest/">Python Packaging Authority</a>
-<a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html">PyOpenSci</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://packaging.python.org/en/latest/#">Python Packaging User Guide</a></p></li>
+<li><p><a class="reference external" href="https://www.pypa.io/en/latest/">Python Packaging Authority</a></p></li>
+<li><p><a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html">PyOpenSci</a></p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">

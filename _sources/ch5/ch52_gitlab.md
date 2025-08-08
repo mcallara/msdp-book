@@ -59,12 +59,13 @@ You can use:
 
 ## Adding the token to the GitLab CI/CD variables
 
-To add the token to the GitLab CI/CD variables, go to the settings of the repository and then to the [CI/CD section](https://gitlab.com/msdp.book/semver/-/settings/ci_cd). Browse until you find the "Variables" section and click on "Expand" to reveal the form for adding a new variable. Now click on "Add variable" and add a new variable with:
+To add the token to the GitLab CI/CD variables, go to the settings of the repository and then to the [CI/CD section](https://gitlab.com/msdp.book/my-package/-/settings/ci_cd). Browse until you find the "Variables" section and click on "Expand" to reveal the form for adding a new variable. Now click on "Add variable" and add a new variable with:
 
 - Type: Variable (default)
 - Environment: All (default)
-- Protect Variable, Mask Variable, Expand variable reference
-- Key: GITLAB_TOKEN
+- Visibility: Masked
+- Flags: Protect Variable and Expand variable reference
+- Key: `GITLAB_TOKEN`
 - Value: `<your token>`
 
 ## Setup Your Python Project with Poetry
@@ -213,7 +214,7 @@ Commit all the changes to the repository, using the message "feat(semantic-relea
 ```{code-cell} bash
 :tags: ["remove-input","remove-output"]
 # git init --initial-branch=main
-# git remote add origin git@gitlab.com:msdp.book/semver.git
+# git remote add origin git@gitlab.com:msdp.book/my-pack-test.git
 git add .
 git commit -m "feat(semantic-release): add python-semantic-release and gitlab-ci.yml"
 git push --set-upstream origin main
