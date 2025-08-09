@@ -29,9 +29,35 @@ Continuous Integration encourages developers to integrate their changes into a m
 
 ## Continuous Delivery and Deployment
 
-Continuous Delivery extends CI by ensuring that your software can be released to your customers at any moment. It involves automatically deploying all changes to a testing or staging environment after the build stage.
+The key difference between **Continuous Delivery** and **Continuous Deployment** lies in the final step of the software release process:
 
-Continuous Deployment takes this a step further by automatically deploying every change that passes through the pipeline to production, eliminating manual steps in the deployment process.
+### Continuous Delivery (CD)
+- **Automated pipeline with manual release**: The code is automatically built, tested, and prepared for deployment, but the actual release to production requires **manual approval/intervention**
+- **Production-ready code**: Every change that passes the automated tests is ready to be deployed to production at any time
+- **Human gate**: There's a human decision point before production deployment
+- **Risk mitigation**: Allows for final business/stakeholder review before going live
+
+### Continuous Deployment (CD)
+- **Fully automated pipeline**: Every change that passes all automated tests is **automatically deployed to production** without human intervention
+- **No manual gates**: No human approval step - if tests pass, it goes live immediately
+- **Higher automation**: Requires more comprehensive automated testing and monitoring
+- **Faster feedback**: Changes reach users immediately after passing tests
+
+**Visually**
+
+```
+Continuous Delivery:
+Code → Build → Test → Stage → [Manual Approval] → Production
+
+Continuous Deployment:
+Code → Build → Test → Stage → Production (automatic)
+```
+
+### When to Use Which?
+- **Continuous Delivery**: Better for applications where you need business approval, regulatory compliance, or coordinated releases
+- **Continuous Deployment**: Ideal for applications where rapid iteration is crucial and you have robust automated testing and monitoring in place
+
+Both practices require strong automated testing, but Continuous Deployment demands even more confidence in your automated quality gates since there's no human safety net before production.
 
 ## How does GitLab CI/CD work?
 

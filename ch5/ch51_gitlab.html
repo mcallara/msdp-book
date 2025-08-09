@@ -416,7 +416,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-devops-cycle">The DevOps Cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-ci">Continuous Integration (CI)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-and-deployment">Continuous Delivery and Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-and-deployment">Continuous Delivery and Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-cd">Continuous Delivery (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-deployment-cd">Continuous Deployment (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-which">When to Use Which?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-gitlab-ci-cd-work">How does GitLab CI/CD work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gitlab-ci-cd">Getting Started with GitLab CI/CD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -455,8 +460,41 @@ document.write(`
 </section>
 <section id="continuous-delivery-and-deployment">
 <h2>Continuous Delivery and Deployment<a class="headerlink" href="#continuous-delivery-and-deployment" title="Link to this heading">#</a></h2>
-<p>Continuous Delivery extends CI by ensuring that your software can be released to your customers at any moment. It involves automatically deploying all changes to a testing or staging environment after the build stage.</p>
-<p>Continuous Deployment takes this a step further by automatically deploying every change that passes through the pipeline to production, eliminating manual steps in the deployment process.</p>
+<p>The key difference between <strong>Continuous Delivery</strong> and <strong>Continuous Deployment</strong> lies in the final step of the software release process:</p>
+<section id="continuous-delivery-cd">
+<h3>Continuous Delivery (CD)<a class="headerlink" href="#continuous-delivery-cd" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Automated pipeline with manual release</strong>: The code is automatically built, tested, and prepared for deployment, but the actual release to production requires <strong>manual approval/intervention</strong></p></li>
+<li><p><strong>Production-ready code</strong>: Every change that passes the automated tests is ready to be deployed to production at any time</p></li>
+<li><p><strong>Human gate</strong>: There’s a human decision point before production deployment</p></li>
+<li><p><strong>Risk mitigation</strong>: Allows for final business/stakeholder review before going live</p></li>
+</ul>
+</section>
+<section id="continuous-deployment-cd">
+<h3>Continuous Deployment (CD)<a class="headerlink" href="#continuous-deployment-cd" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Fully automated pipeline</strong>: Every change that passes all automated tests is <strong>automatically deployed to production</strong> without human intervention</p></li>
+<li><p><strong>No manual gates</strong>: No human approval step - if tests pass, it goes live immediately</p></li>
+<li><p><strong>Higher automation</strong>: Requires more comprehensive automated testing and monitoring</p></li>
+<li><p><strong>Faster feedback</strong>: Changes reach users immediately after passing tests</p></li>
+</ul>
+<p><strong>Visually</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Continuous Delivery:
+Code → Build → Test → Stage → [Manual Approval] → Production
+
+Continuous Deployment:
+Code → Build → Test → Stage → Production (automatic)
+</pre></div>
+</div>
+</section>
+<section id="when-to-use-which">
+<h3>When to Use Which?<a class="headerlink" href="#when-to-use-which" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Continuous Delivery</strong>: Better for applications where you need business approval, regulatory compliance, or coordinated releases</p></li>
+<li><p><strong>Continuous Deployment</strong>: Ideal for applications where rapid iteration is crucial and you have robust automated testing and monitoring in place</p></li>
+</ul>
+<p>Both practices require strong automated testing, but Continuous Deployment demands even more confidence in your automated quality gates since there’s no human safety net before production.</p>
+</section>
 </section>
 <section id="how-does-gitlab-ci-cd-work">
 <h2>How does GitLab CI/CD work?<a class="headerlink" href="#how-does-gitlab-ci-cd-work" title="Link to this heading">#</a></h2>
@@ -636,7 +674,12 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-devops-cycle">The DevOps Cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-ci">Continuous Integration (CI)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-and-deployment">Continuous Delivery and Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-and-deployment">Continuous Delivery and Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-delivery-cd">Continuous Delivery (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-deployment-cd">Continuous Deployment (CD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-which">When to Use Which?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-gitlab-ci-cd-work">How does GitLab CI/CD work?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gitlab-ci-cd">Getting Started with GitLab CI/CD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

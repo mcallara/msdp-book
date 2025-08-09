@@ -72,7 +72,7 @@ To add the token to the GitLab CI/CD variables, go to the settings of the reposi
 
 To ensure that our project is set up with Poetry and has a `pyproject.toml` file at its root, we need to initialize the project using Poetry. 
 
-Let's now initialize the poetry project in the `my-package` directory by running the following command inside the directory:
+If the `pyproject.toml` file is not there, we can create it by running the following command in the terminal:
 
 ```{code-block} bash
 poetry init
@@ -80,19 +80,28 @@ poetry init
 
 ```{code-cell} bash
 :tags: [remove-input]
-echo $'[tool.poetry]
+echo $'[project]
 name = "my-package"
 version = "0.1.0"
 description = ""
-authors = ["msdp-book <msdp.book@gmail.com>"]
+authors = [
+    {name = "msdp-book",email = "msdp.book@gmail.com"}
+]
 readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas (>=2.3.1,<3.0.0)"
+]
 
-[tool.poetry.dependencies]
-python = "^3.8"
+[tool.poetry]
+packages = [{include = "my_package", from = "src"}]
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 ' >> pyproject.toml
 ```
@@ -100,25 +109,18 @@ build-backend = "poetry.core.masonry.api"
 ## Change the Python Versions Supported by the Project
 
 Since `python-semantic-release` requires `Python >=3.8`, before installing python-semantic-release, it is important that you check and change, if needed, the Python version supported by the project.
-In the `pyproject.toml` file, look for the section `[tool.poetry.dependencies]` and change the Python version to `^3.8` if a lower version is specified.
+In the `pyproject.toml` file, look for `requires-python` and change the Python version to `^3.8` if a lower version is specified.
 
 For example, if you find:
 
 ```{code-block} toml
-[tool.poetry.dependencies]
-python = "^3.7"
+requires-python = ">=3.7"
 ```
 
 Change it to: 
 
 ```{code-block}  toml
-[tool.poetry.dependencies]
-python = "^3.8"
-```
-
-```{code-cell} bash
-:tags: [remove-input]
-sed -i 's/python = "^3.7"/python = "^3.8"/' pyproject.toml
+requires-python = ">=3.8"
 ```
 
 ## Add Python Semantic Release as a dependency of your project
@@ -183,7 +185,81 @@ semantic-release:
     - poetry run semantic-release -vvv publish
 ```
 
-We are using the `python:latest` image to run our CI/CD pipeline. We also set up the `before_script` to configure the git user and checkout the branch. The `semantic-release` job is defined to run in the `deploy` stage and is triggered when a commit is made to the default branch that follows semantic versioning in its commit message. The job will install `python-semantic-release` and run the `version` and `publish` commands. Finally, it will display the contents of the `pyproject.toml` file for verification.
+Let's break down this GitLab CI/CD configuration to understand how it automates semantic versioning:
+
+### Docker Image Configuration
+```yaml
+image: python:latest
+```
+We use the `python:latest` Docker image as our CI/CD environment. This provides a clean Python environment with pip and other Python tools pre-installed, ensuring consistent execution across different runners.
+
+### Global Setup (before_script)
+```yaml
+before_script:
+  - git checkout "$CI_COMMIT_REF_NAME"
+  - pip install poetry
+  - poetry install --only dev --no-root
+```
+The `before_script` section runs before every job and performs essential setup:
+
+1. **`git checkout "$CI_COMMIT_REF_NAME"`** - Switches to the specific branch or tag that triggered the pipeline. The `$CI_COMMIT_REF_NAME` variable contains the branch/tag name, ensuring we're working with the correct commit.
+
+2. **`pip install poetry`** - Installs Poetry package manager, which is required to manage our Python project dependencies.
+
+3. **`poetry install --only dev --no-root`** - Installs only development dependencies (including `python-semantic-release`) without installing the package itself. The `--no-root` flag prevents Poetry from installing the current project as a package, which is suitable for CI environments.
+
+### Semantic Release Job Configuration
+```yaml
+semantic-release:
+  stage: deploy
+```
+This job runs in the `deploy` stage, typically after build and test stages have completed successfully.
+
+### Job Execution Rules
+```yaml
+rules:
+  - if: '$CI_COMMIT_MESSAGE =~ /^(\d+\.)?(\d+\.)?(\d+).*/ && $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
+    when: never
+  - when: always
+```
+The rules section implements smart logic to prevent infinite CI/CD loops:
+
+1. **First rule (`when: never`)** - Prevents the job from running when:
+   - The commit message starts with a version number pattern (regex `^(\d+\.)?(\d+\.)?(\d+).*` matches patterns like `1.2.3`, `0.1.0`, etc.)
+   - AND the commit is on the default branch (`$CI_DEFAULT_BRANCH` is typically `main` or `master`)
+   
+   This prevents semantic-release from triggering another pipeline when it creates its own version bump commits.
+
+2. **Second rule (`when: always`)** - Runs the job in all other cases, ensuring semantic-release processes regular feature and bug fix commits.
+
+### Release Automation Scripts
+```yaml
+script:
+  - poetry run semantic-release -vvv version
+  - poetry run semantic-release -vvv publish
+```
+The script section executes two critical commands:
+
+1. **`poetry run semantic-release -vvv version`** - This command:
+   - Analyzes commit messages since the last release using conventional commit standards
+   - Determines the next version number based on semantic commit types (`feat:` = minor, `fix:` = patch, `BREAKING CHANGE:` = major)
+   - Updates version numbers in `pyproject.toml` and other configured files
+   - The `-vvv` flag provides verbose logging for debugging
+
+2. **`poetry run semantic-release -vvv publish`** - This command:
+   - Creates a Git tag for the new version
+   - Generates or updates the `CHANGELOG.md` file based on commit history
+   - Creates a GitLab release with release notes
+   - Pushes the changes and tags back to the repository
+
+### How the Automation Works
+1. **Developer commits** with semantic messages (e.g., `feat: add user authentication`, `fix: resolve login bug`)
+2. **Pipeline triggers** and the semantic-release job analyzes the commit history
+3. **Version calculation** happens automatically based on commit types since the last release
+4. **Release artifacts** are generated (tags, changelog, GitLab releases) without manual intervention
+5. **Loop prevention** ensures semantic-release's own version commits don't trigger new releases
+
+This automation ensures consistent versioning following semantic versioning principles, eliminates manual release management tasks, and provides clear release documentation through automatically generated changelogs.
 
 ```{code-cell} bash
 :tags: [remove-input]

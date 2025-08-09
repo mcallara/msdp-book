@@ -28,22 +28,44 @@ kernelspec:
 :tags: [remove-input]
 cd ../home/ch5/my-package
 ```
-In this chapter, we'll explore the essentials of Python packages, package registries, and how to utilize Poetry for package management. Additionally, we will delve into automating the build and publish process using the GitLab CI/CD pipeline, by continuing our work with the `poetry-demo` project.
+In this chapter, we'll explore the essentials of Python packages, package registries, and how to utilize Poetry for package management. Additionally, we will delve into automating the build and publish process using the GitLab CI/CD pipeline, by continuing our work with the `my-package` project.
 
 ## Python Packages
 
 A Python Package is a collection of modules that are bundled together. These packages can be easily distributed for use in other projects, promoting code reuse and modular programming. Python packages can include libraries, frameworks, or collections of code and resources for specific purposes.
 
-If we look at the structure of our `my-package` project, and compare it with the structure of the flat layout we will notice that we are missing the folder that is supposed to contain the code of our package. 
+If we look at the structure of our `my-package` project, in particular inside the `my_package` folder, we note a `__init__.py` file into it.
 
-To transform our repository in a real python package, let's create a new folder named `my_package` and add an `__init__.py` file into it.
+This file is essential for Python to recognize the directory as a package. The `__init__.py` file serves several important purposes:
 
-```{code-cell} bash
-:tags: [remove-input]
-mkdir my_package
-cd my_package
-touch __init__.py
+1. **Package Recognition**: It signals to Python that the directory should be treated as a package, enabling imports from the directory.
+
+2. **Package Initialization**: When the package is first imported, Python executes the code in `__init__.py`. This allows you to:
+   - Set up package-level variables and constants
+   - Import commonly used modules or functions to make them available at the package level
+   - Perform any necessary initialization logic
+
+3. **Control Public API**: You can use `__init__.py` to define what gets imported when someone uses `from package import *` by setting the `__all__` variable.
+
+4. **Namespace Management**: It can help organize and expose the package's public interface, making it easier for users to access the most important components.
+
+The file can be completely empty (which is often the case for simple packages) or contain initialization code. Here are some common patterns you might find in an `__init__.py` file:
+
+```{code-block} python
+# Empty file - just marks the directory as a package
+
+# Or with version information
+__version__ = "1.0.0"
+
+# Or exposing key components
+from .core import MyClass
+from .utils import helper_function
+
+# Or defining what's available for "from package import *"
+__all__ = ["MyClass", "helper_function"]
 ```
+
+The presence of `__init__.py` allows us to import modules from this directory as a package, enabling clean and organized code structure that promotes reusability and maintainability.
 
 ## Package Registries
 
