@@ -1,0 +1,16 @@
+[project]
+name = "msdp-book"
+version = "0.1.0"
+description = "Modern Software Development Practices - A Jupyter Book"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "jupyter-book",
+    "matplotlib",
+    "numpy",
+    "bash-kernel",
+    "ghp-import",
+    "pytest",
+    "ipytest",
+    "sphinxcontrib-mermaid",
+]

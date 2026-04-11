@@ -1,0 +1,46 @@
+version: 1
+project:
+  title: Modern Software Development Practices
+  authors:
+    - name: Matias Callara
+  copyright: '2025'
+  github: mcallara/msdp-book
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - file: ch1/ch10.md
+      children:
+        - file: ch1/ch11g.md
+        - file: ch1/ch12.md
+        - file: ch1/ch13.md
+        - file: ch1/ch14.md
+        - file: ch1/ch150_gitlab_auth_https.md
+        - file: ch1/ch151_gitlab_https.md
+    - file: ch2/ch20.md
+      children:
+        - file: ch2/ch21.md
+        - file: ch2/ch22.md
+    - file: ch3/ch30.md
+      children:
+        - file: ch3/ch31.md
+        - file: ch3/portfolio.ipynb
+    - file: ch4/ch40.md
+      children:
+        - file: ch4/ch41.md
+        - file: ch4/ch42.md
+        - file: ch4/ch43.md
+    - file: ch5/ch50.md
+      children:
+        - file: ch5/ch51_gitlab.md
+        - file: ch5/ch52_gitlab.md
+        - file: ch5/ch53_gitlab.md
+site:
+  options:
+    logo: tds-logo-small.png
+    folders: true
+  template: book-theme
