@@ -37,6 +37,8 @@ jobs:
           node-version: 18.x
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
+      - name: Install uv and dependencies
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync
       - name: Build HTML Assets
         run: jupyter-book build --html --execute
       - name: Upload artifact
