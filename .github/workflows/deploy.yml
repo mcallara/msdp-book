@@ -43,7 +43,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Try create repo
-        run: gh repo create my-actions-test --private
+        run: gh repo create my-actions-test --private --owner mcallara
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
