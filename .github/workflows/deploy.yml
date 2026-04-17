@@ -32,19 +32,18 @@ jobs:
       - uses: actions/checkout@v6
       - name: Setup Pages
         uses: actions/configure-pages@v6
-      #- uses: actions/setup-node@v4
-      #  with:
-      #    node-version: 18.x
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
       - name: Install uv and dependencies
         run: curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync
-    #  - name: Install kernel
-    #    run: uv run python -m bash_kernel.install --user
+      - name: Install kernel
+        run: uv run python -m bash_kernel.install --user
       - name: Build HTML Assets
         run: uv run jupyter-book build --html --execute
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Try create repo
+        run: gh repo create my-actions-test --private
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
