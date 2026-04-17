@@ -40,7 +40,7 @@ jobs:
       - name: Install uv and dependencies
         run: curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync
       - name: Build HTML Assets
-        run: jupyter-book build --html --execute
+        run: uv run jupyter-book build --html --execute
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
