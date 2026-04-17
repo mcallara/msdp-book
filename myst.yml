@@ -17,8 +17,6 @@ project:
       children:
         - file: ch1/ch11.md
         - file: ch1/ch12.md
-        - file: ch1/ch13.md
-        - file: ch1/ch14.md
     #     - file: ch1/ch150_gitlab_auth_https.md
     #     - file: ch1/ch151_gitlab_https.md
     # - file: ch2/ch20.md

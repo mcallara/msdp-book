@@ -13,4 +13,6 @@ dependencies = [
     "pytest",
     "ipytest",
     "sphinxcontrib-mermaid",
+    "jupyter-server>=2.17.0",
+    "ipykernel>=6.31.0",
 ]
