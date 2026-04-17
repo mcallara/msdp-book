@@ -43,7 +43,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.CREATE_DELETE_REPOS_TOKEN }}
       - name: Try clone repo
-        run: git clone https://github.com/mcallara/my-project.git my-project-remote
+        run: git clone "https://x-access-token:${GH_TOKEN}@github.com/mcallara/my-project.git" my-project-remote
         env:
           GH_TOKEN: ${{ secrets.CREATE_DELETE_REPOS_TOKEN }}
       - name: Upload artifact
