@@ -41,11 +41,11 @@ jobs:
       - name: Build HTML Assets
         run: uv run jupyter-book build --html --execute
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CREATE_DELETE_REPOS_TOKEN }}
       - name: Try create repo
         run: gh repo create mcallara/my-actions-test --private
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CREATE_DELETE_REPOS_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
