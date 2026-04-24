@@ -1,7 +1,7 @@
 # Chapter 1
 - Students can use authentication via VS Code.
 
-For the book, we leverage several types of authentication. Since we use Github CLI (`gh`) to create/delete repos and we use `git` to push/clone to the repos, the instructor needs to authenticate `gh` and also to authenticate `git` in the Github Action runner.
+For the book, we leverage several types of authentication. Since we use Github CLI (`gh`) to create/delete repos and we use `git` to push/clone to the repos, the instructor needs to authenticate `gh`  (via `gh auth login`) and also to authenticate `git` in the Github Action runner.
 
 All authentication is done through a Classic Token that needs the folllowing scopes:
 
