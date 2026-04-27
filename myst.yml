@@ -27,11 +27,11 @@ project:
     #   children:
     #     - file: ch3/ch31.md
     #     - file: ch3/portfolio.ipynb
-    # - file: ch4/ch40.md
-    #   children:
-    #     - file: ch4/ch41.md
-    #     - file: ch4/ch42.md
-    #     - file: ch4/ch43.md
+    - file: ch4/ch40.md
+      children:
+        - file: ch4/ch41.md
+        - file: ch4/ch42.md
+        - file: ch4/ch43.md
     # - file: ch5/ch50.md
     #   children:
     #     - file: ch5/ch51_gitlab.md
