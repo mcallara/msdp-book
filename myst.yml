@@ -34,7 +34,7 @@ project:
       children:
         - file: ch5/ch51.md
         - file: ch5/ch52.md
-    #     - file: ch5/ch53.md
+        - file: ch5/ch53.md
 site:
   options:
     logo: tds-logo-small.png
