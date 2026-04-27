@@ -3,7 +3,7 @@ project:
   title: Modern Software Development Practices
   authors:
     - name: Matias Callara
-  copyright: '2025'
+  copyright: '2026'
   github: mcallara/msdp-book
   bibliography:
     - references.bib
