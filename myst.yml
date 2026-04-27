@@ -30,8 +30,8 @@ project:
     - file: ch4/ch40.md
       children:
         - file: ch4/ch41.md
-        - file: ch4/ch42.md
-        - file: ch4/ch43.md
+    #    - file: ch4/ch42.md
+    #    - file: ch4/ch43.md
     # - file: ch5/ch50.md
     #   children:
     #     - file: ch5/ch51.md
