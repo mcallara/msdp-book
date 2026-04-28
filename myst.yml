@@ -22,10 +22,10 @@ project:
         - file: ch2/ch21.md
         - file: ch2/ch22.md
         - file: ch2/ch23.md
-    # - file: ch3/ch30.md
-    #   children:
-    #     - file: ch3/ch31.md
-    #     - file: ch3/ch32.md
+    - file: ch3/ch30.md
+      children:
+        - file: ch3/ch31.md
+        - file: ch3/ch32.md
     # - file: ch4/ch40.md
     #   children:
     #     - file: ch4/ch41-ai.md
