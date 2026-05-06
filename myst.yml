@@ -17,6 +17,7 @@ project:
       children:
         - file: ch1/ch11.md
         - file: ch1/ch12.md
+        - file: ch1/ch13.md
     - file: ch2/ch20.md
       children:
         - file: ch2/ch21.md
@@ -26,10 +27,10 @@ project:
       children:
         - file: ch3/ch31.md
         - file: ch3/ch32.md
-    # - file: ch4/ch40.md
-    #   children:
-    #     - file: ch4/ch41-ai.md
-    #     - file: ch4/ch42-tdd.ipynb
+    - file: ch4/ch40.md
+      children:
+        - file: ch4/ch41-sdd-tdd.md
+        - file: ch4/ch42-artifacts.md
     - file: ch5/ch50.md
       children:
         - file: ch5/ch51.md
