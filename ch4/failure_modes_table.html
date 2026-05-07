@@ -1,4 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
 
+    :root {
+      --color-background-primary:   #ffffff;
+      --color-background-secondary: #f5f4f0;
+      --color-text-primary:         #1a1a18;
+      --color-text-secondary:       #5c5b56;
+      --color-text-tertiary:        #9c9a92;
+      --color-border-secondary:     rgba(0,0,0,0.30);
+      --color-border-tertiary:      rgba(0,0,0,0.15);
+      --border-radius-md:           8px;
+      --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-background-primary:   #1e1e1c;
+        --color-background-secondary: #2a2a27;
+        --color-text-primary:         #e8e6de;
+        --color-text-secondary:       #a8a69e;
+        --color-text-tertiary:        #6b6963;
+        --color-border-secondary:     rgba(255,255,255,0.30);
+        --color-border-tertiary:      rgba(255,255,255,0.15);
+      }
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-background-primary);
+      color: var(--color-text-primary);
+      margin: 0;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
 <style>
   h2.sr-only { position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0); }
   .wrap { padding: 1rem 0; font-size: 13px; }
@@ -191,3 +234,6 @@ html += `<td></td>`;
 scoreRow.innerHTML = html;
 tbody.appendChild(scoreRow);
 </script>
+
+</body>
+</html>
